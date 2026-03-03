@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service | The Channel Standard</title>
+  <meta name="description" content="Terms of Service for The Channel Standard — the rules and conditions governing your use of our website and services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --max-layout: 1200px;
+      --max-content: 680px;
+      --space-sm: 0.75rem;
+      --space-md: 1.25rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 5rem;
+      --space-3xl: 7rem;
+      --theme-transition: 0.3s ease;
+      --ink: #0d0d0d;
+      --ink-muted: #555;
+      --rule: #e5e5e5;
+      --bg: #f5f4f0;
+      --bg-elevated: #eeede9;
+      --accent: #3b9b8f;
+      --accent-hover: #2e7d73;
+      --accent-glow: 0 0 12px rgba(124, 196, 186, 0.35);
+      --logo-text-fill: #0d0d0d;
+      --logo-dot-dark: #0d0d0d;
+      --logo-dot-teal: #3b9b8f;
+      --logo-dot-blue: #5bb2e8;
+      --footer-bg: #0f1117;
+      --footer-text: #888;
+      --footer-link: #666;
+      --footer-link-hover: #eaeaea;
+      --footer-rule: #222;
+      --white: #ffffff;
+      --serif: 'Times New Roman', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    [data-theme="dark"] {
+      --ink: #eaeaea;
+      --ink-muted: #aaa;
+      --rule: #2a2a2a;
+      --bg: #0c0d11;
+      --bg-elevated: #14151a;
+      --accent: #7CC4BA;
+      --logo-text-fill: #eaeaea;
+      --logo-dot-dark: #eaeaea;
+      --logo-dot-teal: #7CC4BA;
+      --logo-dot-blue: #5bb2e8;
+      --footer-bg: #080910;
+      --footer-text: #666;
+      --footer-link: #555;
+      --footer-link-hover: #eaeaea;
+      --footer-rule: #1e1e1e;
+    }
+    [data-theme="retro"] {
+      --ink: #1a1a1a;
+      --ink-muted: #555;
+      --rule: #cccccc;
+      --bg: #e8e8e8;
+      --bg-elevated: #d8d8d8;
+      --accent: #1a5276;
+      --logo-text-fill: #333333;
+      --logo-dot-dark: #333333;
+      --logo-dot-teal: #2563EB;
+      --logo-dot-blue: #0ea5e9;
+      --footer-bg: #2c3e50;
+      --footer-text: #95a5a6;
+      --footer-link: #7f8c8d;
+      --footer-link-hover: #ecf0f1;
+      --footer-rule: #34495e;
+      --serif: 'Times New Roman', Georgia, serif;
+      --sans: 'Droid Sans', Verdana, Tahoma, Geneva, sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-weight: 400; color: var(--ink); background: var(--bg); line-height: 1.6; transition: background var(--theme-transition), color var(--theme-transition); }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { text-decoration: underline; }
+    .logo-svg { height: 28px; width: auto; display: block; }
+    .logo-svg .logo-text { fill: var(--logo-text-fill); transition: fill var(--theme-transition); }
+    .logo-svg .logo-dot-dark { fill: var(--logo-dot-dark); transition: fill var(--theme-transition); }
+    .logo-svg .logo-dot-teal { fill: var(--logo-dot-teal); transition: fill var(--theme-transition); }
+    .logo-svg .logo-dot-blue { fill: var(--logo-dot-blue); transition: fill var(--theme-transition); }
+    .footer-logo .logo-svg { height: 38px; }
+    footer .logo-svg .logo-text { fill: #EAEAEA; }
+    footer .logo-svg .logo-dot-dark { fill: #EAEAEA; }
+    [data-theme="dark"] footer .logo-svg .logo-dot-teal { fill: #7CC4BA; }
+    .theme-toggle { background: none; border: 1px solid var(--rule); cursor: pointer; padding: 0.4rem; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 0; transition: all var(--theme-transition); color: var(--ink-muted); margin-left: 1rem; flex-shrink: 0; }
+    .theme-toggle:hover { border-color: var(--ink); color: var(--ink); }
+    [data-theme="dark"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .sun { display: block; }
+    .theme-toggle .moon { display: none; }
+    .theme-toggle .retro-icon { display: none; }
+    [data-theme="dark"] .theme-toggle .sun { display: none; }
+    [data-theme="dark"] .theme-toggle .moon { display: block; }
+    [data-theme="retro"] .theme-toggle .sun { display: none; }
+    [data-theme="retro"] .theme-toggle .moon { display: none; }
+    [data-theme="retro"] .theme-toggle .retro-icon { display: block; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; max-width: var(--max-layout); margin: 0 auto; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover { color: var(--ink); }
+    /* Legal content */
+    .legal-page { max-width: 760px; margin: 0 auto; padding: var(--space-2xl) 2rem; }
+    .legal-page .page-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-sm); }
+    .legal-page h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
+    .legal-page .effective-date { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--rule); }
+    .legal-page h2 { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--ink); margin-top: var(--space-xl); margin-bottom: var(--space-sm); }
+    .legal-page p { font-size: 0.95rem; line-height: 1.75; color: var(--ink-muted); margin-bottom: var(--space-md); }
+    .legal-page ul { margin: 0 0 var(--space-md) 1.5rem; }
+    .legal-page ul li { font-size: 0.95rem; line-height: 1.75; color: var(--ink-muted); margin-bottom: 0.4rem; }
+    .legal-page .contact-block { background: var(--bg-elevated); border: 1px solid var(--rule); padding: var(--space-lg); margin-top: var(--space-xl); }
+    .legal-page .contact-block p { margin-bottom: 0.25rem; }
+    /* Footer */
+    footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--space-lg); transition: background var(--theme-transition); }
+    .footer-grid { max-width: var(--max-layout); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-xl); padding-bottom: var(--space-lg); }
+    .footer-tagline {
+      cursor: default;
+      display: inline-block;
+      transform-origin: left center;
+      background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8);
+      background-size: 300% 100%;
+      background-position: 100% 50%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      transition: background-position 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .footer-tagline:hover { background-position: 0% 50%; transform: scale(1.03); }
+    .footer-col h4 { font-family: var(--sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: var(--space-sm); }
+    .footer-col a { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--footer-link); margin-bottom: 0.5rem; transition: color 0.2s ease; text-decoration: none; }
+    .footer-col a:hover { color: var(--footer-link-hover); }
+    .footer-bottom { max-width: var(--max-layout); margin: 0 auto; padding: var(--space-lg) 0 0; margin-top: var(--space-lg); border-top: 1px solid var(--footer-rule); display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 0.75rem; color: var(--footer-text); }
+    .footer-bottom-links { display: flex; gap: var(--space-md); }
+    .footer-bottom-links a { font-size: 0.75rem; color: var(--footer-text); transition: color 0.2s; text-decoration: none; }
+    .footer-bottom-links a:hover { color: var(--footer-link-hover); }
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .logo-svg { height: 22px; }
+      .legal-page { padding: var(--space-xl) 1.25rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+  <!-- RB2B Visitor Identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0OV0VHYEER6Z");</script>
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav>
+  <a href="/">
+    <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
+      <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+      <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+      <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+      <path class="logo-text" d="M441.99,324.91v-44.82h9.34v44.82h-9.34Z"/>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/insights">Insights</a>
+    <a href="/services">Services</a>
+    <a href="/talent">Talent</a>
+    <a href="/jobs">Jobs</a>
+    <a href="/companion">Companion</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="retro-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+  </button>
+</nav>
+
+<!-- CONTENT -->
+<main class="legal-page">
+  <p class="page-label">Legal</p>
+  <h1>Terms of Service</h1>
+  <p class="effective-date">Effective Date: March 1, 2026 &nbsp;·&nbsp; Last Updated: March 1, 2026</p>
+
+  <p>Welcome to The Channel Standard. By accessing or using our website at <a href="https://www.thechannelstandard.com">www.thechannelstandard.com</a> (the "Site"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the Site.</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>These Terms constitute a legally binding agreement between you and The Channel Standard ("Company," "we," "us," or "our"). We reserve the right to modify these Terms at any time. Changes will be effective upon posting to the Site. Your continued use of the Site after any modifications constitutes your acceptance of the updated Terms.</p>
+
+  <h2>2. Use of the Site</h2>
+  <p>You agree to use the Site only for lawful purposes and in a manner consistent with all applicable laws and regulations. You agree not to:</p>
+  <ul>
+    <li>Use the Site in any way that violates applicable local, national, or international laws or regulations.</li>
+    <li>Transmit any unsolicited or unauthorized advertising or promotional material.</li>
+    <li>Attempt to gain unauthorized access to any part of the Site or its related systems.</li>
+    <li>Engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Site.</li>
+    <li>Use automated tools, scrapers, or bots to access or collect data from the Site without our express written permission.</li>
+  </ul>
+
+  <h2>3. Intellectual Property</h2>
+  <p>All content on the Site — including text, graphics, logos, images, and software — is the property of The Channel Standard or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content on the Site without our express written permission.</p>
+
+  <h2>4. Submitted Information</h2>
+  <p>When you submit information through our contact forms, booking requests, or waitlist registrations, you grant us the right to use that information to respond to your inquiry and to contact you regarding our services. We will handle your information in accordance with our <a href="/privacy">Privacy Policy</a>.</p>
+
+  <h2>5. Third-Party Links and Services</h2>
+  <p>The Site may contain links to third-party websites and integrates third-party services. These links are provided for your convenience only. We have no control over the content of those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them. Accessing any third-party site is at your own risk.</p>
+
+  <h2>6. Disclaimers</h2>
+  <p>The Site and its content are provided on an "as is" and "as available" basis without any warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the Site will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+  <p>Content on the Site is provided for general informational purposes only and does not constitute professional legal, financial, or business advice. You should not act or refrain from acting on the basis of any content on the Site without seeking appropriate professional advice.</p>
+
+  <h2>7. Limitation of Liability</h2>
+  <p>To the fullest extent permitted by applicable law, The Channel Standard and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of, or inability to use, the Site or its content — even if we have been advised of the possibility of such damages.</p>
+  <p>Our total liability to you for any claim arising out of or relating to these Terms or the Site shall not exceed one hundred US dollars ($100).</p>
+
+  <h2>8. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless The Channel Standard and its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the Site.</p>
+
+  <h2>9. Governing Law</h2>
+  <p>These Terms shall be governed by and construed in accordance with the laws of the United States and the state in which The Channel Standard is principally located, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved exclusively in the courts of competent jurisdiction in that state.</p>
+
+  <h2>10. Severability</h2>
+  <p>If any provision of these Terms is found to be invalid or unenforceable, that provision will be enforced to the maximum extent permissible, and the remaining provisions will continue in full force and effect.</p>
+
+  <h2>11. Entire Agreement</h2>
+  <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and The Channel Standard regarding your use of the Site and supersede all prior agreements and understandings.</p>
+
+  <h2>12. Contact Us</h2>
+  <div class="contact-block">
+    <p><strong>The Channel Standard</strong></p>
+    <p>Email: <a href="mailto:info@thechannelstandard.com">info@thechannelstandard.com</a></p>
+    <p>Website: <a href="https://www.thechannelstandard.com">www.thechannelstandard.com</a></p>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
+          <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+          <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+          <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+          <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+          <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+          <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+          <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+          <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+          <path class="logo-text" d="M441.99,324.91v-44.82h9.34v44.82h-9.34Z"/>
+        </svg>
+      </a>
+      <p class="footer-tagline" id="footer-tagline">From guesswork to intelligence.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/companion">Channel Companion</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="/insights">Insights</a>
+      <a href="/services">Advisory</a>
+      <a href="/talent">Talent</a>
+      <a href="/jobs">Jobs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="/contact">Contact</a>
+      <a href="https://www.linkedin.com/company/the-channel-standard/" target="_blank">LinkedIn</a>
+      <a href="https://www.youtube.com/@thechannelstandard" target="_blank">YouTube</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 The Channel Standard. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var themes = ['light', 'dark', 'retro'];
+function toggleTheme() {
+  var html = document.documentElement;
+  var current = html.getAttribute('data-theme');
+  var idx = themes.indexOf(current);
+  var next = themes[(idx + 1) % themes.length];
+  html.setAttribute('data-theme', next);
+}
+</script>
+</body>
+</html>

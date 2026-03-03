@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Channel Companion | Intelligence Platform for the Technology Channel</title>
+<meta name="description" content="Channel Companion matches advisors to suppliers based on genuine fit, not who paid the most. Upload a deal, get recommendations, request introductions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================
+   DESIGN TOKENS - LIGHT MODE
+   ============================================ */
+:root {
+  --teal-600: #157A6E;
+  --teal-500: #1A9E8F;
+  --teal-400: #2BB5A6;
+  --teal-300: #5CCFBF;
+  --teal-100: #E6F7F5;
+
+  --ink: #0F1115;
+  --ink-secondary: #181B21;
+  --ink-body: #1E2128;
+  --ink-muted: #4A4A4A;
+  --gray-500: #6B6B6B;
+  --gray-400: #8A8A8A;
+
+  --rule: #D4D4D4;
+  --rule-light: #EBEBEB;
+
+  --bg: #F7F5F2;
+  --bg-elevated: #F0EDEA;
+  --bg-invert: #0F1115;
+  --white: #FFFFFF;
+
+  --accent: var(--teal-600);
+  --accent-hover: var(--teal-500);
+  --accent-glow: none;
+
+  --logo-text-fill: #1c2228;
+  --logo-dot-dark: #1c2228;
+  --logo-dot-teal: #2d7b70;
+  --logo-dot-blue: #5bb2e8;
+
+  --btn-bg: var(--ink);
+  --btn-color: var(--white);
+  --btn-hover: var(--ink-secondary);
+  --btn-border: var(--ink-secondary);
+  --btn-outline-color: var(--ink);
+  --btn-outline-hover-bg: var(--ink);
+  --btn-outline-hover-color: var(--white);
+
+  --thesis-bg: var(--ink);
+  --thesis-text: var(--white);
+  --thesis-sub: var(--gray-400);
+  --thesis-accent: var(--teal-400);
+
+  --footer-bg: var(--ink);
+  --footer-text: var(--gray-400);
+  --footer-link: var(--gray-500);
+  --footer-link-hover: var(--white);
+  --footer-rule: var(--ink-secondary);
+
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  --max-layout: 1100px;
+  --max-content: 720px;
+  --theme-transition: 0.35s ease;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+[data-theme="dark"] {
+  --teal-600: #7CC4BA;
+  --teal-500: #93D4CB;
+  --teal-400: #A5DED6;
+  --teal-300: #B8E6E0;
+  --teal-100: rgba(124, 196, 186, 0.08);
+
+  --ink: #EAEAEA;
+  --ink-secondary: #D4D4D4;
+  --ink-body: #C0C0C0;
+  --ink-muted: #9A9A9A;
+  --gray-500: #7A7A7A;
+  --gray-400: #5A5A5A;
+
+  --rule: #2A2D35;
+  --rule-light: #22252B;
+
+  --bg: #0C0D11;
+  --bg-elevated: #13141A;
+  --bg-invert: #F7F5F2;
+  --white: #EAEAEA;
+
+  --accent: #7CC4BA;
+  --accent-hover: #93D4CB;
+  --accent-glow: 0 0 20px rgba(124, 196, 186, 0.12);
+
+  --logo-text-fill: #EAEAEA;
+  --logo-dot-dark: #EAEAEA;
+  --logo-dot-teal: #7CC4BA;
+  --logo-dot-blue: #5bb2e8;
+
+  --btn-bg: #7CC4BA;
+  --btn-color: #0C0D11;
+  --btn-hover: #93D4CB;
+  --btn-border: #2A2D35;
+  --btn-outline-color: #7CC4BA;
+  --btn-outline-hover-bg: #7CC4BA;
+  --btn-outline-hover-color: #0C0D11;
+
+  --thesis-bg: #13141A;
+  --thesis-text: #EAEAEA;
+  --thesis-sub: #7A7A7A;
+  --thesis-accent: #93D4CB;
+
+  --footer-bg: #0C0D11;
+  --footer-text: #5A5A5A;
+  --footer-link: #7A7A7A;
+  --footer-link-hover: #EAEAEA;
+  --footer-rule: #1A1D23;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  transition: background var(--theme-transition), color var(--theme-transition);
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--ink); text-decoration: none; transition: color var(--theme-transition); }
+
+.container { max-width: var(--max-layout); margin: 0 auto; padding: 0 2rem; }
+.section { padding: var(--space-2xl) 0; }
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1 {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  transition: color var(--theme-transition);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color var(--theme-transition);
+}
+
+h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: var(--ink);
+  transition: color var(--theme-transition);
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+  transition: color var(--theme-transition);
+}
+
+[data-theme="dark"] .eyebrow { text-shadow: var(--accent-glow); }
+
+/* ============================================
+   INLINE SVG LOGO
+   ============================================ */
+.logo-svg { height: 28px; width: auto; display: block; }
+.logo-svg .logo-text { fill: var(--logo-text-fill); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-dark { fill: var(--logo-dot-dark); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-teal { fill: var(--logo-dot-teal); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-blue { fill: var(--logo-dot-blue); transition: fill var(--theme-transition); }
+.footer-logo .logo-svg { height: 38px; }
+footer .logo-svg .logo-text { fill: #EAEAEA; }
+footer .logo-svg .logo-dot-dark { fill: #EAEAEA; }
+[data-theme="dark"] footer .logo-svg .logo-dot-teal { fill: #7CC4BA; }
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--rule);
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  border-radius: 0;
+  transition: all var(--theme-transition);
+  color: var(--ink-muted);
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--ink); color: var(--ink); }
+[data-theme="dark"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle svg { width: 16px; height: 16px; }
+.theme-toggle .sun { display: block; }
+.theme-toggle .moon { display: none; }
+.theme-toggle .retro-icon { display: none; }
+[data-theme="dark"] .theme-toggle .sun { display: none; }
+[data-theme="dark"] .theme-toggle .moon { display: block; }
+[data-theme="dark"] .theme-toggle .retro-icon { display: none; }
+[data-theme="retro"] .theme-toggle .sun { display: none; }
+[data-theme="retro"] .theme-toggle .moon { display: none; }
+[data-theme="retro"] .theme-toggle .retro-icon { display: block; }
+
+/* ============================================
+   NAV
+   ============================================ */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 2rem; max-width: var(--max-layout); margin: 0 auto;
+  border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition);
+}
+[data-theme="dark"] nav { border-bottom-color: var(--rule); }
+.nav-links { display: flex; align-items: center; gap: 1.75rem; }
+.nav-links a {
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 400;
+  color: var(--gray-500); letter-spacing: 0.02em; transition: color 0.2s ease;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-weight: 500 !important; color: var(--ink) !important;
+  border: 1px solid var(--btn-border); padding: 0.4rem 1rem;
+  font-size: 0.75rem !important; letter-spacing: 0.04em; transition: all 0.2s ease;
+}
+.nav-cta:hover { background: var(--btn-bg); color: var(--btn-color) !important; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  border-bottom: 1px solid var(--rule);
+  transition: border-color var(--theme-transition);
+}
+[data-theme="dark"] .hero { border-bottom-color: var(--rule); }
+.hero-content { max-width: 780px; }
+.hero h1 { margin-bottom: var(--space-md); }
+.hero h1 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  color: var(--accent); transition: color var(--theme-transition);
+}
+[data-theme="dark"] .hero h1 em { text-shadow: var(--accent-glow); }
+
+.hero-body {
+  font-family: var(--sans); font-size: 1.1rem; line-height: 1.7;
+  color: var(--ink-muted); max-width: 600px; margin-bottom: var(--space-lg);
+  transition: color var(--theme-transition);
+}
+
+/* ============================================
+   AUDIENCE TOGGLE
+   ============================================ */
+.audience-section {
+  padding: var(--space-2xl) 0 0;
+}
+
+.audience-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: var(--space-xl);
+  border-bottom: 2px solid var(--rule);
+  transition: border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .audience-toggle {
+  border-bottom-color: var(--rule);
+}
+
+.audience-tab {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gray-500);
+  background: none;
+  border: none;
+  padding: var(--space-sm) var(--space-lg) calc(var(--space-sm) + 2px);
+  cursor: pointer;
+  position: relative;
+  bottom: -2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.audience-tab:hover {
+  color: var(--ink);
+}
+
+.audience-tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+[data-theme="dark"] .audience-tab.active {
+  border-bottom-color: var(--accent);
+  text-shadow: var(--accent-glow);
+}
+
+/* ============================================
+   AUDIENCE PANELS
+   ============================================ */
+.audience-panel {
+  display: none;
+}
+
+.audience-panel.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Lead statement */
+.panel-lead {
+  max-width: 680px;
+  margin-bottom: var(--space-xl);
+}
+
+.panel-lead h2 {
+  margin-bottom: var(--space-md);
+}
+
+.panel-lead p {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  transition: color var(--theme-transition);
+}
+
+/* ============================================
+   FEATURE GRID - WITH ICONS
+   ============================================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  transition: border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .features-grid {
+  border-top: 1px solid var(--accent);
+  border-bottom-color: transparent;
+}
+
+.feature-card {
+  padding: var(--space-xl);
+  padding-left: 0;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+/* 2x2 grid with ruled internal borders */
+.feature-card:nth-child(odd) {
+  padding-right: var(--space-xl);
+  border-right: 1px solid var(--rule);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition);
+}
+
+.feature-card:nth-child(even) {
+  padding-left: var(--space-xl);
+  padding-right: 0;
+}
+
+.feature-card:nth-child(1),
+.feature-card:nth-child(2) {
+  border-bottom: 1px solid var(--rule);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .feature-card:nth-child(odd) { border-right-color: var(--rule); }
+[data-theme="dark"] .feature-card:nth-child(1),
+[data-theme="dark"] .feature-card:nth-child(2) { border-bottom-color: var(--rule); }
+
+/* Icon */
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--space-sm);
+  color: var(--accent);
+  transition: color var(--theme-transition);
+}
+
+[data-theme="dark"] .feature-icon {
+  filter: drop-shadow(0 0 6px rgba(124, 196, 186, 0.15));
+}
+
+.feature-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.6rem;
+}
+
+.feature-card p {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gray-500);
+  transition: color var(--theme-transition);
+}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how-section {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .how-section { border-bottom-color: var(--rule); }
+
+.how-section .eyebrow { margin-bottom: var(--space-lg); }
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  transition: border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .how-steps {
+  border-top: 1px solid var(--accent);
+}
+
+.how-step {
+  padding: var(--space-xl) 0;
+  padding-right: var(--space-xl);
+  transform: translateY(0);
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition);
+  cursor: default;
+}
+
+.how-step:not(:last-child) {
+  border-right: 1px solid var(--rule);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .how-step:not(:last-child) { border-right-color: var(--rule); }
+
+.how-step:not(:first-child) { padding-left: var(--space-xl); }
+
+.step-number {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+  transition: color var(--theme-transition);
+}
+
+[data-theme="dark"] .step-number { text-shadow: var(--accent-glow); }
+
+.how-step p {
+  font-family: var(--sans); font-size: 0.9rem; line-height: 1.6;
+  color: var(--ink-muted); transition: color var(--theme-transition);
+}
+.how-step strong {
+  color: var(--ink); font-weight: 500; transition: color var(--theme-transition);
+}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing-section {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .pricing-section { border-bottom-color: var(--rule); }
+
+.pricing-section .section-head {
+  margin-bottom: var(--space-xl);
+}
+
+.pricing-section h2 {
+  max-width: 600px;
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-section .section-head p {
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--ink-muted);
+  transition: color var(--theme-transition);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  transition: border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .pricing-grid {
+  border-top: 1px solid var(--accent);
+}
+
+.pricing-card {
+  padding: var(--space-xl) 0;
+  padding-right: var(--space-xl);
+  transform: translateY(0);
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition);
+  cursor: default;
+}
+
+.pricing-card:not(:last-child) {
+  border-right: 1px solid var(--rule);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition);
+}
+
+[data-theme="dark"] .pricing-card:not(:last-child) { border-right-color: var(--rule); }
+
+.pricing-card:not(:first-child) { padding-left: var(--space-xl); }
+
+.pricing-tier {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-xs);
+  transition: color var(--theme-transition);
+}
+
+.pricing-amount {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  transition: color var(--theme-transition);
+}
+
+.pricing-period {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-bottom: var(--space-md);
+  transition: color var(--theme-transition);
+}
+
+.pricing-desc {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  transition: color var(--theme-transition);
+}
+
+/* ============================================
+   THESIS STRIP
+   ============================================ */
+.thesis-strip {
+  padding: var(--space-3xl) 0;
+  background: var(--thesis-bg);
+  transition: background var(--theme-transition);
+}
+[data-theme="dark"] .thesis-strip {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.thesis-strip blockquote {
+  max-width: 700px; margin: 0 auto; text-align: center;
+}
+.thesis-strip .highlight {
+  display: block; font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem); line-height: 1.35;
+  color: var(--thesis-text); margin-bottom: var(--space-md);
+  transition: color var(--theme-transition);
+}
+.thesis-strip .punchline {
+  display: block; font-family: var(--sans); font-weight: 500;
+  font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+  margin-top: var(--space-sm);
+  background: linear-gradient(90deg, #157A6E 0%, #2d7b70 20%, #5bb2e8 50%, #2d7b70 80%, #157A6E 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
+[data-theme="dark"] .thesis-strip .punchline {
+  background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 20%, #5bb2e8 50%, #93D4CB 80%, #7CC4BA 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   FOOTER CTA
+   ============================================ */
+.footer-cta {
+  text-align: center; padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition);
+}
+[data-theme="dark"] .footer-cta { border-bottom-color: var(--rule); }
+.footer-cta h2 { margin-bottom: var(--space-lg); }
+.footer-cta .cta-group {
+  display: flex; gap: var(--space-md); justify-content: center; align-items: center;
+}
+
+.btn-primary-ed {
+  display: inline-block; font-family: var(--sans); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.06em; color: var(--btn-color);
+  background: linear-gradient(90deg, #0F1115 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #0F1115 100%);
+  background-size: 200% 100%; animation: btnShimmer 6s ease infinite;
+  padding: 0.75rem 1.75rem; transition: all 0.25s ease;
+  position: relative; overflow: hidden;
+}
+.btn-primary-ed:hover {
+  background: linear-gradient(90deg, #181B21 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #181B21 100%);
+  background-size: 200% 100%; animation: btnShimmer 6s ease infinite; color: var(--btn-color);
+}
+[data-theme="dark"] .btn-primary-ed {
+  background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 30%, #8dc5bf 50%, #93D4CB 70%, #7CC4BA 100%);
+  background-size: 200% 100%; animation: btnShimmer 6s ease infinite;
+  box-shadow: 0 0 24px rgba(124, 196, 186, 0.12);
+}
+[data-theme="dark"] .btn-primary-ed:hover { box-shadow: 0 0 32px rgba(124, 196, 186, 0.2); }
+@keyframes btnShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pop animation */
+.btn-primary-ed.pop { transform: scale(1.02); transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.btn-primary-ed.pop .btn-label {
+  background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8);
+  background-size: 300% 100%; -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brandSweep 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+.btn-primary-ed.fade-back { transform: scale(1); transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); }
+
+@keyframes brandSweep {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.btn-primary-ed .arrow { margin-left: 0.5rem; transition: margin-left 0.2s ease; }
+.btn-primary-ed:hover .arrow { margin-left: 0.75rem; }
+
+.btn-secondary-ed {
+  display: inline-block; font-family: var(--sans); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.06em; color: var(--btn-outline-color);
+  border: 1px solid var(--btn-outline-color); padding: 0.7rem 1.75rem; transition: all 0.25s ease;
+}
+.btn-secondary-ed:hover { background: var(--btn-outline-hover-bg); color: var(--btn-outline-hover-color); }
+[data-theme="dark"] .btn-secondary-ed:hover { box-shadow: 0 0 24px rgba(124, 196, 186, 0.12); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  padding: var(--space-xl) 0 var(--space-lg);
+  background: var(--footer-bg); transition: background var(--theme-transition);
+}
+.footer-grid {
+  max-width: var(--max-layout); margin: 0 auto; padding: 0 2rem;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-xl);
+}
+.footer-brand p {
+  font-family: var(--sans); font-size: 0.8rem; line-height: 1.6;
+  color: var(--footer-text); max-width: 260px; margin-top: var(--space-sm);
+  transition: color var(--theme-transition);
+}
+.footer-tagline {
+  cursor: pointer; display: inline-block; transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.4s ease;
+}
+.footer-tagline:hover { color: #7A7A7A !important; }
+.footer-tagline.pop {
+  transform: scale(1.04);
+  background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8);
+  background-size: 300% 100%; -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brandSweep 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+.footer-tagline.fade-back { transform: scale(1); transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); }
+
+.footer-col h4 {
+  font-family: var(--sans); font-weight: 500; font-size: 0.7rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--footer-text); margin-bottom: var(--space-sm); transition: color var(--theme-transition);
+}
+.footer-col a {
+  display: block; font-family: var(--sans); font-size: 0.85rem;
+  color: var(--footer-link); margin-bottom: 0.5rem; transition: color 0.2s ease;
+}
+.footer-col a:hover { color: var(--footer-link-hover); }
+.footer-bottom {
+  max-width: var(--max-layout); margin: 0 auto; padding: var(--space-lg) 2rem 0;
+  margin-top: var(--space-lg); border-top: 1px solid var(--footer-rule);
+  display: flex; justify-content: space-between; align-items: center;
+  transition: border-color var(--theme-transition);
+}
+.footer-bottom p { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color var(--theme-transition); }
+.footer-bottom-links { display: flex; gap: var(--space-md); }
+.footer-bottom-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color 0.2s ease; }
+.footer-bottom-links a:hover { color: var(--footer-link-hover); }
+
+
+/* ============================================
+   HOVER INTERACTIONS
+   ============================================ */
+.feature-card,
+.how-step,
+.pricing-card {
+  transform: translateY(0);
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition);
+  cursor: default;
+}
+.feature-card:hover,
+.how-step:hover,
+.pricing-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   PUNCHLINE GRADIENT
+   ============================================ */
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero .eyebrow { animation: fadeUp 0.6s ease both 0.1s; }
+.hero h1 { animation: fadeUp 0.6s ease both 0.25s; }
+.hero-body { animation: fadeUp 0.6s ease both 0.4s; }
+
+
+/* ============================================
+   RETRO MODE - 2009 WEB PORTAL AESTHETIC
+   ============================================ */
+[data-theme="retro"] {
+  --teal-600: #2563EB;
+  --teal-500: #3B82F6;
+  --teal-400: #60A5FA;
+  --teal-300: #93C5FD;
+  --teal-100: #EFF6FF;
+
+  --ink: #333333;
+  --ink-secondary: #444444;
+  --ink-body: #555555;
+  --ink-muted: #666666;
+  --gray-500: #999999;
+  --gray-400: #bbbbbb;
+
+  --rule: #cccccc;
+  --rule-light: #dddddd;
+
+  --bg: #e8e8e8;
+  --bg-elevated: #d8d8d8;
+  --bg-invert: #2c3e50;
+  --white: #ffffff;
+
+  --accent: #1a5276;
+  --accent-hover: #2980b9;
+  --accent-glow: none;
+
+  --logo-text-fill: #333333;
+  --logo-dot-dark: #333333;
+  --logo-dot-teal: #2563EB;
+  --logo-dot-blue: #0ea5e9;
+
+  --btn-bg: #2563EB;
+  --btn-color: #ffffff;
+  --btn-hover: #3B82F6;
+  --btn-border: #1a3c6e;
+  --btn-outline-color: #1a5276;
+  --btn-outline-hover-bg: #1a5276;
+  --btn-outline-hover-color: #ffffff;
+
+  --thesis-bg: #2c3e50;
+  --thesis-text: #ecf0f1;
+  --thesis-sub: #95a5a6;
+  --thesis-accent: #5dade2;
+
+  --footer-bg: #2c3e50;
+  --footer-text: #95a5a6;
+  --footer-link: #7f8c8d;
+  --footer-link-hover: #ecf0f1;
+  --footer-rule: #34495e;
+
+  --serif: 'Times New Roman', Georgia, serif;
+  --sans: 'Droid Sans', Verdana, Tahoma, Geneva, sans-serif;
+}
+
+/* Retro: subtle cross-hatch texture */
+[data-theme="retro"] body {
+  background: #e8e8e8;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px);
+}
+
+/* Retro: rounded corners */
+[data-theme="retro"] .nav-cta,
+[data-theme="retro"] .btn-primary-ed,
+[data-theme="retro"] .btn-secondary-ed,
+[data-theme="retro"] .theme-toggle,
+[data-theme="retro"] .audience-tab {
+  border-radius: 6px;
+}
+
+/* Retro: glossy Aqua buttons */
+[data-theme="retro"] .btn-primary-ed {
+  background: linear-gradient(180deg, #6db3f8 0%, #3B82F6 40%, #2563EB 60%, #1d4ed8 100%) !important;
+  animation: none !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.15) inset, 0 2px 6px rgba(30, 64, 175, 0.5);
+  border: 1px solid #1a3c6e;
+  color: #ffffff;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.35);
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  padding: 0.7rem 1.5rem;
+}
+[data-theme="retro"] .btn-primary-ed:hover {
+  background: linear-gradient(180deg, #93C5FD 0%, #60A5FA 40%, #3B82F6 60%, #2563EB 100%) !important;
+  animation: none !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset, 0 -1px 0 rgba(0,0,0,0.1) inset, 0 3px 10px rgba(30, 64, 175, 0.55);
+}
+
+[data-theme="retro"] .btn-secondary-ed {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 40%, #e0e0e0 100%);
+  border: 1px solid #aaaaaa;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.12);
+  color: #333333;
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+[data-theme="retro"] .btn-secondary-ed:hover {
+  background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 40%, #d0d0d0 100%);
+  border-color: #888888;
+  color: #1a5276;
+}
+
+/* Retro: card panels */
+[data-theme="retro"] .features-grid,
+[data-theme="retro"] .how-steps,
+[data-theme="retro"] .pricing-grid {
+  border-top: none;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 3px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #c0c0c0;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+/* Retro: bigger cell padding */
+[data-theme="retro"] .feature-card {
+  padding: 2.5rem 2rem !important;
+}
+[data-theme="retro"] .how-step {
+  padding: 2.5rem 2rem !important;
+}
+[data-theme="retro"] .pricing-card {
+  padding: 2.5rem 2rem !important;
+}
+
+/* Retro: silver chrome dividers */
+[data-theme="retro"] .feature-card:nth-child(odd) {
+  border-right-color: #d0d0d0 !important;
+}
+[data-theme="retro"] .feature-card:nth-child(1),
+[data-theme="retro"] .feature-card:nth-child(2) {
+  border-bottom-color: #d0d0d0 !important;
+}
+[data-theme="retro"] .how-step:not(:last-child) {
+  border-right-color: #d0d0d0 !important;
+}
+[data-theme="retro"] .pricing-card:not(:last-child) {
+  border-right-color: #d0d0d0 !important;
+}
+
+/* Retro: typography overrides */
+[data-theme="retro"] h1 {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+  font-weight: 700;
+  color: #222222;
+}
+[data-theme="retro"] h2 {
+  font-family: 'Times New Roman', Georgia, serif !important;
+  color: #333333;
+}
+[data-theme="retro"] h3 {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+  font-weight: 700;
+  color: #333333;
+}
+[data-theme="retro"] p {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* Retro: eyebrow chrome gradient text */
+[data-theme="retro"] .eyebrow {
+  color: #1a5276;
+  text-shadow: none;
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  background: linear-gradient(180deg, #2563EB, #1a5276);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Retro: nav toolbar */
+[data-theme="retro"] nav {
+  border-bottom: none;
+  border-image: none;
+  background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 40%, #d4d4d4 100%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.5) inset;
+  border-bottom: 1px solid #aaaaaa;
+}
+[data-theme="retro"] .nav-links a {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #555555;
+}
+[data-theme="retro"] .nav-links a:hover { color: #2563EB; }
+[data-theme="retro"] .nav-cta {
+  background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%);
+  border: 1px solid #aaaaaa;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 2px rgba(0,0,0,0.08);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+[data-theme="retro"] .nav-cta:hover {
+  background: linear-gradient(180deg, #6db3f8 0%, #2563EB 100%);
+  border-color: #1a3c6e;
+  color: #ffffff !important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+}
+
+/* Retro: hero */
+[data-theme="retro"] .hero {
+  background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%);
+  border-bottom: 1px solid #c0c0c0;
+}
+[data-theme="retro"] .hero h1 em {
+  color: #2563EB;
+  font-family: 'Times New Roman', Georgia, serif !important;
+  text-shadow: 0 1px 2px rgba(37, 99, 235, 0.15);
+}
+
+/* Retro: audience tabs */
+[data-theme="retro"] .audience-toggle {
+  border-bottom-color: #c0c0c0;
+}
+[data-theme="retro"] .audience-tab {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif;
+  font-weight: 700;
+}
+[data-theme="retro"] .audience-tab.active {
+  border-bottom-color: #2563EB;
+  color: #2563EB;
+}
+
+/* Retro: feature icons */
+[data-theme="retro"] .feature-icon {
+  color: #2563EB;
+  filter: none;
+}
+
+/* Retro: step numbers */
+[data-theme="retro"] .step-number {
+  color: #2563EB;
+  font-family: 'Times New Roman', Georgia, serif !important;
+  text-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Retro: pricing */
+[data-theme="retro"] .pricing-tier {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+  font-weight: 700;
+  color: #1a5276;
+}
+[data-theme="retro"] .pricing-amount {
+  color: #222222;
+  font-family: 'Times New Roman', Georgia, serif !important;
+}
+
+/* Retro: thesis strip */
+[data-theme="retro"] .thesis-strip {
+  background: linear-gradient(180deg, #34495e 0%, #2c3e50 30%, #1a252f 100%);
+  border-top: 3px solid #5dade2;
+  border-bottom: 3px solid #5dade2;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3) inset;
+}
+[data-theme="retro"] .thesis-strip .highlight {
+  font-family: 'Times New Roman', Georgia, serif !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+[data-theme="retro"] .thesis-strip .punchline {
+  background: linear-gradient(90deg, #5dade2 0%, #85c1e9 50%, #5dade2 100%) !important;
+  background-size: 200% 100% !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+  text-shadow: none !important;
+}
+
+/* Retro: footer */
+[data-theme="retro"] footer {
+  background: linear-gradient(180deg, #34495e 0%, #2c3e50 40%, #1a252f 100%);
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.05) inset;
+}
+[data-theme="retro"] footer p,
+[data-theme="retro"] footer a,
+[data-theme="retro"] footer h4 {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+}
+[data-theme="retro"] .footer-tagline {
+  font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important;
+}
+
+/* Retro: toggle chrome */
+[data-theme="retro"] .theme-toggle {
+  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+  border: 1px solid #aaaaaa;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.1);
+}
+[data-theme="retro"] .theme-toggle:hover {
+  border-color: #2563EB;
+  color: #2563EB;
+  background: linear-gradient(180deg, #f0f0f0 0%, #d8d8d8 100%);
+}
+
+/* Retro: logo */
+[data-theme="retro"] .logo-svg .logo-dot-teal { fill: #2563EB; }
+[data-theme="retro"] .logo-svg .logo-dot-blue { fill: #0ea5e9; }
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links { gap: 0.75rem; }
+
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card:nth-child(odd) { border-right: none; padding-right: 0; }
+  .feature-card:nth-child(even) { padding-left: 0; }
+  .feature-card:nth-child(1),
+  .feature-card:nth-child(2),
+  .feature-card:nth-child(3) {
+    border-bottom: 1px solid var(--rule);
+  }
+  [data-theme="dark"] .feature-card { border-bottom-color: var(--rule) !important; }
+
+  .how-steps { grid-template-columns: 1fr; }
+  .how-step:not(:last-child) { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; }
+  [data-theme="dark"] .how-step:not(:last-child) { border-bottom-color: var(--rule); }
+  .how-step:not(:first-child) { padding-left: 0; }
+
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card:not(:last-child) { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; }
+  [data-theme="dark"] .pricing-card:not(:last-child) { border-bottom-color: var(--rule); }
+  .pricing-card:not(:first-child) { padding-left: 0; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+
+  /* Tablet spacing reductions */
+  .section { padding: var(--space-xl) 0; }
+  .hero { padding: var(--space-2xl) 0 var(--space-xl); }
+  .audience-section { padding: var(--space-xl) 0 0; }
+  .how-section { padding: var(--space-xl) 0; }
+  .pricing-section { padding: var(--space-xl) 0; }
+}
+
+@media (max-width: 600px) {
+  /* Phone spacing */
+  .container { padding: 0 1.25rem; }
+  .section { padding: var(--space-lg) 0; }
+  .hero { padding: var(--space-xl) 0 var(--space-lg); }
+  .audience-section { padding: var(--space-lg) 0 0; }
+  .how-section { padding: var(--space-lg) 0; }
+  .pricing-section { padding: var(--space-lg) 0; }
+
+  /* Phone typography */
+  .hero-body { font-size: 0.9rem; }
+  .pricing-amount { font-size: 2rem; }
+
+  /* Nav */
+  nav { padding: 1rem 1.25rem; }
+  .logo-svg { height: 22px; }
+
+  /* Audience tabs - ensure no overflow */
+  .audience-tab { padding: var(--space-sm) var(--space-md) calc(var(--space-sm) + 2px); font-size: 0.8rem; }
+
+  /* Footer stacks */
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .footer-bottom { padding: var(--space-md) 1.25rem 0; }
+
+  /* Touch targets */
+  .btn-primary-ed, .btn-secondary-ed { min-height: 44px; padding: 0.75rem 1.5rem; }
+  .nav-cta { min-height: 36px; }
+  .audience-tab { min-height: 44px; }
+
+  /* Retro card padding */
+  [data-theme="retro"] .feature-card,
+  [data-theme="retro"] .how-step,
+  [data-theme="retro"] .pricing-card {
+    padding: 1.75rem 1.25rem !important;
+  }
+}
+</style>
+    <!-- RB2B Visitor Identification -->
+    <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0OV0VHYEER6Z");</script>
+  </head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
+      <!-- Dot mark: 3x2 grid -->
+      <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+      <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+      <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <!-- Wordmark: "the" -->
+      <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M247.13,227.47v-44.82h9.34v44.82h-9.34ZM269.23,227.47v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M300.61,228.09c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <!-- Wordmark: "Channel" -->
+      <path class="logo-text" d="M235.3,276.81c-3.32,0-6.25-.71-8.78-2.12-2.53-1.41-4.51-3.36-5.95-5.85-1.43-2.49-2.15-5.33-2.15-8.53s.72-6.04,2.15-8.53c1.43-2.49,3.41-4.44,5.95-5.85,2.53-1.41,5.46-2.12,8.78-2.12,2.78,0,5.28.51,7.5,1.53,2.22,1.02,4.05,2.42,5.48,4.2,1.43,1.78,2.36,3.88,2.77,6.29h-9.03c-.46-1.53-1.28-2.7-2.46-3.49-1.18-.79-2.56-1.18-4.14-1.18-1.49,0-2.79.37-3.89,1.12-1.1.75-1.94,1.81-2.52,3.18-.58,1.37-.87,2.99-.87,4.86s.29,3.49.87,4.86c.58,1.37,1.42,2.43,2.52,3.18,1.1.75,2.4,1.12,3.89,1.12,1.58,0,2.96-.39,4.14-1.18,1.18-.79,2-1.95,2.46-3.49h9.03c-.41,2.41-1.34,4.5-2.77,6.29-1.43,1.78-3.26,3.19-5.48,4.2-2.22,1.02-4.72,1.53-7.5,1.53Z"/>
+      <path class="logo-text" d="M255.91,276.19v-44.82h9.34v44.82h-9.34ZM278.01,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M302.54,276.81c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM313.62,276.19c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M329.18,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM351.28,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M367.72,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM389.82,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M421.2,276.81c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+      <!-- Wordmark: "Standard" -->
+      <path class="logo-text" d="M233.75,325.53c-4.65,0-8.34-.93-11.08-2.8-2.74-1.87-4.23-4.44-4.48-7.72h8.34c.21,1.41.92,2.48,2.15,3.21,1.22.73,2.92,1.09,5.07,1.09,1.95,0,3.37-.28,4.26-.84.89-.56,1.34-1.36,1.34-2.4,0-.79-.26-1.4-.78-1.84-.52-.44-1.46-.8-2.83-1.09l-5.1-1.06c-3.78-.79-6.56-1.98-8.34-3.58-1.78-1.6-2.68-3.66-2.68-6.19,0-3.07,1.18-5.47,3.55-7.19,2.37-1.72,5.67-2.58,9.9-2.58s7.53.84,10.02,2.52c2.49,1.68,3.86,4.02,4.11,7h-8.34c-.17-1.08-.75-1.9-1.74-2.46-1-.56-2.41-.84-4.23-.84-1.66,0-2.89.24-3.7.72-.81.48-1.21,1.15-1.21,2.02,0,.75.33,1.34,1,1.77.66.44,1.76.82,3.3,1.15l5.73,1.18c3.2.66,5.61,1.9,7.25,3.7,1.64,1.81,2.46,3.93,2.46,6.38,0,3.11-1.21,5.53-3.64,7.25-2.43,1.72-5.86,2.58-10.3,2.58Z"/>
+      <path class="logo-text" d="M249.31,300.26v-7.1h23.47v7.1h-23.47ZM267.24,325.59c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M286.66,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM297.74,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M313.31,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM335.41,324.91v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M374.32,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM366.85,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
+      <path class="logo-text" d="M399.84,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM410.92,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M426.49,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM435.82,308.35l-.81-7.53c.75-2.7,1.97-4.75,3.67-6.16,1.7-1.41,3.82-2.12,6.35-2.12.79,0,1.37.08,1.74.25v8.72c-.21-.08-.5-.13-.87-.16-.37-.02-.83-.03-1.37-.03-2.99,0-5.19.53-6.6,1.59-1.41,1.06-2.12,2.87-2.12,5.45Z"/>
+      <path class="logo-text" d="M473.18,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM465.71,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/insights">Insights</a>
+    <a href="/services">Services</a>
+    <a href="/talent">Talent</a>
+    <a href="/jobs">Jobs</a>
+    <a href="/companion">Companion</a>
+    <a href="/contact">Contact</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="retro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero section">
+  <div class="container">
+    <div class="hero-content">
+      <p class="eyebrow">Channel Companion</p>
+      <h1>Stop guessing. <em>Start matching.</em></h1>
+      <p class="hero-body">Channel Companion connects advisors to the suppliers who actually fit their deals, and connects suppliers to the advisors who need what they sell. Every recommendation shows its reasoning. No pay-to-play rankings. No black boxes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE SECTION -->
+<section class="audience-section">
+  <div class="container">
+
+    <!-- Toggle tabs -->
+    <div class="audience-toggle">
+      <button class="audience-tab active" onclick="switchTab('advisors')">For Advisors</button>
+      <button class="audience-tab" onclick="switchTab('suppliers')">For Suppliers</button>
+    </div>
+
+    <!-- ADVISORS PANEL -->
+    <div class="audience-panel active" id="panel-advisors">
+      <div class="panel-lead">
+        <h2>You already know your client. Now find the supplier who fits.</h2>
+        <p>You spend hours comparing suppliers across portals that rank by spend, not by fit. Channel Companion analyzes your deal and tells you who's built for it, with the reasoning visible so you can trust it.</p>
+        <p>Your data makes the platform smarter over time, but nothing is ever tied to you or your clients by name. Suppliers see aggregated intelligence, not your deals.</p>
+        <button class="btn-primary-ed modal-trigger" onclick="openModal('advisor-modal')" style="margin-top: var(--space-md); cursor:pointer; border:none;"><span class="btn-label">Explore the Advisor Experience</span> <span class="arrow">&rarr;</span></button>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Transcript / Upload -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 3H9a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9l-6-6z"/>
+              <polyline points="19 3 19 9 25 9"/>
+              <line x1="12" y1="15" x2="20" y2="15"/>
+              <line x1="12" y1="19" x2="18" y2="19"/>
+            </svg>
+          </div>
+          <h3>Upload a deal, get answers</h3>
+          <p>Drop in a call transcript or describe the opportunity. The AI analyzes customer needs, requirements, and deal specifics, then recommends suppliers who match.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Compass / Match -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="16" cy="16" r="12"/>
+              <polygon points="20.24 11.76 18 18 11.76 20.24 14 14 20.24 11.76" fill="none"/>
+            </svg>
+          </div>
+          <h3>Fit-based recommendations</h3>
+          <p>Every match is scored on genuine alignment: product capabilities, ICP fit, vertical expertise, deal size. Not who wrote the biggest check.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Lightbulb / Cross-sell -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 27h8"/>
+              <path d="M12 24h8"/>
+              <path d="M16 4a8 8 0 0 0-5 14.28V21h10v-2.72A8 8 0 0 0 16 4z"/>
+            </svg>
+          </div>
+          <h3>Cross-sell intelligence</h3>
+          <p>The AI catches opportunities you'd walk past. Going in for UCaaS? It flags the security need your client mentioned in passing. That's incremental revenue you'd have missed.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Eye / Transparency -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16s4-8 12-8 12 8 12 8-4 8-12 8-12-8-12-8z"/>
+              <circle cx="16" cy="16" r="4"/>
+            </svg>
+          </div>
+          <h3>See the math</h3>
+          <p>Every recommendation shows why it was made: match factors, confidence signals, contextual fit. Not a black box score. Architecture you can interrogate.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPLIERS PANEL -->
+    <div class="audience-panel" id="panel-suppliers">
+      <div class="panel-lead">
+        <h2>Reach advisors who are working deals you're built for.</h2>
+        <p>You've been paying for visibility without knowing if it reaches the right people. Channel Companion matches you to advisors based on what they're actually selling, not how much you're spending.</p>
+        <p>Your company's profile is already on our platform, built from publicly available product and market data. Claim it to make sure advisors are seeing accurate information when the AI recommends you.</p>
+        <button class="btn-primary-ed modal-trigger" onclick="openModal('supplier-modal')" style="margin-top: var(--space-md); cursor:pointer; border:none;"><span class="btn-label">Claim Your Profile</span> <span class="arrow">&rarr;</span></button>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Profile / Standardize -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="4" width="20" height="24" rx="2"/>
+              <line x1="11" y1="11" x2="21" y2="11"/>
+              <line x1="11" y1="15" x2="21" y2="15"/>
+              <line x1="11" y1="19" x2="17" y2="19"/>
+              <circle cx="16" cy="26" r="0"/>
+            </svg>
+          </div>
+          <h3>Standardize once, match continuously</h3>
+          <p>Load your product data, pricing, ICP, and competitive positioning into one clean profile. The platform keeps matching you to new deals as they come in.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Magnet / Fit discovery -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S6 19.52 6 14A10 10 0 0 1 16 4z"/>
+              <path d="M16 4v6"/>
+              <path d="M12 14l4-4 4 4"/>
+              <line x1="12" y1="20" x2="20" y2="20"/>
+              <line x1="10" y1="24" x2="22" y2="24"/>
+            </svg>
+          </div>
+          <h3>Qualified introductions, not cold leads</h3>
+          <p>Every connection comes with context: what the advisor is working on, why your product fits, and what the deal looks like. You're not buying a list. You're getting introduced.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Signal / Intelligence -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 24V18"/>
+              <path d="M14 24V14"/>
+              <path d="M20 24V10"/>
+              <path d="M26 24V6"/>
+              <circle cx="8" cy="18" r="1.5"/>
+              <circle cx="14" cy="14" r="1.5"/>
+              <circle cx="20" cy="10" r="1.5"/>
+              <circle cx="26" cy="6" r="1.5"/>
+            </svg>
+          </div>
+          <h3>Deal intelligence</h3>
+          <p>See what advisors are actually selling, where the market is moving, and which verticals are generating demand for your product category. Channel intelligence that was never available before.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Scale / No pay-to-play -->
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="16" y1="4" x2="16" y2="28"/>
+              <line x1="6" y1="10" x2="26" y2="10"/>
+              <path d="M6 10l4 8h0a4 4 0 0 0 8-0h0l-4-8"/>
+              <path d="M18 10l4 8h0a4 4 0 0 0 8-0h0l-4-8"/>
+            </svg>
+          </div>
+          <h3>No pay-to-play</h3>
+          <p>Rankings are based on fit, not spend. The platform doesn't lie about why you're being recommended. Transparency is the architecture, not a toggle. The best product for the deal wins.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="container">
+    <p class="eyebrow">How it works</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-number">1</div>
+        <p><strong>Suppliers standardize</strong> their product data, pricing, and ICP into one clean profile on the platform.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">2</div>
+        <p><strong>Advisors upload</strong> a call transcript or describe a deal. The AI analyzes customer needs, vertical, and deal specifics.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">3</div>
+        <p><strong>Channel Companion matches</strong> the deal to the right suppliers and facilitates a qualified introduction, with context on both sides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Supplier pricing</p>
+      <h2>Transparent pricing. Measurable returns.</h2>
+      <p>Advisors use Channel Companion for free. Suppliers invest in qualified access to the advisor network.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="pricing-tier">Essentials</p>
+        <p class="pricing-amount">$1,000</p>
+        <p class="pricing-period">per month</p>
+        <p class="pricing-desc">Profile visibility, fit-based matching, and qualified introductions. The foundation: transparent access to advisors working deals that match your product.</p>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-tier">Standard</p>
+        <p class="pricing-amount">$2,500</p>
+        <p class="pricing-period">per month</p>
+        <p class="pricing-desc">Everything in Essentials, plus deeper deal intelligence, cross-sell identification, and competitive positioning data. For suppliers serious about the channel.</p>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-tier">Professional</p>
+        <p class="pricing-amount">$5,000</p>
+        <p class="pricing-period">per month</p>
+        <p class="pricing-desc">Full platform access with priority matching, advanced analytics, and dedicated onboarding. Roughly four incentive trips, with transparent, measurable returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS STRIP -->
+<section class="thesis-strip">
+  <div class="container">
+    <blockquote>
+      <span class="highlight">The channel has been matching suppliers to advisors based on who pays the most. Channel Companion matches on who fits best.</span>
+      <span class="punchline">From guesswork to intelligence.</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>See what intelligence looks like.</h2>
+    <div class="cta-group">
+      <button class="btn-primary-ed modal-trigger" onclick="openModal('role-modal')" style="cursor:pointer; border:none;"><span class="btn-label">Experience Channel Companion</span> <span class="arrow">&rarr;</span></button>
+      <a href="/contact" class="btn-secondary-ed">Talk to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
+      <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+      <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+      <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M247.13,227.47v-44.82h9.34v44.82h-9.34ZM269.23,227.47v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M300.61,228.09c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M235.3,276.81c-3.32,0-6.25-.71-8.78-2.12-2.53-1.41-4.51-3.36-5.95-5.85-1.43-2.49-2.15-5.33-2.15-8.53s.72-6.04,2.15-8.53c1.43-2.49,3.41-4.44,5.95-5.85,2.53-1.41,5.46-2.12,8.78-2.12,2.78,0,5.28.51,7.5,1.53,2.22,1.02,4.05,2.42,5.48,4.2,1.43,1.78,2.36,3.88,2.77,6.29h-9.03c-.46-1.53-1.28-2.7-2.46-3.49-1.18-.79-2.56-1.18-4.14-1.18-1.49,0-2.79.37-3.89,1.12-1.1.75-1.94,1.81-2.52,3.18-.58,1.37-.87,2.99-.87,4.86s.29,3.49.87,4.86c.58,1.37,1.42,2.43,2.52,3.18,1.1.75,2.4,1.12,3.89,1.12,1.58,0,2.96-.39,4.14-1.18,1.18-.79,2-1.95,2.46-3.49h9.03c-.41,2.41-1.34,4.5-2.77,6.29-1.43,1.78-3.26,3.19-5.48,4.2-2.22,1.02-4.72,1.53-7.5,1.53Z"/>
+      <path class="logo-text" d="M255.91,276.19v-44.82h9.34v44.82h-9.34ZM278.01,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M302.54,276.81c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM313.62,276.19c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M329.18,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM351.28,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M367.72,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM389.82,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M421.2,276.81c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+      <path class="logo-text" d="M233.75,325.53c-4.65,0-8.34-.93-11.08-2.8-2.74-1.87-4.23-4.44-4.48-7.72h8.34c.21,1.41.92,2.48,2.15,3.21,1.22.73,2.92,1.09,5.07,1.09,1.95,0,3.37-.28,4.26-.84.89-.56,1.34-1.36,1.34-2.4,0-.79-.26-1.4-.78-1.84-.52-.44-1.46-.8-2.83-1.09l-5.1-1.06c-3.78-.79-6.56-1.98-8.34-3.58-1.78-1.6-2.68-3.66-2.68-6.19,0-3.07,1.18-5.47,3.55-7.19,2.37-1.72,5.67-2.58,9.9-2.58s7.53.84,10.02,2.52c2.49,1.68,3.86,4.02,4.11,7h-8.34c-.17-1.08-.75-1.9-1.74-2.46-1-.56-2.41-.84-4.23-.84-1.66,0-2.89.24-3.7.72-.81.48-1.21,1.15-1.21,2.02,0,.75.33,1.34,1,1.77.66.44,1.76.82,3.3,1.15l5.73,1.18c3.2.66,5.61,1.9,7.25,3.7,1.64,1.81,2.46,3.93,2.46,6.38,0,3.11-1.21,5.53-3.64,7.25-2.43,1.72-5.86,2.58-10.3,2.58Z"/>
+      <path class="logo-text" d="M249.31,300.26v-7.1h23.47v7.1h-23.47ZM267.24,325.59c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M286.66,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM297.74,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M313.31,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM335.41,324.91v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M374.32,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM366.85,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
+      <path class="logo-text" d="M399.84,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM410.92,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M426.49,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM435.82,308.35l-.81-7.53c.75-2.7,1.97-4.75,3.67-6.16,1.7-1.41,3.82-2.12,6.35-2.12.79,0,1.37.08,1.74.25v8.72c-.21-.08-.5-.13-.87-.16-.37-.02-.83-.03-1.37-.03-2.99,0-5.19.53-6.6,1.59-1.41,1.06-2.12,2.87-2.12,5.45Z"/>
+      <path class="logo-text" d="M473.18,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM465.71,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
+        </svg>
+      </a>
+      <p class="footer-tagline" id="footer-tagline">From guesswork to intelligence.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/companion">Channel Companion</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="/insights">Insights</a>
+      <a href="/services">Advisory</a>
+      <a href="/talent">Talent</a>
+      <a href="/jobs">Jobs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="/contact">Contact</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 The Channel Standard. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ROLE SELECTION MODAL -->
+<div id="role-modal" class="tcs-modal-overlay" onclick="closeModalOutside(event,'role-modal')" aria-hidden="true">
+  <div class="tcs-modal" role="dialog" aria-modal="true" aria-labelledby="role-modal-title" style="max-width:480px;">
+    <button class="tcs-modal-close" onclick="closeModal('role-modal')" aria-label="Close">&times;</button>
+    <div class="tcs-modal-gradient-bar" id="role-gradient-bar"></div>
+    <h2 id="role-modal-title" style="margin-bottom:0.5rem;">Who are you?</h2>
+    <p class="tcs-modal-sub">Tell us how you work in the channel so we can show you the right experience.</p>
+    <div class="role-cards">
+      <button class="role-card" onclick="selectRole('advisor')">
+        <div class="role-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="role-card-text">
+          <strong>I'm an Advisor</strong>
+          <span>Trusted Advisor, agent, or consultant working deals in the channel</span>
+        </div>
+        <span class="role-card-arrow">&rarr;</span>
+      </button>
+      <button class="role-card" onclick="selectRole('supplier')">
+        <div class="role-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="role-card-text">
+          <strong>I'm a Supplier</strong>
+          <span>Technology vendor or supplier looking to reach the right advisors</span>
+        </div>
+        <span class="role-card-arrow">&rarr;</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ADVISOR MODAL -->
+<div id="advisor-modal" class="tcs-modal-overlay" onclick="closeModalOutside(event,'advisor-modal')" aria-hidden="true">
+  <div class="tcs-modal" role="dialog" aria-modal="true" aria-labelledby="advisor-modal-title">
+    <button class="tcs-modal-close" onclick="closeModal('advisor-modal')" aria-label="Close">&times;</button>
+    <div class="tcs-modal-gradient-bar" id="advisor-gradient-bar"></div>
+    <h2 id="advisor-modal-title">Explore Advisor Experience</h2>
+    <p class="tcs-modal-sub">Fill out the form below to learn more about the Advisor Workspace.</p>
+    <form id="advisor-form" class="tcs-modal-form" onsubmit="submitAdvisorForm(event)">
+      <div class="tcs-form-row">
+        <div class="tcs-form-group">
+          <label for="adv-first">FIRST NAME <span class="req">*</span></label>
+          <input type="text" id="adv-first" placeholder="John" required />
+        </div>
+        <div class="tcs-form-group">
+          <label for="adv-last">LAST NAME <span class="req">*</span></label>
+          <input type="text" id="adv-last" placeholder="Doe" required />
+        </div>
+      </div>
+      <div class="tcs-form-group">
+        <label for="adv-email">EMAIL <span class="req">*</span></label>
+        <input type="email" id="adv-email" placeholder="john@company.com" required />
+      </div>
+      <div class="tcs-form-group">
+        <label for="adv-tsd">TSD AFFILIATION</label>
+        <input type="text" id="adv-tsd" placeholder="Which TSD do you work with?" />
+      </div>
+      <button type="submit" class="tcs-modal-submit" id="advisor-submit-btn">Request Access</button>
+      <p class="tcs-modal-status" id="advisor-status"></p>
+      <p class="tcs-switch-role"><button type="button" class="tcs-switch-role-btn" onclick="closeModal('advisor-modal'); openModal('role-modal');"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg> Switch role</button></p>
+    </form>
+    <!-- Confirmation screen (hidden until success) -->
+    <div id="advisor-confirm" class="tcs-modal-confirm" style="display:none">
+      <div class="tcs-confirm-icon">&#10003;</div>
+      <h3 class="tcs-confirm-title">You're on the list.</h3>
+      <p class="tcs-confirm-body">Thanks for your interest in the Advisor Workspace. We'll be in touch shortly with next steps.</p>
+      <button class="tcs-modal-submit" onclick="closeModal('advisor-modal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUPPLIER MODAL -->
+<div id="supplier-modal" class="tcs-modal-overlay" onclick="closeModalOutside(event,'supplier-modal')" aria-hidden="true">
+  <div class="tcs-modal" role="dialog" aria-modal="true" aria-labelledby="supplier-modal-title">
+    <button class="tcs-modal-close" onclick="closeModal('supplier-modal')" aria-label="Close">&times;</button>
+    <div class="tcs-modal-gradient-bar" id="supplier-gradient-bar"></div>
+    <h2 id="supplier-modal-title">Claim Your Profile</h2>
+    <p class="tcs-modal-sub">Tell us about your company so advisors see accurate information when Channel Companion recommends you.</p>
+    <form id="supplier-form" class="tcs-modal-form" onsubmit="submitSupplierForm(event)">
+      <div class="tcs-form-row">
+        <div class="tcs-form-group">
+          <label for="sup-first">FIRST NAME <span class="req">*</span></label>
+          <input type="text" id="sup-first" placeholder="Jane" required />
+        </div>
+        <div class="tcs-form-group">
+          <label for="sup-last">LAST NAME <span class="req">*</span></label>
+          <input type="text" id="sup-last" placeholder="Smith" required />
+        </div>
+      </div>
+      <div class="tcs-form-group">
+        <label for="sup-company">COMPANY <span class="req">*</span></label>
+        <input type="text" id="sup-company" placeholder="Acme Corp" required />
+      </div>
+      <div class="tcs-form-group">
+        <label for="sup-email">EMAIL <span class="req">*</span></label>
+        <input type="email" id="sup-email" placeholder="jane@company.com" required />
+      </div>
+      <button type="submit" class="tcs-modal-submit" id="supplier-submit-btn">Claim Profile</button>
+      <p class="tcs-modal-status" id="supplier-status"></p>
+      <p class="tcs-switch-role"><button type="button" class="tcs-switch-role-btn" onclick="closeModal('supplier-modal'); openModal('role-modal');"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg> Switch role</button></p>
+    </form>
+    <!-- Confirmation screen (hidden until success) -->
+    <div id="supplier-confirm" class="tcs-modal-confirm" style="display:none">
+      <div class="tcs-confirm-icon">&#10003;</div>
+      <h3 class="tcs-confirm-title">Profile claim received.</h3>
+      <p class="tcs-confirm-body">We've got your details. Our team will review your profile and reach out to confirm your listing on Channel Companion.</p>
+      <button class="tcs-modal-submit" onclick="closeModal('supplier-modal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ── Switch Role Link ── */
+.tcs-switch-role {
+  text-align: center;
+  margin: 0;
+}
+.tcs-switch-role-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.8rem;
+  color: #666;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: color 0.2s, text-decoration-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.tcs-switch-role-btn:hover {
+  color: #40b4a6;
+  text-decoration-color: #40b4a6;
+}
+[data-theme="retro"] .tcs-switch-role-btn:hover { color: #c8b560; text-decoration-color: #c8b560; }
+
+/* ── Role Selection Cards ── */
+.role-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid #333;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  text-align: left;
+  color: #f5f5f0;
+  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+  width: 100%;
+}
+.role-card:hover {
+  border-color: #40b4a6;
+  background: rgba(64,180,166,0.08);
+  transform: translateY(-1px);
+}
+.role-card:active { transform: scale(0.98); }
+.role-card-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #40b4a6;
+}
+.role-card-icon svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.role-card:hover .role-card-icon { color: #5ccfbf; }
+.role-card-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.role-card-text strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f5f5f0;
+}
+.role-card-text span {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 1.4;
+}
+.role-card-arrow {
+  font-size: 1.1rem;
+  color: #555;
+  flex-shrink: 0;
+  transition: color 0.2s, transform 0.2s;
+}
+.role-card:hover .role-card-arrow {
+  color: #40b4a6;
+  transform: translateX(3px);
+}
+[data-theme="retro"] .role-card {
+  border-color: #555;
+  color: #f5f0d0;
+}
+[data-theme="retro"] .role-card:hover {
+  border-color: #c8b560;
+  background: rgba(200,181,96,0.08);
+}
+[data-theme="retro"] .role-card-text strong { color: #f5f0d0; }
+
+/* ── TCS Modal System ── */
+.tcs-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.tcs-modal-overlay.open {
+  display: flex;
+}
+.tcs-modal {
+  position: relative;
+  background: #111;
+  color: #f5f5f0;
+  border-radius: 12px;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 540px;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+[data-theme="light"] .tcs-modal {
+  background: #1a1a1a;
+  color: #f5f5f0;
+}
+[data-theme="retro"] .tcs-modal {
+  background: #1a1a0e;
+  color: #f5f0d0;
+  border: 2px solid #c8b560;
+}
+.tcs-modal-gradient-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2d6a4f, #40b4a6, #2563a8, #e05c2a, #2d6a4f);
+  background-size: 300% 100%;
+  animation: none;
+  border-radius: 12px 12px 0 0;
+}
+.tcs-modal-gradient-bar.animate {
+  animation: gradientSlide 2s ease forwards;
+}
+@keyframes gradientSlide {
+  0%   { background-position: 100% 0; opacity: 0.6; }
+  30%  { background-position: 60% 0;  opacity: 1; }
+  70%  { background-position: 20% 0;  opacity: 1; }
+  100% { background-position: 0% 0;   opacity: 0.85; }
+}
+.tcs-modal-close {
+  position: absolute;
+  top: 1rem; right: 1.25rem;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s;
+}
+.tcs-modal-close:hover { color: #f5f5f0; }
+.tcs-modal h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: #f5f5f0;
+  line-height: 1.2;
+}
+[data-theme="retro"] .tcs-modal h2 { color: #f5f0d0; }
+.tcs-modal-sub {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin: 0 0 1.75rem;
+  line-height: 1.5;
+}
+.tcs-modal-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.tcs-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 480px) { .tcs-form-row { grid-template-columns: 1fr; } }
+.tcs-form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.tcs-form-group label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #888;
+  text-transform: uppercase;
+}
+.req { color: #e05c2a; }
+.tcs-form-group input {
+  background: #222;
+  border: 1.5px solid #333;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: #f5f5f0;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.tcs-form-group input:focus {
+  border-color: #40b4a6;
+  box-shadow: 0 0 0 3px rgba(64,180,166,0.15);
+}
+[data-theme="retro"] .tcs-form-group input {
+  background: #111108;
+  border-color: #555;
+  color: #f5f0d0;
+}
+[data-theme="retro"] .tcs-form-group input:focus {
+  border-color: #c8b560;
+  box-shadow: 0 0 0 3px rgba(200,181,96,0.15);
+}
+.tcs-modal-submit {
+  background: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.02em;
+  margin-top: 0.25rem;
+}
+.tcs-modal-submit:hover { background: #40b4a6; }
+.tcs-modal-submit:active { transform: scale(0.98); }
+.tcs-modal-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.tcs-modal-status {
+  font-size: 0.875rem;
+  text-align: center;
+  min-height: 1.2em;
+  margin: 0;
+  color: #40b4a6;
+}
+.tcs-modal-status.error { color: #e05c2a; }
+/* Confirmation screen */
+.tcs-modal-confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
+  gap: 0.75rem;
+  animation: tcs-confirm-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes tcs-confirm-in {
+  from { opacity: 0; transform: scale(0.85) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.tcs-confirm-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8);
+  background-size: 300% 100%;
+  animation: brandSweep 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards, confirmIconPop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(64,180,166,0.35);
+  margin-bottom: 0.25rem;
+}
+@keyframes confirmIconPop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+.tcs-confirm-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0ede6;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.tcs-confirm-body {
+  font-size: 0.95rem;
+  color: #a8a49c;
+  margin: 0 0 0.5rem;
+  line-height: 1.55;
+  max-width: 340px;
+}
+</style>
+
+<script>
+var themes = ['light', 'dark', 'retro'];
+function toggleTheme() {
+  var html = document.documentElement;
+  var current = html.getAttribute('data-theme');
+  var idx = themes.indexOf(current);
+  var next = themes[(idx + 1) % themes.length];
+  html.setAttribute('data-theme', next);
+}
+
+function switchTab(audience) {
+  document.querySelectorAll('.audience-tab').forEach(function(t) { t.classList.remove('active'); });
+  event.currentTarget.classList.add('active');
+  document.querySelectorAll('.audience-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById('panel-' + audience).classList.add('active');
+}
+
+// Brand palette pop
+(function() {
+  function applyPop(el) {
+    if (el.classList.contains('pop')) return;
+    el.classList.remove('fade-back');
+    el.classList.add('pop');
+    setTimeout(function() {
+      el.classList.remove('pop');
+      el.classList.add('fade-back');
+      var targets = [el];
+      el.querySelectorAll('.link-label, .link-arrow, .btn-label').forEach(function(c) { targets.push(c); });
+      if (el.classList.contains('footer-tagline')) targets.push(el);
+      targets.forEach(function(t) {
+        t.style.background = '';
+        t.style.webkitBackgroundClip = '';
+        t.style.backgroundClip = '';
+        t.style.webkitTextFillColor = '';
+      });
+    }, 1800);
+    setTimeout(function() { el.classList.remove('fade-back'); }, 2600);
+  }
+
+  var tagline = document.getElementById('footer-tagline');
+  if (tagline) tagline.addEventListener('click', function() { applyPop(tagline); });
+
+  document.querySelectorAll('.btn-primary-ed').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      // Modal triggers handle their own click via onclick; skip href navigation for them
+      if (btn.classList.contains('modal-trigger')) {
+        applyPop(btn);
+        return;
+      }
+      e.preventDefault();
+      applyPop(btn);
+      var href = btn.getAttribute('href');
+      if (href && href !== '#') setTimeout(function() { window.location.href = href; }, 600);
+    });
+  });
+})();
+
+// ── Modal helpers ──
+function openModal(id) {
+  var overlay = document.getElementById(id);
+  if (!overlay) return;
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  // Trigger gradient bar animation
+  var bar = overlay.querySelector('.tcs-modal-gradient-bar');
+  if (bar) {
+    bar.classList.remove('animate');
+    void bar.offsetWidth; // reflow
+    bar.classList.add('animate');
+  }
+}
+function closeModal(id) {
+  var overlay = document.getElementById(id);
+  if (!overlay) return;
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  // Reset: hide confirmation, show form again for next open
+  var confirmEl = overlay.querySelector('.tcs-modal-confirm');
+  var formEl = overlay.querySelector('form');
+  if (confirmEl) confirmEl.style.display = 'none';
+  if (formEl) formEl.style.display = '';
+}
+function closeModalOutside(e, id) {
+  if (e.target === document.getElementById(id)) closeModal(id);
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    ['role-modal','advisor-modal','supplier-modal'].forEach(closeModal);
+  }
+});
+// ── Role selection ──
+function selectRole(role) {
+  closeModal('role-modal');
+  if (role === 'advisor') {
+    openModal('advisor-modal');
+  } else {
+    openModal('supplier-modal');
+  }
+}
+
+// ── Advisor form submission ──
+function submitAdvisorForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('advisor-submit-btn');
+  var status = document.getElementById('advisor-status');
+  var firstName = document.getElementById('adv-first').value.trim();
+  var lastName  = document.getElementById('adv-last').value.trim();
+  var email     = document.getElementById('adv-email').value.trim();
+  var tsd       = document.getElementById('adv-tsd').value.trim();
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  status.textContent = '';
+  status.className = 'tcs-modal-status';
+  fetch('/api/trpc/bookings.create', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify({
+      json: {
+        formType: 'advisor_experience',
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        message: tsd ? 'TSD Affiliation: ' + tsd : '',
+        company: tsd || ''
+      }
+    })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data && data.result) {
+      document.getElementById('advisor-form').reset();
+      // Show confirmation screen
+      document.getElementById('advisor-form').style.display = 'none';
+      var confirm = document.getElementById('advisor-confirm');
+      confirm.style.display = 'flex';
+      // Re-trigger container animation
+      confirm.style.animation = 'none';
+      void confirm.offsetWidth;
+      confirm.style.animation = '';
+      // Re-trigger icon animation
+      var icon = confirm.querySelector('.tcs-confirm-icon');
+      if (icon) { icon.style.animation = 'none'; void icon.offsetWidth; icon.style.animation = ''; }
+      // Re-sweep gradient bar
+      var bar = document.getElementById('advisor-gradient-bar');
+      if (bar) { bar.classList.remove('animate'); void bar.offsetWidth; bar.classList.add('animate'); }
+    } else {
+      throw new Error('Submission failed');
+    }
+  })
+  .catch(function() {
+    status.textContent = 'Something went wrong. Please try again.';
+    status.className = 'tcs-modal-status error';
+    btn.disabled = false;
+    btn.textContent = 'Request Access';
+  });
+}
+
+// ── Supplier form submission ──
+function submitSupplierForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('supplier-submit-btn');
+  var status = document.getElementById('supplier-status');
+  var firstName = document.getElementById('sup-first').value.trim();
+  var lastName  = document.getElementById('sup-last').value.trim();
+  var company   = document.getElementById('sup-company').value.trim();
+  var email     = document.getElementById('sup-email').value.trim();
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  status.textContent = '';
+  status.className = 'tcs-modal-status';
+  fetch('/api/trpc/bookings.create', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify({
+      json: {
+        formType: 'supplier_claim',
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        company: company,
+        message: 'Supplier profile claim request from ' + company
+      }
+    })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data && data.result) {
+      document.getElementById('supplier-form').reset();
+      // Show confirmation screen
+      document.getElementById('supplier-form').style.display = 'none';
+      var confirm = document.getElementById('supplier-confirm');
+      confirm.style.display = 'flex';
+      // Re-trigger container animation
+      confirm.style.animation = 'none';
+      void confirm.offsetWidth;
+      confirm.style.animation = '';
+      // Re-trigger icon animation
+      var icon = confirm.querySelector('.tcs-confirm-icon');
+      if (icon) { icon.style.animation = 'none'; void icon.offsetWidth; icon.style.animation = ''; }
+      // Re-sweep gradient bar
+      var bar = document.getElementById('supplier-gradient-bar');
+      if (bar) { bar.classList.remove('animate'); void bar.offsetWidth; bar.classList.add('animate'); }
+    } else {
+      throw new Error('Submission failed');
+    }
+  })
+  .catch(function() {
+    status.textContent = 'Something went wrong. Please try again.';
+    status.className = 'tcs-modal-status error';
+    btn.disabled = false;
+    btn.textContent = 'Claim Profile';
+  });
+}
+</script>
+
+</body>
+</html>

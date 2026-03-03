@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact | The Channel Standard</title>
+<meta name="description" content="Get in touch with The Channel Standard. We're here to help you redefine excellence." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================
+   DESIGN TOKENS - LIGHT MODE (default)
+   ============================================ */
+:root {
+  --teal-600: #157A6E;
+  --teal-500: #1A9E8F;
+  --teal-400: #2BB5A6;
+  --teal-300: #5CCFBF;
+  --teal-100: #E6F7F5;
+  --dot-teal: #3b9b8f;
+  --dot-teal-dark: #2d7b70;
+  --dot-blue: #5bb2e8;
+  --dot-green: #59be7a;
+  --dot-amber: #e9a75c;
+  --dot-coral: #e95a5b;
+  --dot-gray: #89909a;
+  --dot-gray-dark: #515a63;
+  --dot-navy: #1c2228;
+  --ink: #0F1115;
+  --ink-secondary: #181B21;
+  --ink-body: #1E2128;
+  --ink-muted: #4A4A4A;
+  --gray-500: #6B6B6B;
+  --gray-400: #8A8A8A;
+  --rule: #D4D4D4;
+  --rule-light: #EBEBEB;
+  --bg: #F7F5F2;
+  --bg-elevated: #F0EDEA;
+  --bg-invert: #0F1115;
+  --white: #FFFFFF;
+  --accent: var(--teal-600);
+  --accent-hover: var(--teal-500);
+  --accent-glow: none;
+  --logo-text-fill: #1c2228;
+  --logo-dot-dark: #1c2228;
+  --logo-dot-teal: #2d7b70;
+  --logo-dot-blue: #5bb2e8;
+  --btn-bg: var(--ink);
+  --btn-color: var(--white);
+  --btn-hover: var(--ink-secondary);
+  --btn-border: var(--ink-secondary);
+  --btn-outline-color: var(--ink);
+  --btn-outline-hover-bg: var(--ink);
+  --btn-outline-hover-color: var(--white);
+  --thesis-bg: var(--ink);
+  --thesis-text: var(--white);
+  --thesis-sub: var(--gray-400);
+  --thesis-accent: var(--teal-400);
+  --footer-bg: var(--ink);
+  --footer-text: var(--gray-400);
+  --footer-link: var(--gray-500);
+  --footer-link-hover: var(--white);
+  --footer-rule: var(--ink-secondary);
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+  --max-layout: 1100px;
+  --max-content: 720px;
+  --theme-transition: 0.35s ease;
+}
+
+[data-theme="dark"] {
+  --teal-600: #7CC4BA;
+  --teal-500: #93D4CB;
+  --teal-400: #A5DED6;
+  --teal-300: #B8E6E0;
+  --teal-100: rgba(124, 196, 186, 0.08);
+  --ink: #EAEAEA;
+  --ink-secondary: #D4D4D4;
+  --ink-body: #C0C0C0;
+  --ink-muted: #9A9A9A;
+  --gray-500: #7A7A7A;
+  --gray-400: #5A5A5A;
+  --rule: #2A2D35;
+  --rule-light: #22252B;
+  --bg: #0C0D11;
+  --bg-elevated: #13141A;
+  --bg-invert: #F7F5F2;
+  --white: #EAEAEA;
+  --accent: #7CC4BA;
+  --accent-hover: #93D4CB;
+  --accent-glow: 0 0 20px rgba(124, 196, 186, 0.12);
+  --logo-text-fill: #EAEAEA;
+  --logo-dot-dark: #EAEAEA;
+  --logo-dot-teal: #7CC4BA;
+  --logo-dot-blue: #5bb2e8;
+  --btn-bg: #7CC4BA;
+  --btn-color: #0C0D11;
+  --btn-hover: #93D4CB;
+  --btn-border: #2A2D35;
+  --btn-outline-color: #7CC4BA;
+  --btn-outline-hover-bg: #7CC4BA;
+  --btn-outline-hover-color: #0C0D11;
+  --thesis-bg: #13141A;
+  --thesis-text: #EAEAEA;
+  --thesis-sub: #7A7A7A;
+  --thesis-accent: #93D4CB;
+  --footer-bg: #0C0D11;
+  --footer-text: #5A5A5A;
+  --footer-link: #7A7A7A;
+  --footer-link-hover: #EAEAEA;
+  --footer-rule: #1A1D23;
+}
+
+[data-theme="retro"] {
+  --teal-600: #2563EB;
+  --teal-500: #3B82F6;
+  --teal-400: #60A5FA;
+  --teal-300: #93C5FD;
+  --teal-100: #EFF6FF;
+  --ink: #333333;
+  --ink-secondary: #444444;
+  --ink-body: #555555;
+  --ink-muted: #666666;
+  --gray-500: #999999;
+  --gray-400: #bbbbbb;
+  --rule: #cccccc;
+  --rule-light: #dddddd;
+  --bg: #e8e8e8;
+  --bg-elevated: #d8d8d8;
+  --bg-invert: #2c3e50;
+  --white: #ffffff;
+  --accent: #1a5276;
+  --accent-hover: #2980b9;
+  --accent-glow: none;
+  --logo-text-fill: #333333;
+  --logo-dot-dark: #333333;
+  --logo-dot-teal: #2563EB;
+  --logo-dot-blue: #0ea5e9;
+  --btn-bg: #2563EB;
+  --btn-color: #ffffff;
+  --btn-hover: #3B82F6;
+  --btn-border: #1a3c6e;
+  --btn-outline-color: #1a5276;
+  --btn-outline-hover-bg: #1a5276;
+  --btn-outline-hover-color: #ffffff;
+  --thesis-bg: #2c3e50;
+  --thesis-text: #ecf0f1;
+  --thesis-sub: #95a5a6;
+  --thesis-accent: #5dade2;
+  --footer-bg: #2c3e50;
+  --footer-text: #95a5a6;
+  --footer-link: #7f8c8d;
+  --footer-link-hover: #ecf0f1;
+  --footer-rule: #34495e;
+  --serif: 'Times New Roman', Georgia, serif;
+  --sans: 'Droid Sans', Verdana, Tahoma, Geneva, sans-serif;
+}
+
+[data-theme="retro"] body {
+  background: #e8e8e8;
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.015) 2px,rgba(0,0,0,0.015) 4px),repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(0,0,0,0.015) 2px,rgba(0,0,0,0.015) 4px);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body { font-family: var(--sans); font-weight: 400; color: var(--ink); background: var(--bg); line-height: 1.6; transition: background var(--theme-transition), color var(--theme-transition); }
+img { max-width: 100%; display: block; }
+a { color: var(--ink); text-decoration: none; transition: color var(--theme-transition); }
+
+.container { max-width: var(--max-layout); margin: 0 auto; padding: 0 2rem; }
+.section { padding: var(--space-2xl) 0; }
+
+h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.8rem, 5.5vw, 4.2rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); transition: color var(--theme-transition); }
+h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.5vw, 2.4rem); line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); transition: color var(--theme-transition); }
+h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.3; color: var(--ink); transition: color var(--theme-transition); }
+
+.eyebrow { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+[data-theme="dark"] .eyebrow { text-shadow: var(--accent-glow); }
+
+.body-text { font-family: var(--sans); font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted); max-width: var(--max-content); transition: color var(--theme-transition); }
+
+/* Logo */
+.logo-svg { height: 28px; width: auto; display: block; }
+.logo-svg .logo-text { fill: var(--logo-text-fill); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-dark { fill: var(--logo-dot-dark); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-teal { fill: var(--logo-dot-teal); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-blue { fill: var(--logo-dot-blue); transition: fill var(--theme-transition); }
+.footer-logo .logo-svg { height: 38px; }
+footer .logo-svg .logo-text { fill: #EAEAEA; }
+footer .logo-svg .logo-dot-dark { fill: #EAEAEA; }
+[data-theme="dark"] footer .logo-svg .logo-dot-teal { fill: #7CC4BA; }
+
+/* Theme toggle */
+.theme-toggle { background: none; border: 1px solid var(--rule); cursor: pointer; padding: 0.4rem; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 0; transition: all var(--theme-transition); color: var(--ink-muted); margin-left: 1rem; flex-shrink: 0; }
+.theme-toggle:hover { border-color: var(--ink); color: var(--ink); }
+[data-theme="dark"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle svg { width: 16px; height: 16px; }
+.theme-toggle .sun { display: block; }
+.theme-toggle .moon { display: none; }
+.theme-toggle .retro-icon { display: none; }
+[data-theme="dark"] .theme-toggle .sun { display: none; }
+[data-theme="dark"] .theme-toggle .moon { display: block; }
+[data-theme="retro"] .theme-toggle .sun { display: none; }
+[data-theme="retro"] .theme-toggle .moon { display: none; }
+[data-theme="retro"] .theme-toggle .retro-icon { display: block; }
+[data-theme="retro"] .theme-toggle { background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%); border: 1px solid #aaaaaa; border-radius: 6px; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.1); }
+
+/* Nav */
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; max-width: var(--max-layout); margin: 0 auto; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+.nav-links { display: flex; align-items: center; gap: 1.75rem; }
+.nav-links a { font-family: var(--sans); font-size: 0.8rem; font-weight: 400; color: var(--gray-500); letter-spacing: 0.02em; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { font-weight: 500 !important; color: var(--ink) !important; border: 1px solid var(--btn-border); padding: 0.4rem 1rem; font-size: 0.75rem !important; letter-spacing: 0.04em; transition: all 0.2s ease; }
+.nav-cta:hover { background: var(--btn-bg); color: var(--btn-color) !important; }
+
+/* Hero */
+.page-hero { padding: var(--space-3xl) 0 var(--space-2xl); border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+.page-hero .eyebrow { display: block; margin-bottom: var(--space-sm); }
+.page-hero h1 { margin-bottom: var(--space-md); }
+.page-hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); transition: color var(--theme-transition); }
+.page-hero .hero-sub { font-family: var(--sans); font-size: 1.1rem; line-height: 1.6; color: var(--ink-muted); max-width: 580px; transition: color var(--theme-transition); }
+
+/* Services grid */
+.services-list { border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+.service-row { display: grid; grid-template-columns: 1fr 2fr; gap: 0; border-top: 1px solid var(--rule); padding: var(--space-xl) 0; transition: border-color var(--theme-transition); }
+.service-row:first-child { border-top: 2px solid var(--ink); }
+[data-theme="dark"] .service-row:first-child { border-top: 1px solid var(--accent); }
+.service-label-col { padding-right: var(--space-xl); }
+.service-number { font-family: var(--serif); font-size: 2.5rem; line-height: 1; color: var(--accent); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+[data-theme="dark"] .service-number { text-shadow: var(--accent-glow); }
+.service-label { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); transition: color var(--theme-transition); }
+.service-content-col { border-left: 1px solid var(--rule); padding-left: var(--space-xl); transition: border-color var(--theme-transition); }
+.service-content-col h3 { margin-bottom: var(--space-sm); font-size: 1.6rem; }
+.service-content-col .service-desc { font-family: var(--sans); font-size: 1rem; line-height: 1.7; color: var(--ink-muted); margin-bottom: var(--space-lg); max-width: 560px; transition: color var(--theme-transition); }
+.service-offerings { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-lg); }
+.offering-item { padding: var(--space-md) 0; border-top: 1px solid var(--rule-light); transition: border-color var(--theme-transition); }
+.offering-item h4 { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
+.offering-item p { font-family: var(--sans); font-size: 0.85rem; line-height: 1.6; color: var(--ink-muted); transition: color var(--theme-transition); }
+
+/* Buttons */
+.btn-primary-ed { display: inline-block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; color: var(--btn-color); background: linear-gradient(90deg, #0F1115 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #0F1115 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; padding: 0.75rem 1.75rem; transition: all 0.25s ease; }
+[data-theme="dark"] .btn-primary-ed { background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 30%, #8dc5bf 50%, #93D4CB 70%, #7CC4BA 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; box-shadow: 0 0 24px rgba(124, 196, 186, 0.12); color: #0C0D11; }
+[data-theme="retro"] .btn-primary-ed { background: linear-gradient(180deg, #6db3f8 0%, #3B82F6 40%, #2563EB 60%, #1d4ed8 100%) !important; animation: none !important; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.15) inset, 0 2px 6px rgba(30, 64, 175, 0.5); border: 1px solid #1a3c6e; color: #ffffff; border-radius: 6px; }
+@keyframes btnShimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.btn-primary-ed .arrow { margin-left: 0.5rem; transition: margin-left 0.2s ease; }
+.btn-primary-ed:hover .arrow { margin-left: 0.75rem; }
+
+/* CTA strip */
+.cta-strip { padding: var(--space-3xl) 0; background: var(--thesis-bg); transition: background var(--theme-transition); }
+[data-theme="dark"] .cta-strip { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.cta-strip h2 { color: var(--thesis-text); max-width: 600px; margin-bottom: var(--space-md); transition: color var(--theme-transition); }
+.cta-strip p { font-family: var(--sans); font-size: 1rem; color: var(--thesis-sub); max-width: 500px; margin-bottom: var(--space-lg); transition: color var(--theme-transition); }
+
+/* Footer */
+footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--space-lg); transition: background var(--theme-transition); }
+.footer-grid { max-width: var(--max-layout); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-xl); padding-bottom: var(--space-lg); }
+.footer-tagline { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--footer-text); margin-top: var(--space-sm); transition: color var(--theme-transition); cursor: pointer; }
+.footer-col h4 { font-family: var(--sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+.footer-col a { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--footer-link); margin-bottom: 0.5rem; transition: color 0.2s ease; }
+.footer-col a:hover { color: var(--footer-link-hover); }
+.footer-bottom { max-width: var(--max-layout); margin: 0 auto; padding: var(--space-lg) 0 0; margin-top: var(--space-lg); border-top: 1px solid var(--footer-rule); display: flex; justify-content: space-between; align-items: center; transition: border-color var(--theme-transition); }
+.footer-bottom p { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color var(--theme-transition); }
+.footer-bottom-links { display: flex; gap: var(--space-md); }
+.footer-bottom-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color 0.2s ease; }
+.footer-bottom-links a:hover { color: var(--footer-link-hover); }
+
+[data-theme="retro"] footer { background: linear-gradient(180deg, #34495e 0%, #2c3e50 40%, #1a252f 100%); }
+
+@media (max-width: 900px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links { gap: 0.75rem; }
+  .service-row { grid-template-columns: 1fr; }
+  .service-label-col { padding-right: 0; margin-bottom: var(--space-md); }
+  .service-content-col { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: var(--space-md); }
+  .service-offerings { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 1.25rem; }
+  nav { padding: 1rem 1.25rem; }
+  .logo-svg { height: 22px; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
+      <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+      <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+      <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M247.13,227.47v-44.82h9.34v44.82h-9.34ZM269.23,227.47v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M300.61,228.09c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M235.3,276.81c-3.32,0-6.25-.71-8.78-2.12-2.53-1.41-4.51-3.36-5.95-5.85-1.43-2.49-2.15-5.33-2.15-8.53s.72-6.04,2.15-8.53c1.43-2.49,3.41-4.44,5.95-5.85,2.53-1.41,5.46-2.12,8.78-2.12,2.78,0,5.28.51,7.5,1.53,2.22,1.02,4.05,2.42,5.48,4.2,1.43,1.78,2.36,3.88,2.77,6.29h-9.03c-.46-1.53-1.28-2.7-2.46-3.49-1.18-.79-2.56-1.18-4.14-1.18-1.49,0-2.79.37-3.89,1.12-1.1.75-1.94,1.81-2.52,3.18-.58,1.37-.87,2.99-.87,4.86s.29,3.49.87,4.86c.58,1.37,1.42,2.43,2.52,3.18,1.1.75,2.4,1.12,3.89,1.12,1.58,0,2.96-.39,4.14-1.18,1.18-.79,2-1.95,2.46-3.49h9.03c-.41,2.41-1.34,4.5-2.77,6.29-1.43,1.78-3.26,3.19-5.48,4.2-2.22,1.02-4.72,1.53-7.5,1.53Z"/>
+      <path class="logo-text" d="M255.91,276.19v-44.82h9.34v44.82h-9.34ZM278.01,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M302.54,276.81c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM313.62,276.19c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M329.18,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM351.28,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M367.72,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM389.82,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M421.2,276.81c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+      <path class="logo-text" d="M233.75,325.53c-4.65,0-8.34-.93-11.08-2.8-2.74-1.87-4.23-4.44-4.48-7.72h8.34c.21,1.41.92,2.48,2.15,3.21,1.22.73,2.92,1.09,5.07,1.09,1.95,0,3.37-.28,4.26-.84.89-.56,1.34-1.36,1.34-2.4,0-.79-.26-1.4-.78-1.84-.52-.44-1.46-.8-2.83-1.09l-5.1-1.06c-3.78-.79-6.56-1.98-8.34-3.58-1.78-1.6-2.68-3.66-2.68-6.19,0-3.07,1.18-5.47,3.55-7.19,2.37-1.72,5.67-2.58,9.9-2.58s7.53.84,10.02,2.52c2.49,1.68,3.86,4.02,4.11,7h-8.34c-.17-1.08-.75-1.9-1.74-2.46-1-.56-2.41-.84-4.23-.84-1.66,0-2.89.24-3.7.72-.81.48-1.21,1.15-1.21,2.02,0,.75.33,1.34,1,1.77.66.44,1.76.82,3.3,1.15l5.73,1.18c3.2.66,5.61,1.9,7.25,3.7,1.64,1.81,2.46,3.93,2.46,6.38,0,3.11-1.21,5.53-3.64,7.25-2.43,1.72-5.86,2.58-10.3,2.58Z"/>
+      <path class="logo-text" d="M249.31,300.26v-7.1h23.47v7.1h-23.47ZM267.24,325.59c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M441.99,324.91v-44.82h9.34v44.82h-9.34Z"/>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/talent">Talent</a>
+    <a href="/jobs">Jobs</a>
+    <a href="/companion">Companion</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" hint="Toggle dark mode">
+    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="retro-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Get in Touch</p>
+    <h1>Let&rsquo;s Start a <em>Conversation.</em></h1>
+    <p class="hero-sub">Whether you&rsquo;re a supplier looking to scale or an advisor seeking better tools, we&rsquo;re here to help you redefine excellence.</p>
+  </div>
+</section>
+
+<style>
+.contact-layout { padding: var(--space-2xl) 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: var(--space-3xl); border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+.contact-info-label { font-family: var(--sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
+.contact-info-value { font-family: var(--sans); font-size: 1rem; color: var(--ink); margin-bottom: var(--space-xl); transition: color var(--theme-transition); }
+.contact-info-value a { color: var(--accent); transition: color 0.2s ease; }
+.contact-info-value a:hover { color: var(--accent-hover); }
+.contact-form-title { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin-bottom: var(--space-lg); transition: color var(--theme-transition); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1.25rem; }
+.form-label { display: block; font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
+.form-input, .form-textarea { width: 100%; font-family: var(--sans); font-size: 0.95rem; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); padding: 0.7rem 1rem; outline: none; transition: all var(--theme-transition); }
+.form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+.form-textarea { resize: vertical; min-height: 140px; }
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="container">
+  <div class="contact-layout">
+    <div>
+      <p class="contact-info-label">Email Us</p>
+      <p class="contact-info-value"><a href="mailto:info@thechannelstandard.com">info@thechannelstandard.com</a></p>
+      <p class="contact-info-label">Location</p>
+      <p class="contact-info-value">Minneapolis, Minnesota</p>
+      <p class="contact-info-label">Schedule</p>
+      <p class="contact-info-value">Book a time directly using the form or email us to arrange a call at your convenience.</p>
+    </div>
+    <div>
+      <p class="contact-form-title">Send us a message</p>
+      <p style="font-family:var(--sans);font-size:0.9rem;color:var(--ink-muted);margin-bottom:var(--space-lg);transition:color var(--theme-transition);">Fill out the form below and we&rsquo;ll get back to you shortly.</p>
+      <form onsubmit="handleContact(event)">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="c-first">First Name *</label><input class="form-input" type="text" id="c-first" name="first" required /></div>
+          <div class="form-group"><label class="form-label" for="c-last">Last Name *</label><input class="form-input" type="text" id="c-last" name="last" required /></div>
+        </div>
+        <div class="form-group"><label class="form-label" for="c-email">Email Address *</label><input class="form-input" type="email" id="c-email" name="email" required /></div>
+        <div class="form-group"><label class="form-label" for="c-subject">Subject</label><input class="form-input" type="text" id="c-subject" name="subject" /></div>
+        <div class="form-group"><label class="form-label" for="c-message">Message</label><textarea class="form-textarea" id="c-message" name="message"></textarea></div>
+        <button type="submit" class="btn-primary-ed"><span class="btn-label">Send Message</span> <span class="arrow">&rarr;</span></button>
+      </form>
+      <!-- Contact confirmation screen -->
+      <div id="contact-confirm" style="display:none;flex-direction:column;align-items:center;text-align:center;padding:2.5rem 1rem;gap:1rem;animation:tcs-confirm-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both;">
+        <div id="contact-confirm-icon" style="width:56px;height:56px;border-radius:50%;background:linear-gradient(90deg,#5bb2e8,#3b9b8f,#59be7a,#e9a75c,#e95a5b,#5bb2e8);background-size:300% 100%;animation:brandSweep 1.6s cubic-bezier(0.25,0.1,0.25,1) forwards,confirmIconPop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;display:flex;align-items:center;justify-content:center;font-size:1.75rem;color:#fff;font-weight:700;box-shadow:0 4px 18px rgba(64,180,166,0.35);">&#10003;</div>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--ink);margin:0;letter-spacing:-0.01em;transition:color var(--theme-transition);">Message received.</h3>
+        <p style="font-family:var(--sans);font-size:0.95rem;color:var(--ink-muted);margin:0;line-height:1.55;max-width:340px;transition:color var(--theme-transition);">Thanks for reaching out. We&rsquo;ll get back to you shortly at the email you provided.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function handleContact(e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('button[type="submit"]');
+  var firstName = document.getElementById('c-first').value.trim();
+  var lastName = document.getElementById('c-last').value.trim();
+  var email = document.getElementById('c-email').value.trim();
+  var subject = document.getElementById('c-subject').value.trim() || 'Website Inquiry';
+  var message = document.getElementById('c-message').value.trim();
+
+  if (!firstName || !lastName || !email) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.querySelector('.btn-label').textContent = 'Sending...';
+
+  try {
+    var res = await fetch('/api/trpc/bookings.create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({
+        json: {
+          formType: 'contact',
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          message: (subject ? subject + '\n\n' : '') + message
+        }
+      })
+    });
+    var data = await res.json();
+    if (data.result && data.result.data && data.result.data.json && data.result.data.json.success) {
+      e.target.style.display = 'none';
+      var confirmEl = document.getElementById('contact-confirm');
+      confirmEl.style.display = 'flex';
+      // Re-trigger animations
+      confirmEl.style.animation = 'none'; void confirmEl.offsetWidth; confirmEl.style.animation = '';
+      var iconEl = document.getElementById('contact-confirm-icon');
+      if (iconEl) { iconEl.style.animation = 'none'; void iconEl.offsetWidth; iconEl.style.animation = ''; }
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.querySelector('.btn-label').textContent = 'Send Message';
+    alert('Something went wrong. Please try again or email us directly at info@thechannelstandard.com');
+  }
+}
+</script><!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Explore Our Services</h2>
+    <p>See how The Channel Standard can help you build a stronger channel program.</p>
+    <a href="/services" class="btn-primary-ed"><span class="btn-label">View Services</span> <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
+          <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+          <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+          <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+          <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+          <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+          <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+          <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+          <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+          <path class="logo-text" d="M441.99,324.91v-44.82h9.34v44.82h-9.34Z"/>
+        </svg>
+      </a>
+      <p class="footer-tagline" id="footer-tagline">From guesswork to intelligence.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/companion">Channel Companion</a>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="/services">Advisory</a>
+      <a href="/talent">Talent</a>
+      <a href="/jobs">Jobs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="/contact">Contact</a>
+      <a href="https://www.linkedin.com/company/the-channel-standard" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 The Channel Standard. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var themes = ['light', 'dark', 'retro'];
+function toggleTheme() {
+  var html = document.documentElement;
+  var current = html.getAttribute('data-theme');
+  var idx = themes.indexOf(current);
+  var next = themes[(idx + 1) % themes.length];
+  html.setAttribute('data-theme', next);
+}
+</script>
+</body>
+</html>
