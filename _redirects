@@ -1,8 +1,10 @@
 /    /TCS_Homepage_v2_SVG_Toggle.html
-/companion         /TCS_Companion_Page_v1.html
-/contact           /contact.html
-/services          /services.html
-/talent            /talent.html
-/jobs              /jobs.html
-/privacy-policy    /privacy-policy.html
-/terms-of-service  /terms-of-service.html
+/companion              /TCS_Companion_Page_v1.html
+/companion-waitlist     /companion-waitlist.html
+/contact                /contact.html
+/services               /services.html
+/talent                 /talent.html
+/jobs                   /jobs.html
+/community              /community.html
+/privacy-policy         /privacy-policy.html
+/terms-of-service       /terms-of-service.html

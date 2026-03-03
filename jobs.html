@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Channel Jobs | The Channel Standard</title>
-<meta name="description" content="Browse current channel job openings curated by The Channel Standard." />
+<title>Jobs | The Channel Standard</title>
+<meta name="description" content="Open roles at The Channel Standard. Join the team building intelligence tools for the technology channel." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet" />
-
 <style>
 /* ============================================
-   DESIGN TOKENS - LIGHT MODE (default)
+   DESIGN TOKENS - LIGHT MODE
    ============================================ */
 :root {
   --teal-600: #157A6E;
@@ -20,15 +19,6 @@
   --teal-400: #2BB5A6;
   --teal-300: #5CCFBF;
   --teal-100: #E6F7F5;
-  --dot-teal: #3b9b8f;
-  --dot-teal-dark: #2d7b70;
-  --dot-blue: #5bb2e8;
-  --dot-green: #59be7a;
-  --dot-amber: #e9a75c;
-  --dot-coral: #e95a5b;
-  --dot-gray: #89909a;
-  --dot-gray-dark: #515a63;
-  --dot-navy: #1c2228;
   --ink: #0F1115;
   --ink-secondary: #181B21;
   --ink-body: #1E2128;
@@ -77,7 +67,6 @@
   --max-content: 720px;
   --theme-transition: 0.35s ease;
 }
-
 [data-theme="dark"] {
   --teal-600: #7CC4BA;
   --teal-500: #93D4CB;
@@ -120,7 +109,6 @@
   --footer-link-hover: #EAEAEA;
   --footer-rule: #1A1D23;
 }
-
 [data-theme="retro"] {
   --teal-600: #2563EB;
   --teal-500: #3B82F6;
@@ -165,31 +153,18 @@
   --serif: 'Times New Roman', Georgia, serif;
   --sans: 'Droid Sans', Verdana, Tahoma, Geneva, sans-serif;
 }
-
-[data-theme="retro"] body {
-  background: #e8e8e8;
-  background-image: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.015) 2px,rgba(0,0,0,0.015) 4px),repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(0,0,0,0.015) 2px,rgba(0,0,0,0.015) 4px);
-}
-
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 body { font-family: var(--sans); font-weight: 400; color: var(--ink); background: var(--bg); line-height: 1.6; transition: background var(--theme-transition), color var(--theme-transition); }
 img { max-width: 100%; display: block; }
 a { color: var(--ink); text-decoration: none; transition: color var(--theme-transition); }
-
 .container { max-width: var(--max-layout); margin: 0 auto; padding: 0 2rem; }
 .section { padding: var(--space-2xl) 0; }
-
-h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.8rem, 5.5vw, 4.2rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); transition: color var(--theme-transition); }
-h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.5vw, 2.4rem); line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); transition: color var(--theme-transition); }
-h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.3; color: var(--ink); transition: color var(--theme-transition); }
-
+h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); transition: color var(--theme-transition); }
+h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); transition: color var(--theme-transition); }
+h3 { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; line-height: 1.3; color: var(--ink); transition: color var(--theme-transition); }
 .eyebrow { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
 [data-theme="dark"] .eyebrow { text-shadow: var(--accent-glow); }
-
-.body-text { font-family: var(--sans); font-size: 1.05rem; line-height: 1.7; color: var(--ink-muted); max-width: var(--max-content); transition: color var(--theme-transition); }
-
-/* Logo */
 .logo-svg { height: 28px; width: auto; display: block; }
 .logo-svg .logo-text { fill: var(--logo-text-fill); transition: fill var(--theme-transition); }
 .logo-svg .logo-dot-dark { fill: var(--logo-dot-dark); transition: fill var(--theme-transition); }
@@ -199,8 +174,6 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-heigh
 footer .logo-svg .logo-text { fill: #EAEAEA; }
 footer .logo-svg .logo-dot-dark { fill: #EAEAEA; }
 [data-theme="dark"] footer .logo-svg .logo-dot-teal { fill: #7CC4BA; }
-
-/* Theme toggle */
 .theme-toggle { background: none; border: 1px solid var(--rule); cursor: pointer; padding: 0.4rem; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 0; transition: all var(--theme-transition); color: var(--ink-muted); margin-left: 1rem; flex-shrink: 0; }
 .theme-toggle:hover { border-color: var(--ink); color: var(--ink); }
 [data-theme="dark"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
@@ -210,136 +183,206 @@ footer .logo-svg .logo-dot-dark { fill: #EAEAEA; }
 .theme-toggle .retro-icon { display: none; }
 [data-theme="dark"] .theme-toggle .sun { display: none; }
 [data-theme="dark"] .theme-toggle .moon { display: block; }
+[data-theme="dark"] .theme-toggle .retro-icon { display: none; }
 [data-theme="retro"] .theme-toggle .sun { display: none; }
 [data-theme="retro"] .theme-toggle .moon { display: none; }
 [data-theme="retro"] .theme-toggle .retro-icon { display: block; }
-[data-theme="retro"] .theme-toggle { background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%); border: 1px solid #aaaaaa; border-radius: 6px; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.1); }
-
-/* Nav */
-nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; max-width: var(--max-layout); margin: 0 auto; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+.nav-wrapper { border-bottom: 1px solid var(--rule); background: var(--bg); position: sticky; top: 0; z-index: 100; transition: background var(--theme-transition), border-color var(--theme-transition); }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; max-width: var(--max-layout); margin: 0 auto; }
 .nav-links { display: flex; align-items: center; gap: 1.75rem; }
 .nav-links a { font-family: var(--sans); font-size: 0.8rem; font-weight: 400; color: var(--gray-500); letter-spacing: 0.02em; transition: color 0.2s ease; }
 .nav-links a:hover { color: var(--ink); }
 .nav-cta { font-weight: 500 !important; color: var(--ink) !important; border: 1px solid var(--btn-border); padding: 0.4rem 1rem; font-size: 0.75rem !important; letter-spacing: 0.04em; transition: all 0.2s ease; }
 .nav-cta:hover { background: var(--btn-bg); color: var(--btn-color) !important; }
-
-/* Hero */
-.page-hero { padding: var(--space-3xl) 0 var(--space-2xl); border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
-.page-hero .eyebrow { display: block; margin-bottom: var(--space-sm); }
-.page-hero h1 { margin-bottom: var(--space-md); }
-.page-hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); transition: color var(--theme-transition); }
-.page-hero .hero-sub { font-family: var(--sans); font-size: 1.1rem; line-height: 1.6; color: var(--ink-muted); max-width: 580px; transition: color var(--theme-transition); }
-
-/* Services grid */
-.services-list { border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
-.service-row { display: grid; grid-template-columns: 1fr 2fr; gap: 0; border-top: 1px solid var(--rule); padding: var(--space-xl) 0; transition: border-color var(--theme-transition); }
-.service-row:first-child { border-top: 2px solid var(--ink); }
-[data-theme="dark"] .service-row:first-child { border-top: 1px solid var(--accent); }
-.service-label-col { padding-right: var(--space-xl); }
-.service-number { font-family: var(--serif); font-size: 2.5rem; line-height: 1; color: var(--accent); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
-[data-theme="dark"] .service-number { text-shadow: var(--accent-glow); }
-.service-label { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); transition: color var(--theme-transition); }
-.service-content-col { border-left: 1px solid var(--rule); padding-left: var(--space-xl); transition: border-color var(--theme-transition); }
-.service-content-col h3 { margin-bottom: var(--space-sm); font-size: 1.6rem; }
-.service-content-col .service-desc { font-family: var(--sans); font-size: 1rem; line-height: 1.7; color: var(--ink-muted); margin-bottom: var(--space-lg); max-width: 560px; transition: color var(--theme-transition); }
-.service-offerings { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-lg); }
-.offering-item { padding: var(--space-md) 0; border-top: 1px solid var(--rule-light); transition: border-color var(--theme-transition); }
-.offering-item h4 { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
-.offering-item p { font-family: var(--sans); font-size: 0.85rem; line-height: 1.6; color: var(--ink-muted); transition: color var(--theme-transition); }
-
-/* Buttons */
-.btn-primary-ed { display: inline-block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; color: var(--btn-color); background: linear-gradient(90deg, #0F1115 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #0F1115 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; padding: 0.75rem 1.75rem; transition: all 0.25s ease; }
-[data-theme="dark"] .btn-primary-ed { background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 30%, #8dc5bf 50%, #93D4CB 70%, #7CC4BA 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; box-shadow: 0 0 24px rgba(124, 196, 186, 0.12); color: #0C0D11; }
-[data-theme="retro"] .btn-primary-ed { background: linear-gradient(180deg, #6db3f8 0%, #3B82F6 40%, #2563EB 60%, #1d4ed8 100%) !important; animation: none !important; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.15) inset, 0 2px 6px rgba(30, 64, 175, 0.5); border: 1px solid #1a3c6e; color: #ffffff; border-radius: 6px; }
-@keyframes btnShimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.hero { padding: var(--space-3xl) 0 var(--space-2xl); border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .hero { border-bottom-color: var(--rule); }
+.hero-content { max-width: 780px; }
+.hero h1 { margin-bottom: var(--space-md); }
+.hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); transition: color var(--theme-transition); }
+[data-theme="dark"] .hero h1 em { text-shadow: var(--accent-glow); }
+.hero-body { font-family: var(--sans); font-size: 1.1rem; line-height: 1.7; color: var(--ink-muted); max-width: 600px; margin-bottom: var(--space-lg); transition: color var(--theme-transition); }
+.section-head { margin-bottom: var(--space-xl); }
+.section-head h2 { max-width: 600px; margin-bottom: var(--space-sm); }
+.section-head p { font-family: var(--sans); font-size: 1rem; color: var(--ink-muted); transition: color var(--theme-transition); }
+.grid-section { padding: var(--space-2xl) 0; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .grid-section { border-bottom-color: var(--rule); }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .card-grid { border-top: 1px solid var(--accent); }
+.card-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 2px solid var(--ink); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .card-grid-2 { border-top: 1px solid var(--accent); }
+.grid-card { padding: var(--space-xl) 0; padding-right: var(--space-xl); transform: translateY(0); will-change: transform; transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); cursor: default; }
+.grid-card:hover { transform: translateY(-4px); }
+.card-grid .grid-card:not(:last-child) { border-right: 1px solid var(--rule); transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); }
+.card-grid-2 .grid-card:nth-child(odd) { border-right: 1px solid var(--rule); transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); }
+.card-grid-2 .grid-card:nth-child(even) { padding-left: var(--space-xl); padding-right: 0; }
+.card-grid-2 .grid-card:nth-child(1), .card-grid-2 .grid-card:nth-child(2) { border-bottom: 1px solid var(--rule); transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); }
+.card-grid .grid-card:not(:first-child) { padding-left: var(--space-xl); }
+[data-theme="dark"] .card-grid .grid-card:not(:last-child) { border-right-color: var(--rule); }
+[data-theme="dark"] .card-grid-2 .grid-card:nth-child(odd) { border-right-color: var(--rule); }
+[data-theme="dark"] .card-grid-2 .grid-card:nth-child(1),
+[data-theme="dark"] .card-grid-2 .grid-card:nth-child(2) { border-bottom-color: var(--rule); }
+.grid-card-icon { width: 32px; height: 32px; margin-bottom: var(--space-sm); color: var(--accent); transition: color var(--theme-transition); }
+[data-theme="dark"] .grid-card-icon { filter: drop-shadow(0 0 6px rgba(124, 196, 186, 0.15)); }
+.grid-card-icon svg { width: 100%; height: 100%; }
+.grid-card h3 { margin-bottom: 0.6rem; }
+.grid-card p { font-family: var(--sans); font-size: 0.9rem; line-height: 1.6; color: var(--gray-500); transition: color var(--theme-transition); }
+.stat-number { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; color: var(--accent); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
+[data-theme="dark"] .stat-number { text-shadow: var(--accent-glow); }
+.stat-label { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-muted); transition: color var(--theme-transition); }
+.thesis-strip { padding: var(--space-3xl) 0; background: var(--thesis-bg); transition: background var(--theme-transition); }
+[data-theme="dark"] .thesis-strip { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.thesis-strip blockquote { max-width: 700px; margin: 0 auto; text-align: center; }
+.thesis-strip .highlight { display: block; font-family: var(--serif); font-size: clamp(1.4rem, 2.8vw, 1.85rem); line-height: 1.35; color: var(--thesis-text); margin-bottom: var(--space-md); transition: color var(--theme-transition); }
+.thesis-strip .punchline { display: block; font-family: var(--sans); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: var(--space-sm); background: linear-gradient(90deg, #157A6E 0%, #2d7b70 20%, #5bb2e8 50%, #2d7b70 80%, #157A6E 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 8s ease infinite; }
+[data-theme="dark"] .thesis-strip .punchline { background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 20%, #5bb2e8 50%, #93D4CB 80%, #7CC4BA 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 8s ease infinite; }
+.footer-cta { text-align: center; padding: var(--space-2xl) 0; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .footer-cta { border-bottom-color: var(--rule); }
+.footer-cta h2 { margin-bottom: var(--space-lg); }
+.footer-cta .cta-group { display: flex; gap: var(--space-md); justify-content: center; align-items: center; }
+.btn-primary-ed { display: inline-block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; color: var(--btn-color); background: linear-gradient(90deg, #0F1115 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #0F1115 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; padding: 0.75rem 1.75rem; transition: all 0.25s ease; position: relative; overflow: hidden; }
+.btn-primary-ed:hover { background: linear-gradient(90deg, #181B21 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #181B21 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; color: var(--btn-color); }
+[data-theme="dark"] .btn-primary-ed { background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 30%, #8dc5bf 50%, #93D4CB 70%, #7CC4BA 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; color: #0C0D11; box-shadow: 0 0 24px rgba(124, 196, 186, 0.12); }
+[data-theme="dark"] .btn-primary-ed:hover { box-shadow: 0 0 32px rgba(124, 196, 186, 0.2); }
+.btn-primary-ed.pop { transform: scale(1.02); transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.btn-primary-ed.pop .btn-label { background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: brandSweep 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
+.btn-primary-ed.fade-back { transform: scale(1); transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); }
 .btn-primary-ed .arrow { margin-left: 0.5rem; transition: margin-left 0.2s ease; }
 .btn-primary-ed:hover .arrow { margin-left: 0.75rem; }
-
-/* CTA strip */
-.cta-strip { padding: var(--space-3xl) 0; background: var(--thesis-bg); transition: background var(--theme-transition); }
-[data-theme="dark"] .cta-strip { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-.cta-strip h2 { color: var(--thesis-text); max-width: 600px; margin-bottom: var(--space-md); transition: color var(--theme-transition); }
-.cta-strip p { font-family: var(--sans); font-size: 1rem; color: var(--thesis-sub); max-width: 500px; margin-bottom: var(--space-lg); transition: color var(--theme-transition); }
-
-/* Footer */
-footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--space-lg); transition: background var(--theme-transition); }
-.footer-grid { max-width: var(--max-layout); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-xl); padding-bottom: var(--space-lg); }
-.footer-tagline {
-  cursor: default;
-  display: inline-block;
-  transform-origin: left center;
-  background: linear-gradient(
-    90deg,
-    #5bb2e8,
-    #3b9b8f,
-    #59be7a,
-    #e9a75c,
-    #e95a5b,
-    #5bb2e8
-  );
-  background-size: 300% 100%;
-  background-position: 100% 50%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  transition:
-    background-position 1.2s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.footer-tagline:hover {
-  background-position: 0% 50%;
-  transform: scale(1.03);
-}
-.footer-col h4 { font-family: var(--sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+.btn-secondary-ed { display: inline-block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; color: var(--btn-outline-color); border: 1px solid var(--btn-outline-color); padding: 0.7rem 1.75rem; transition: all 0.25s ease; }
+.btn-secondary-ed:hover { background: var(--btn-outline-hover-bg); color: var(--btn-outline-hover-color); }
+[data-theme="dark"] .btn-secondary-ed:hover { box-shadow: 0 0 24px rgba(124, 196, 186, 0.12); }
+footer { padding: var(--space-xl) 0 var(--space-lg); background: var(--footer-bg); transition: background var(--theme-transition); }
+.footer-grid { max-width: var(--max-layout); margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-xl); }
+.footer-brand p { font-family: var(--sans); font-size: 0.8rem; line-height: 1.6; color: var(--footer-text); max-width: 260px; margin-top: var(--space-sm); transition: color var(--theme-transition); }
+.footer-tagline { cursor: pointer; display: inline-block; transform-origin: left center; transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.4s ease; }
+.footer-tagline:hover { color: #7A7A7A !important; }
+.footer-tagline.pop { transform: scale(1.04); background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: brandSweep 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
+.footer-tagline.fade-back { transform: scale(1); transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.footer-col h4 { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--footer-text); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
 .footer-col a { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--footer-link); margin-bottom: 0.5rem; transition: color 0.2s ease; }
 .footer-col a:hover { color: var(--footer-link-hover); }
-.footer-bottom { max-width: var(--max-layout); margin: 0 auto; padding: var(--space-lg) 0 0; margin-top: var(--space-lg); border-top: 1px solid var(--footer-rule); display: flex; justify-content: space-between; align-items: center; transition: border-color var(--theme-transition); }
+.footer-bottom { max-width: var(--max-layout); margin: 0 auto; padding: var(--space-lg) 2rem 0; margin-top: var(--space-lg); border-top: 1px solid var(--footer-rule); display: flex; justify-content: space-between; align-items: center; transition: border-color var(--theme-transition); }
 .footer-bottom p { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color var(--theme-transition); }
 .footer-bottom-links { display: flex; gap: var(--space-md); }
 .footer-bottom-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color 0.2s ease; }
 .footer-bottom-links a:hover { color: var(--footer-link-hover); }
-
-[data-theme="retro"] footer { background: linear-gradient(180deg, #34495e 0%, #2c3e50 40%, #1a252f 100%); }
-
+/* Form styles */
+.form-section { padding: var(--space-2xl) 0; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+.form-wrap { max-width: 560px; }
+.form-group { margin-bottom: var(--space-md); }
+.form-group label { display: block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; color: var(--ink-muted); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
+.form-group input, .form-group textarea, .form-group select { width: 100%; font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: var(--white); border: 1px solid var(--rule); padding: 0.65rem 0.9rem; transition: border-color 0.2s ease, background var(--theme-transition), color var(--theme-transition); outline: none; border-radius: 0; }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+[data-theme="dark"] .form-group input, [data-theme="dark"] .form-group textarea, [data-theme="dark"] .form-group select { background: var(--bg-elevated); border-color: var(--rule); color: var(--ink); }
+[data-theme="retro"] .form-group input, [data-theme="retro"] .form-group textarea, [data-theme="retro"] .form-group select { border-radius: 4px; border-color: #aaaaaa; background: #ffffff; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+/* Legal page styles */
+.legal-section { padding: var(--space-2xl) 0; }
+.legal-content { max-width: 720px; }
+.legal-content h2 { font-size: 1.4rem; margin-top: var(--space-xl); margin-bottom: var(--space-sm); }
+.legal-content h3 { font-size: 1rem; margin-top: var(--space-lg); margin-bottom: 0.5rem; }
+.legal-content p { font-family: var(--sans); font-size: 0.95rem; line-height: 1.75; color: var(--ink-body); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+.legal-content ul { font-family: var(--sans); font-size: 0.95rem; line-height: 1.75; color: var(--ink-body); margin-bottom: var(--space-sm); padding-left: 1.5rem; transition: color var(--theme-transition); }
+.legal-content li { margin-bottom: 0.4rem; }
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes btnShimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes brandSweep { 0% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.hero .eyebrow { animation: fadeUp 0.6s ease both 0.1s; }
+.hero h1 { animation: fadeUp 0.6s ease both 0.25s; }
+.hero-body { animation: fadeUp 0.6s ease both 0.4s; }
+/* Retro overrides */
+[data-theme="retro"] body { background: #e8e8e8; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px); }
+[data-theme="retro"] .nav-cta, [data-theme="retro"] .btn-primary-ed, [data-theme="retro"] .btn-secondary-ed, [data-theme="retro"] .theme-toggle { border-radius: 6px; }
+[data-theme="retro"] .btn-primary-ed { background: linear-gradient(180deg, #6db3f8 0%, #3B82F6 40%, #2563EB 60%, #1d4ed8 100%) !important; animation: none !important; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.15) inset, 0 2px 6px rgba(30,64,175,0.5); border: 1px solid #1a3c6e; color: #ffffff; text-shadow: 0 -1px 1px rgba(0,0,0,0.35); font-family: 'Droid Sans', Verdana, Tahoma, sans-serif; font-weight: 700; }
+[data-theme="retro"] .btn-primary-ed:hover { background: linear-gradient(180deg, #93C5FD 0%, #60A5FA 40%, #3B82F6 60%, #2563EB 100%) !important; animation: none !important; }
+[data-theme="retro"] .btn-secondary-ed { background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 40%, #e0e0e0 100%); border: 1px solid #aaaaaa; border-radius: 6px; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.12); color: #333333; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif; font-weight: 700; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
+[data-theme="retro"] .card-grid, [data-theme="retro"] .card-grid-2 { border-top: none; background: #ffffff; border-radius: 10px; box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 3px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #c0c0c0; overflow: hidden; padding: 0.5rem; }
+[data-theme="retro"] .grid-card { padding: 2.5rem 2rem !important; }
+[data-theme="retro"] .card-grid .grid-card:not(:last-child) { border-right-color: #d0d0d0 !important; }
+[data-theme="retro"] .card-grid-2 .grid-card:nth-child(odd) { border-right-color: #d0d0d0 !important; }
+[data-theme="retro"] .card-grid-2 .grid-card:nth-child(1), [data-theme="retro"] .card-grid-2 .grid-card:nth-child(2) { border-bottom-color: #d0d0d0 !important; }
+[data-theme="retro"] h1 { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-weight: 700; color: #222222; }
+[data-theme="retro"] h2 { font-family: 'Times New Roman', Georgia, serif !important; color: #333333; }
+[data-theme="retro"] h3 { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-weight: 700; color: #333333; }
+[data-theme="retro"] p { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-size: 0.9rem; line-height: 1.65; }
+[data-theme="retro"] .eyebrow { color: #1a5276; text-shadow: none; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-weight: 700; font-size: 0.65rem; letter-spacing: 0.22em; background: linear-gradient(180deg, #2563EB, #1a5276); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+[data-theme="retro"] .nav-wrapper { border-bottom: none; background: transparent; }
+[data-theme="retro"] nav { border-bottom: none; border-image: none; background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 40%, #d4d4d4 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.5) inset; border-bottom: 1px solid #aaaaaa; }
+[data-theme="retro"] .nav-links a { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif; font-weight: 700; font-size: 0.75rem; color: #555555; }
+[data-theme="retro"] .nav-links a:hover { color: #2563EB; }
+[data-theme="retro"] .nav-cta { background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%); border: 1px solid #aaaaaa; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 2px rgba(0,0,0,0.08); text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
+[data-theme="retro"] .nav-cta:hover { background: linear-gradient(180deg, #6db3f8 0%, #2563EB 100%); border-color: #1a3c6e; color: #ffffff !important; text-shadow: 0 -1px 0 rgba(0,0,0,0.2); }
+[data-theme="retro"] .hero { background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%); border-bottom: 1px solid #c0c0c0; }
+[data-theme="retro"] .hero h1 em { color: #2563EB; font-family: 'Times New Roman', Georgia, serif !important; }
+[data-theme="retro"] .grid-card-icon { color: #2563EB; filter: none; }
+[data-theme="retro"] .stat-number { color: #2563EB; font-family: 'Times New Roman', Georgia, serif !important; }
+[data-theme="retro"] .thesis-strip { background: linear-gradient(180deg, #34495e 0%, #2c3e50 30%, #1a252f 100%); border-top: 3px solid #5dade2; border-bottom: 3px solid #5dade2; box-shadow: 0 0 20px rgba(0,0,0,0.3) inset; }
+[data-theme="retro"] .thesis-strip .highlight { font-family: 'Times New Roman', Georgia, serif !important; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+[data-theme="retro"] .thesis-strip .punchline { background: linear-gradient(90deg, #5dade2 0%, #85c1e9 50%, #5dade2 100%) !important; background-size: 200% 100% !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; text-shadow: none !important; }
+[data-theme="retro"] footer { background: linear-gradient(180deg, #34495e 0%, #2c3e50 40%, #1a252f 100%); box-shadow: 0 -1px 0 rgba(255,255,255,0.05) inset; }
+[data-theme="retro"] footer p, [data-theme="retro"] footer a, [data-theme="retro"] footer h4 { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+[data-theme="retro"] .footer-tagline { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+[data-theme="retro"] .theme-toggle { background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%); border: 1px solid #aaaaaa; border-radius: 6px; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.1); }
+[data-theme="retro"] .theme-toggle:hover { border-color: #2563EB; color: #2563EB; background: linear-gradient(180deg, #f0f0f0 0%, #d8d8d8 100%); }
+[data-theme="retro"] .logo-svg .logo-dot-teal { fill: #2563EB; }
+[data-theme="retro"] .logo-svg .logo-dot-blue { fill: #0ea5e9; }
+[data-theme="retro"] .form-group label { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+/* Custom dot cursor */
+body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%232d7b70' opacity='0.9'/%3E%3Ccircle cx='10' cy='10' r='5.5' fill='none' stroke='%231c2228' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E") 10 10, default; }
+a, button, [onclick], .nav-cta, .btn-primary-ed, .btn-secondary-ed, .theme-toggle { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232d7b70' opacity='0.12'/%3E%3Ccircle cx='12' cy='12' r='5.5' fill='none' stroke='%232d7b70' stroke-width='1.5' opacity='0.85'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%232d7b70' opacity='0.9'/%3E%3C/svg%3E") 12 12, pointer; }
+[data-theme="dark"] body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%237CC4BA' opacity='0.9'/%3E%3Ccircle cx='10' cy='10' r='5.5' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E") 10 10, default; }
+[data-theme="dark"] a, [data-theme="dark"] button, [data-theme="dark"] [onclick], [data-theme="dark"] .nav-cta, [data-theme="dark"] .btn-primary-ed, [data-theme="dark"] .btn-secondary-ed, [data-theme="dark"] .theme-toggle { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%237CC4BA' opacity='0.12'/%3E%3Ccircle cx='12' cy='12' r='5.5' fill='none' stroke='%237CC4BA' stroke-width='1.5' opacity='0.85'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%237CC4BA' opacity='0.9'/%3E%3C/svg%3E") 12 12, pointer; }
+[data-theme="retro"] body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%232563EB' opacity='0.9'/%3E%3Ccircle cx='10' cy='10' r='5.5' fill='none' stroke='%231a3c6e' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E") 10 10, default; }
+[data-theme="retro"] a, [data-theme="retro"] button, [data-theme="retro"] [onclick], [data-theme="retro"] .nav-cta, [data-theme="retro"] .btn-primary-ed, [data-theme="retro"] .btn-secondary-ed, [data-theme="retro"] .theme-toggle { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232563EB' opacity='0.12'/%3E%3Ccircle cx='12' cy='12' r='5.5' fill='none' stroke='%232563EB' stroke-width='1.5' opacity='0.85'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%232563EB' opacity='0.9'/%3E%3C/svg%3E") 12 12, pointer; }
+/* Responsive */
 @media (max-width: 900px) {
   .nav-links a:not(.nav-cta) { display: none; }
   .nav-links { gap: 0.75rem; }
-  .service-row { grid-template-columns: 1fr; }
-  .service-label-col { padding-right: 0; margin-bottom: var(--space-md); }
-  .service-content-col { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: var(--space-md); }
-  .service-offerings { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
+  .card-grid .grid-card:not(:last-child) { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; }
+  .card-grid .grid-card:not(:first-child) { padding-left: 0; }
+  .card-grid-2 { grid-template-columns: 1fr; }
+  .card-grid-2 .grid-card:nth-child(odd) { border-right: none; padding-right: 0; }
+  .card-grid-2 .grid-card:nth-child(even) { padding-left: 0; }
+  .card-grid-2 .grid-card:nth-child(1), .card-grid-2 .grid-card:nth-child(2), .card-grid-2 .grid-card:nth-child(3) { border-bottom: 1px solid var(--rule); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+  .section { padding: var(--space-xl) 0; }
+  .hero { padding: var(--space-2xl) 0 var(--space-xl); }
+  .grid-section { padding: var(--space-xl) 0; }
 }
 @media (max-width: 600px) {
   .container { padding: 0 1.25rem; }
+  .section { padding: var(--space-lg) 0; }
+  .hero { padding: var(--space-xl) 0 var(--space-lg); }
+  .hero-body { font-size: 0.9rem; }
   nav { padding: 1rem 1.25rem; }
   .logo-svg { height: 22px; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .btn-primary-ed, .btn-secondary-ed { min-height: 44px; padding: 0.75rem 1.5rem; }
+  .nav-cta { min-height: 36px; }
+  [data-theme="retro"] .grid-card { padding: 1.75rem 1.25rem !important; }
 }
+
 </style>
-    <!-- RB2B Visitor Identification -->
-    <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0OV0VHYEER6Z");</script>
-  </head>
+</head>
 <body>
 
-<!-- NAVIGATION -->
+<div class="nav-wrapper">
 <nav>
   <a href="/" class="nav-logo">
     <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
-      <!-- Dot mark: 3x2 grid -->
       <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
       <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
       <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
       <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
       <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
       <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
-      <!-- Wordmark: "the" -->
       <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
       <path class="logo-text" d="M247.13,227.47v-44.82h9.34v44.82h-9.34ZM269.23,227.47v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
       <path class="logo-text" d="M300.61,228.09c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
-      <!-- Wordmark: "Channel" -->
       <path class="logo-text" d="M235.3,276.81c-3.32,0-6.25-.71-8.78-2.12-2.53-1.41-4.51-3.36-5.95-5.85-1.43-2.49-2.15-5.33-2.15-8.53s.72-6.04,2.15-8.53c1.43-2.49,3.41-4.44,5.95-5.85,2.53-1.41,5.46-2.12,8.78-2.12,2.78,0,5.28.51,7.5,1.53,2.22,1.02,4.05,2.42,5.48,4.2,1.43,1.78,2.36,3.88,2.77,6.29h-9.03c-.46-1.53-1.28-2.7-2.46-3.49-1.18-.79-2.56-1.18-4.14-1.18-1.49,0-2.79.37-3.89,1.12-1.1.75-1.94,1.81-2.52,3.18-.58,1.37-.87,2.99-.87,4.86s.29,3.49.87,4.86c.58,1.37,1.42,2.43,2.52,3.18,1.1.75,2.4,1.12,3.89,1.12,1.58,0,2.96-.39,4.14-1.18,1.18-.79,2-1.95,2.46-3.49h9.03c-.41,2.41-1.34,4.5-2.77,6.29-1.43,1.78-3.26,3.19-5.48,4.2-2.22,1.02-4.72,1.53-7.5,1.53Z"/>
       <path class="logo-text" d="M255.91,276.19v-44.82h9.34v44.82h-9.34ZM278.01,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
       <path class="logo-text" d="M302.54,276.81c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM313.62,276.19c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
@@ -347,7 +390,6 @@ footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--spac
       <path class="logo-text" d="M367.72,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM389.82,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
       <path class="logo-text" d="M421.2,276.81c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
       <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
-      <!-- Wordmark: "Standard" -->
       <path class="logo-text" d="M233.75,325.53c-4.65,0-8.34-.93-11.08-2.8-2.74-1.87-4.23-4.44-4.48-7.72h8.34c.21,1.41.92,2.48,2.15,3.21,1.22.73,2.92,1.09,5.07,1.09,1.95,0,3.37-.28,4.26-.84.89-.56,1.34-1.36,1.34-2.4,0-.79-.26-1.4-.78-1.84-.52-.44-1.46-.8-2.83-1.09l-5.1-1.06c-3.78-.79-6.56-1.98-8.34-3.58-1.78-1.6-2.68-3.66-2.68-6.19,0-3.07,1.18-5.47,3.55-7.19,2.37-1.72,5.67-2.58,9.9-2.58s7.53.84,10.02,2.52c2.49,1.68,3.86,4.02,4.11,7h-8.34c-.17-1.08-.75-1.9-1.74-2.46-1-.56-2.41-.84-4.23-.84-1.66,0-2.89.24-3.7.72-.81.48-1.21,1.15-1.21,2.02,0,.75.33,1.34,1,1.77.66.44,1.76.82,3.3,1.15l5.73,1.18c3.2.66,5.61,1.9,7.25,3.7,1.64,1.81,2.46,3.93,2.46,6.38,0,3.11-1.21,5.53-3.64,7.25-2.43,1.72-5.86,2.58-10.3,2.58Z"/>
       <path class="logo-text" d="M249.31,300.26v-7.1h23.47v7.1h-23.47ZM267.24,325.59c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
       <path class="logo-text" d="M286.66,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM297.74,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
@@ -360,179 +402,143 @@ footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--spac
   </a>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/insights">Insights</a>
     <a href="/services">Services</a>
     <a href="/talent">Talent</a>
     <a href="/jobs">Jobs</a>
+    <a href="/community">Community</a>
     <a href="/companion">Companion</a>
+    <a href="/companion-waitlist">Companion Wait List</a>
     <a href="/contact">Contact</a>
+    <a href="#" class="nav-cta">Book a Meeting</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="retro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    </button>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" hint="Toggle dark mode">
-    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    <svg class="retro-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-  </button>
 </nav>
+</div>
 
 <!-- HERO -->
-<section class="page-hero">
+<section class="hero section">
   <div class="container">
-    <p class="eyebrow">Current Openings</p>
-    <h1>Channel Jobs. <em>Curated.</em></h1>
-    <p class="hero-sub">Join leading companies in the channel ecosystem. We connect top talent with organizations that value expertise, relationships, and measurable results.</p>
-  </div>
-</section>
-
-<style>
-.jobs-section { padding: var(--space-2xl) 0; }
-.jobs-label { font-family: var(--sans); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-lg); padding-bottom: var(--space-sm); border-bottom: 2px solid var(--ink); transition: color var(--theme-transition), border-color var(--theme-transition); }
-[data-theme="dark"] .jobs-label { border-bottom-color: var(--accent); }
-.job-card { border-top: 1px solid var(--rule); padding: var(--space-lg) 0; display: grid; grid-template-columns: 1fr auto; gap: var(--space-md); align-items: start; transition: border-color var(--theme-transition); }
-.job-title { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.3rem; transition: color var(--theme-transition); }
-.job-company { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.75rem; transition: color var(--theme-transition); }
-.job-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
-.job-tag { font-family: var(--sans); font-size: 0.75rem; color: var(--gray-500); background: var(--bg-elevated); padding: 0.2rem 0.6rem; border: 1px solid var(--rule-light); transition: all var(--theme-transition); }
-.job-desc { font-family: var(--sans); font-size: 0.9rem; line-height: 1.6; color: var(--ink-muted); max-width: 600px; transition: color var(--theme-transition); }
-.btn-job { display: inline-block; font-family: var(--sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; color: var(--ink); border: 1px solid var(--rule); padding: 0.5rem 1.25rem; transition: all 0.2s ease; white-space: nowrap; }
-.btn-job:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.featured-badge { display: inline-block; font-family: var(--sans); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.15rem 0.5rem; margin-bottom: 0.5rem; transition: all var(--theme-transition); }
-.btn-apply { display: inline-block; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; color: var(--btn-color); background: var(--btn-bg); border: 1px solid var(--btn-border); padding: 0.5rem 1.25rem; transition: all 0.2s ease; white-space: nowrap; cursor: pointer; }
-.btn-apply:hover { opacity: 0.85; }
-/* Application Modal */
-.app-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1000; align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; }
-.app-overlay.open { display: flex; }
-.app-modal { background: var(--bg); border: 1px solid var(--rule); width: 100%; max-width: 640px; position: relative; margin: auto; transition: background var(--theme-transition), border-color var(--theme-transition); }
-[data-theme="dark"] .app-modal { background: var(--bg-elevated); }
-.app-modal-header { padding: 1.75rem 2rem 1.25rem; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; transition: border-color var(--theme-transition); }
-.app-modal-header-text h2 { font-family: var(--sans); font-weight: 700; font-size: 1.35rem; color: var(--ink); transition: color var(--theme-transition); }
-.app-modal-header-text p { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.3rem; transition: color var(--theme-transition); }
-.app-modal-close { background: none; border: 1px solid var(--rule); cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); flex-shrink: 0; transition: all 0.2s; }
-.app-modal-close:hover { border-color: var(--ink); color: var(--ink); }
-.app-modal-body { padding: 1.75rem 2rem 2rem; max-height: 72vh; overflow-y: auto; }
-.app-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-.app-form-group { margin-bottom: 1rem; }
-.app-form-group label { display: block; font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
-.app-form-group label .req { color: var(--accent); }
-.app-form-group input, .app-form-group select, .app-form-group textarea { width: 100%; font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); padding: 0.6rem 0.85rem; outline: none; transition: border-color 0.2s, background var(--theme-transition), color var(--theme-transition); -webkit-appearance: none; appearance: none; }
-[data-theme="dark"] .app-form-group input, [data-theme="dark"] .app-form-group select, [data-theme="dark"] .app-form-group textarea { background: var(--bg); }
-.app-form-group input:focus, .app-form-group select:focus, .app-form-group textarea:focus { border-color: var(--accent); }
-.app-form-group textarea { resize: vertical; min-height: 90px; }
-.app-checkbox-row { display: flex; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
-.app-checkbox-label { display: flex; align-items: center; gap: 0.5rem; font-family: var(--sans); font-size: 0.9rem; color: var(--ink); cursor: pointer; transition: color var(--theme-transition); }
-.app-checkbox-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
-.app-section-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; margin-top: 0.25rem; transition: color var(--theme-transition); }
-.app-tsd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
-.app-tsd-item { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 0.5rem; }
-.app-tsd-item span { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-muted); transition: color var(--theme-transition); }
-.app-tsd-item input { font-family: var(--sans); font-size: 0.85rem; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); padding: 0.45rem 0.7rem; outline: none; transition: border-color 0.2s, background var(--theme-transition); }
-.app-tsd-item input:focus { border-color: var(--accent); }
-.app-upload-area { border: 1px dashed var(--rule); padding: 1.25rem; text-align: center; cursor: pointer; transition: border-color 0.2s; }
-.app-upload-area:hover { border-color: var(--accent); }
-.app-upload-area svg { display: block; margin: 0 auto 0.5rem; color: var(--ink-muted); }
-.app-upload-area span { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-muted); transition: color var(--theme-transition); }
-.app-file-name { font-family: var(--sans); font-size: 0.8rem; color: var(--accent); margin-top: 0.4rem; text-align: center; }
-.app-upload-hint { font-family: var(--sans); font-size: 0.72rem; color: var(--gray-500); margin-top: 0.3rem; text-align: center; }
-.app-submit-btn { width: 100%; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; color: var(--btn-color); background: linear-gradient(90deg, #0F1115 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #0F1115 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; border: none; padding: 1rem; cursor: pointer; margin-top: 1.25rem; transition: opacity 0.2s; }
-[data-theme="dark"] .app-submit-btn { background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 30%, #8dc5bf 50%, #93D4CB 70%, #7CC4BA 100%); background-size: 200% 100%; color: #0C0D11; }
-.app-submit-btn:hover { opacity: 0.85; }
-.app-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.app-status { font-family: var(--sans); font-size: 0.85rem; margin-top: 0.75rem; text-align: center; min-height: 1.2em; }
-.app-status.error { color: #e95a5b; }
-.app-confirm { display: none; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; text-align: center; }
-.app-confirm-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
-.app-confirm h3 { font-family: var(--sans); font-weight: 700; font-size: 1.3rem; color: var(--ink); margin-bottom: 0.5rem; transition: color var(--theme-transition); }
-.app-confirm p { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-muted); max-width: 360px; transition: color var(--theme-transition); }
-@media (max-width: 600px) { .job-card { grid-template-columns: 1fr; } .app-form-row { grid-template-columns: 1fr; } .app-tsd-grid { grid-template-columns: 1fr; } }
-</style>
-
-<section class="jobs-section">
-  <div class="container">
-    <p class="jobs-label">&#9733; Featured Opportunities</p>
-    <div class="job-card">
-      <div><span class="featured-badge">Featured</span><div class="job-title">Channel Manager</div><div class="job-company">Confidential</div><div class="job-meta"><span class="job-tag">East of Mississippi</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 9 days ago</span></div><p class="job-desc">A fast-growing telecommunications provider is seeking a Channel Manager to drive partner engagement, revenue growth, and market expansion through the indirect sales ecosystem.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><span class="featured-badge">Featured</span><div class="job-title">Channel Manager</div><div class="job-company">Confidential</div><div class="job-meta"><span class="job-tag">Georgia &ndash; South Carolina</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 9 days ago</span></div><p class="job-desc">A fast-growing telecommunications provider is seeking a Channel Manager to drive partner engagement, revenue growth, and market expansion through the indirect sales ecosystem.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><span class="featured-badge">Featured</span><div class="job-title">Channel Manager</div><div class="job-company">Confidential</div><div class="job-meta"><span class="job-tag">California</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 9 days ago</span></div><p class="job-desc">Build, develop, and manage relationships with Trusted Advisors, TSDs, and key partner organizations. Drive partner enablement through training, webinars, joint selling, and ongoing communication.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><span class="featured-badge">Featured</span><div class="job-title">Sales Engineer</div><div class="job-company">Confidential</div><div class="job-meta"><span class="job-tag">Chicago</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 9 days ago</span></div><p class="job-desc">We are seeking a customer-focused Sales Engineer to support enterprise and mid-market opportunities across voice, connectivity, cloud, CX, and security solutions.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
+    <div class="hero-content">
+      <p class="eyebrow">Open Roles</p>
+      <h1>Build the future of <em>the channel.</em></h1>
+      <p class="hero-body">The Channel Standard is a small, focused team building intelligence tools for the technology channel. We are looking for people who are curious about how the channel actually works and want to help make it work better.</p>
     </div>
   </div>
 </section>
 
-<section class="jobs-section" style="border-top:1px solid var(--rule);padding-top:var(--space-2xl);">
+<!-- OPEN ROLES -->
+<section class="grid-section">
   <div class="container">
-    <p class="jobs-label">More Channel Roles</p>
-    <div class="job-card">
-      <div><div class="job-title">Channel Sales Manager &ndash; Telecom Data Networking</div><div class="job-company">APX Net, Inc.</div><div class="job-meta"><span class="job-tag">Watertown, South Dakota</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 5 days ago</span></div><p class="job-desc">A growing telecommunications organization is seeking an experienced Channel Sales Manager to generate new business and manage agent relationships.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
+    <div class="section-head">
+      <p class="eyebrow">Current openings</p>
+      <h2>We are hiring for these roles now.</h2>
+      <p>All roles are remote-first. We value channel experience over credentials, and clear thinking over credentials.</p>
     </div>
-    <div class="job-card">
-      <div><div class="job-title">Regional Channel Manager</div><div class="job-company">Granite Telecommunications</div><div class="job-meta"><span class="job-tag">California</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 5 days ago</span></div><p class="job-desc">We are looking to hire a Regional Channel Manager to join our successful Channel Sales team. If you are a highly driven and self-motivated sales professional with a passion for the channel, we want to hear from you.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><div class="job-title">Partner Enablement Manager</div><div class="job-company">TPx Communications</div><div class="job-meta"><span class="job-tag">Maryland</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 5 days ago</span></div><p class="job-desc">The Partner Enablement Manager empowers TPx&rsquo;s channel partners to effectively position, sell, and support TPx&rsquo;s managed IT, cloud, connectivity, and cybersecurity solutions.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><div class="job-title">Partner CS Enablement Manager</div><div class="job-company">Zoom</div><div class="job-meta"><span class="job-tag">Remote</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 5 days ago</span></div><p class="job-desc">Zoom is seeking a strategic and execution-oriented Enablement Manager to design, build, and scale learning programs that power the success of our Partner Success team.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><div class="job-title">Channel Sales Manager</div><div class="job-company">WOW! Internet, Cable &amp; Phone</div><div class="job-meta"><span class="job-tag">Belleair, Florida</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 5 days ago</span></div><p class="job-desc">WOW! is currently hiring a Channel Sales Manager responsible for directly interfacing with assigned and prospective agent partners to grow revenue.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><div class="job-title">Channel Account Manager, West</div><div class="job-company">NinjaOne</div><div class="job-meta"><span class="job-tag">Washington, D.C.</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 5 days ago</span></div><p class="job-desc">The Channel Account Manager at NinjaOne owns the growth and success of our partner ecosystem within a defined region, focused on identifying, onboarding, and activating high-value partners.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><div class="job-title">ZCX Strategic Channel Manager</div><div class="job-company">Zoom</div><div class="job-meta"><span class="job-tag">New Jersey</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 5 days ago</span></div><p class="job-desc">We are seeking a talented Strategic Channel Manager with deep specialized experience in Customer Experience (CCaaS).</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><div class="job-title">Channel Partner Marketing Manager</div><div class="job-company">Confidential</div><div class="job-meta"><span class="job-tag">Indianapolis, IN or Remote</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 7 days ago</span></div><p class="job-desc">The Channel Partner Marketing Manager is responsible for developing and executing the partner co-marketing strategy to expand brand presence and support demand generation.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
-    </div>
-    <div class="job-card">
-      <div><div class="job-title">Channel Manager / Channel Director</div><div class="job-company">CommandLink</div><div class="job-meta"><span class="job-tag">Remote</span><span class="job-tag">Full-time</span><span class="job-tag">Posted 9 days ago</span></div><p class="job-desc">CommandLink is a global SaaS Platform providing network, voice services, and IT security solutions, helping corporations consolidate their core infrastructure into a single vendor.</p></div>
-      <div><button class="btn-apply" onclick="openAppModal()">Apply Now</button></div>
+
+    <div class="card-grid-2">
+      <div class="grid-card">
+        <div class="grid-card-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="10" height="10" rx="1"/>
+            <rect x="18" y="4" width="10" height="10" rx="1"/>
+            <rect x="4" y="18" width="10" height="10" rx="1"/>
+            <rect x="18" y="18" width="10" height="10" rx="1"/>
+          </svg>
+        </div>
+        <h3>Channel Partnerships Lead</h3>
+        <p>Own relationships with master agents, distributors, and key suppliers. You will be the first dedicated channel hire, which means you will shape how we show up in the market. Requires 5+ years in the technology channel.</p>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 3H9a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9l-6-6z"/>
+            <polyline points="19 3 19 9 25 9"/>
+            <line x1="12" y1="15" x2="20" y2="15"/>
+            <line x1="12" y1="19" x2="18" y2="19"/>
+          </svg>
+        </div>
+        <h3>Content and Research Lead</h3>
+        <p>Write the analysis, research, and editorial content that makes The Channel Standard the most credible voice in the channel. You understand the difference between content marketing and journalism. Channel background strongly preferred.</p>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="12"/>
+            <polygon points="20.24 11.76 18 18 11.76 20.24 14 14 20.24 11.76" fill="none"/>
+          </svg>
+        </div>
+        <h3>Product Designer</h3>
+        <p>Design the interfaces that advisors and suppliers use every day. You care about information architecture, not just visual polish. Experience with data-heavy B2B products preferred.</p>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 6h16M8 12h16M8 18h10"/>
+            <circle cx="24" cy="22" r="4"/>
+            <line x1="27" y1="25" x2="30" y2="28"/>
+          </svg>
+        </div>
+        <h3>ML Engineer</h3>
+        <p>Build the matching and recommendation systems that power Channel Companion. You will work on retrieval, ranking, and explainability, not just model training. Experience with production LLM systems required.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA STRIP -->
-<section class="cta-strip">
+<!-- THESIS STRIP -->
+<section class="thesis-strip">
   <div class="container">
-    <h2>Don't See the Right Role?</h2>
-    <p>Join our talent network and we'll notify you when positions matching your expertise become available.</p>
-    <a href="/contact" class="btn-primary-ed"><span class="btn-label">Join Talent Network</span> <span class="arrow">&rarr;</span></a>
+    <blockquote>
+      <span class="highlight">We are not building another SaaS tool. We are building the intelligence layer the channel has never had.</span>
+      <span class="punchline">From guesswork to intelligence.</span>
+    </blockquote>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Interested in joining the team?</h2>
+    <div class="cta-group">
+      <a href="/contact" class="btn-primary-ed"><span class="btn-label">Apply Now</span> <span class="arrow">&rarr;</span></a>
+      <a href="/companion" class="btn-secondary-ed">See What We Are Building</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" class="footer-logo">
         <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
-          <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
-          <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
-          <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
-          <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
-          <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
-          <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
-          <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
-          <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
-          <path class="logo-text" d="M441.99,324.91v-44.82h9.34v44.82h-9.34Z"/>
+      <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+      <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+      <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M247.13,227.47v-44.82h9.34v44.82h-9.34ZM269.23,227.47v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M300.61,228.09c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M235.3,276.81c-3.32,0-6.25-.71-8.78-2.12-2.53-1.41-4.51-3.36-5.95-5.85-1.43-2.49-2.15-5.33-2.15-8.53s.72-6.04,2.15-8.53c1.43-2.49,3.41-4.44,5.95-5.85,2.53-1.41,5.46-2.12,8.78-2.12,2.78,0,5.28.51,7.5,1.53,2.22,1.02,4.05,2.42,5.48,4.2,1.43,1.78,2.36,3.88,2.77,6.29h-9.03c-.46-1.53-1.28-2.7-2.46-3.49-1.18-.79-2.56-1.18-4.14-1.18-1.49,0-2.79.37-3.89,1.12-1.1.75-1.94,1.81-2.52,3.18-.58,1.37-.87,2.99-.87,4.86s.29,3.49.87,4.86c.58,1.37,1.42,2.43,2.52,3.18,1.1.75,2.4,1.12,3.89,1.12,1.58,0,2.96-.39,4.14-1.18,1.18-.79,2-1.95,2.46-3.49h9.03c-.41,2.41-1.34,4.5-2.77,6.29-1.43,1.78-3.26,3.19-5.48,4.2-2.22,1.02-4.72,1.53-7.5,1.53Z"/>
+      <path class="logo-text" d="M255.91,276.19v-44.82h9.34v44.82h-9.34ZM278.01,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M302.54,276.81c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM313.62,276.19c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M329.18,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM351.28,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M367.72,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM389.82,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M421.2,276.81c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+      <path class="logo-text" d="M233.75,325.53c-4.65,0-8.34-.93-11.08-2.8-2.74-1.87-4.23-4.44-4.48-7.72h8.34c.21,1.41.92,2.48,2.15,3.21,1.22.73,2.92,1.09,5.07,1.09,1.95,0,3.37-.28,4.26-.84.89-.56,1.34-1.36,1.34-2.4,0-.79-.26-1.4-.78-1.84-.52-.44-1.46-.8-2.83-1.09l-5.1-1.06c-3.78-.79-6.56-1.98-8.34-3.58-1.78-1.6-2.68-3.66-2.68-6.19,0-3.07,1.18-5.47,3.55-7.19,2.37-1.72,5.67-2.58,9.9-2.58s7.53.84,10.02,2.52c2.49,1.68,3.86,4.02,4.11,7h-8.34c-.17-1.08-.75-1.9-1.74-2.46-1-.56-2.41-.84-4.23-.84-1.66,0-2.89.24-3.7.72-.81.48-1.21,1.15-1.21,2.02,0,.75.33,1.34,1,1.77.66.44,1.76.82,3.3,1.15l5.73,1.18c3.2.66,5.61,1.9,7.25,3.7,1.64,1.81,2.46,3.93,2.46,6.38,0,3.11-1.21,5.53-3.64,7.25-2.43,1.72-5.86,2.58-10.3,2.58Z"/>
+      <path class="logo-text" d="M249.31,300.26v-7.1h23.47v7.1h-23.47ZM267.24,325.59c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M286.66,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM297.74,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M313.31,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM335.41,324.91v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M374.32,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM366.85,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
+      <path class="logo-text" d="M399.84,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM410.92,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M426.49,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM435.82,308.35l-.81-7.53c.75-2.7,1.97-4.75,3.67-6.16,1.7-1.41,3.82-2.12,6.35-2.12.79,0,1.37.08,1.74.25v8.72c-.21-.08-.5-.13-.87-.16-.37-.02-.83-.03-1.37-.03-2.99,0-5.19.53-6.6,1.59-1.41,1.06-2.12,2.87-2.12,5.45Z"/>
+      <path class="logo-text" d="M473.18,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM465.71,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
         </svg>
       </a>
       <p class="footer-tagline" id="footer-tagline">From guesswork to intelligence.</p>
@@ -540,10 +546,10 @@ footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--spac
     <div class="footer-col">
       <h4>Product</h4>
       <a href="/companion">Channel Companion</a>
+      <a href="/companion-waitlist">Wait List</a>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
-      <a href="/insights">Insights</a>
       <a href="/services">Advisory</a>
       <a href="/talent">Talent</a>
       <a href="/jobs">Jobs</a>
@@ -551,161 +557,18 @@ footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--spac
     <div class="footer-col">
       <h4>Connect</h4>
       <a href="/contact">Contact</a>
-      <a href="https://www.linkedin.com/company/the-channel-standard/" target="_blank">LinkedIn</a>
-      <a href="https://www.youtube.com/@thechannelstandard" target="_blank">YouTube</a>
+      <a href="/community">Community</a>
+      <a href="#">LinkedIn</a>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 The Channel Standard. All rights reserved.</p>
     <div class="footer-bottom-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms-of-service">Terms</a>
     </div>
   </div>
 </footer>
-
-<!-- APPLICATION MODAL -->
-<div class="app-overlay" id="app-overlay" onclick="handleOverlayClick(event)">
-  <div class="app-modal" id="app-modal">
-    <div class="app-modal-header">
-      <div class="app-modal-header-text">
-        <h2>Submit Your Application</h2>
-        <p>Fill out the form below and upload your resume to start the conversation.</p>
-      </div>
-      <button class="app-modal-close" onclick="closeAppModal()" aria-label="Close">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
-          <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
-        </svg>
-      </button>
-    </div>
-    <div class="app-modal-body">
-      <form id="app-form" onsubmit="submitAppForm(event)">
-        <div class="app-form-row">
-          <div class="app-form-group">
-            <label for="app-first">First Name <span class="req">*</span></label>
-            <input type="text" id="app-first" placeholder="John" required />
-          </div>
-          <div class="app-form-group">
-            <label for="app-last">Last Name <span class="req">*</span></label>
-            <input type="text" id="app-last" placeholder="Doe" required />
-          </div>
-        </div>
-        <div class="app-form-group">
-          <label for="app-email">Email Address <span class="req">*</span></label>
-          <input type="email" id="app-email" placeholder="john@company.com" required />
-        </div>
-        <div class="app-form-group">
-          <label for="app-phone">Phone Number <span class="req">*</span></label>
-          <input type="tel" id="app-phone" placeholder="(555) 123-4567" required />
-        </div>
-        <div class="app-checkbox-row">
-          <label class="app-checkbox-label">
-            <input type="checkbox" id="app-acw" />
-            ACW Member
-          </label>
-          <label class="app-checkbox-label">
-            <input type="checkbox" id="app-quiet" />
-            Quietly Looking
-          </label>
-        </div>
-        <div class="app-form-group">
-          <label for="app-linkedin">LinkedIn URL</label>
-          <input type="url" id="app-linkedin" placeholder="https://linkedin.com/in/yourprofile" />
-        </div>
-        <div class="app-form-row">
-          <div class="app-form-group">
-            <label for="app-salary">Salary Requirements</label>
-            <input type="text" id="app-salary" placeholder="$100,000" />
-          </div>
-          <div class="app-form-group">
-            <label for="app-ote">OTE ($)</label>
-            <input type="text" id="app-ote" placeholder="$150,000" />
-          </div>
-        </div>
-        <div class="app-form-row">
-          <div class="app-form-group">
-            <label for="app-state">State</label>
-            <input type="text" id="app-state" placeholder="CA" />
-          </div>
-          <div class="app-form-group">
-            <label for="app-travel">Travel Willingness</label>
-            <select id="app-travel">
-              <option value="">Select %</option>
-              <option value="0%">0%</option>
-              <option value="10%">10%</option>
-              <option value="25%">25%</option>
-              <option value="50%">50%</option>
-              <option value="75%">75%</option>
-              <option value="100%">100%</option>
-            </select>
-          </div>
-        </div>
-        <p class="app-section-label">TSD Relationships (Rank 1–5, 1=Strongest)</p>
-        <div class="app-tsd-grid">
-          <div class="app-tsd-item"><span>Telarus</span><input type="text" id="app-tsd-telarus" placeholder="1-5" /></div>
-          <div class="app-tsd-item"><span>Avant</span><input type="text" id="app-tsd-avant" placeholder="1-5" /></div>
-          <div class="app-tsd-item"><span>Intelisys</span><input type="text" id="app-tsd-intelisys" placeholder="1-5" /></div>
-          <div class="app-tsd-item"><span>Sandler</span><input type="text" id="app-tsd-sandler" placeholder="1-5" /></div>
-          <div class="app-tsd-item"><span>AppDirect</span><input type="text" id="app-tsd-appdirect" placeholder="1-5" /></div>
-        </div>
-        <div class="app-form-group">
-          <label for="app-questions">Any questions?</label>
-          <textarea id="app-questions" placeholder="Share any questions or additional information..."></textarea>
-        </div>
-        <div class="app-form-row">
-          <div class="app-form-group">
-            <label for="app-ecosystem">Ecosystem Type <span class="req">*</span></label>
-            <select id="app-ecosystem" required>
-              <option value="">Select your role</option>
-              <option value="Trusted Advisor">Trusted Advisor</option>
-              <option value="Supplier">Supplier</option>
-              <option value="TSD">TSD</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="app-form-group">
-            <label for="app-expertise">Expertise <span class="req">*</span></label>
-            <select id="app-expertise" required>
-              <option value="">Select expertise</option>
-              <option value="Channel Sales">Channel Sales</option>
-              <option value="Channel Marketing">Channel Marketing</option>
-              <option value="Channel Operations">Channel Operations</option>
-              <option value="Partner Enablement">Partner Enablement</option>
-              <option value="Sales Engineering">Sales Engineering</option>
-              <option value="Leadership / Executive">Leadership / Executive</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="app-form-group">
-          <label>Resume (Optional)</label>
-          <div class="app-upload-area" onclick="document.getElementById('app-resume-input').click()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="17 8 12 3 7 8"/>
-              <line x1="12" y1="3" x2="12" y2="15"/>
-            </svg>
-            <span>Upload Resume (PDF or Word)</span>
-          </div>
-          <input type="file" id="app-resume-input" accept=".pdf,.doc,.docx" style="display:none" onchange="handleResumeSelect(this)" />
-          <div class="app-file-name" id="app-file-name"></div>
-          <div class="app-upload-hint">Maximum file size: 5MB</div>
-        </div>
-        <button type="submit" class="app-submit-btn" id="app-submit-btn">Submit</button>
-        <div class="app-status" id="app-status"></div>
-      </form>
-      <div class="app-confirm" id="app-confirm">
-        <div class="app-confirm-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-        </div>
-        <h3>Application Received</h3>
-        <p>Thank you for applying. Our team will review your submission and be in touch shortly.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
 var themes = ['light', 'dark', 'retro'];
@@ -716,127 +579,38 @@ function toggleTheme() {
   var next = themes[(idx + 1) % themes.length];
   html.setAttribute('data-theme', next);
 }
-
-// Application Modal
-var appResumeUrl = '';
-var appResumeFileName = '';
-
-function openAppModal() {
-  document.getElementById('app-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  // Reset form state
-  document.getElementById('app-form').style.display = '';
-  document.getElementById('app-confirm').style.display = 'none';
-  document.getElementById('app-status').textContent = '';
-  document.getElementById('app-status').className = 'app-status';
-}
-
-function closeAppModal() {
-  document.getElementById('app-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function handleOverlayClick(e) {
-  if (e.target === document.getElementById('app-overlay')) closeAppModal();
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeAppModal();
-});
-
-function handleResumeSelect(input) {
-  var file = input.files[0];
-  if (!file) return;
-  if (file.size > 5 * 1024 * 1024) {
-    document.getElementById('app-file-name').textContent = 'File too large (max 5MB)';
-    document.getElementById('app-file-name').style.color = '#e95a5b';
-    input.value = '';
-    return;
+(function() {
+  function applyPop(el) {
+    if (el.classList.contains('pop')) return;
+    el.classList.remove('fade-back');
+    el.classList.add('pop');
+    setTimeout(function() {
+      el.classList.remove('pop');
+      el.classList.add('fade-back');
+      var targets = [el];
+      el.querySelectorAll('.btn-label').forEach(function(c) { targets.push(c); });
+      if (el.classList.contains('footer-tagline')) targets.push(el);
+      targets.forEach(function(t) {
+        t.style.background = '';
+        t.style.webkitBackgroundClip = '';
+        t.style.backgroundClip = '';
+        t.style.webkitTextFillColor = '';
+      });
+    }, 1800);
+    setTimeout(function() { el.classList.remove('fade-back'); }, 2600);
   }
-  document.getElementById('app-file-name').textContent = file.name;
-  document.getElementById('app-file-name').style.color = '';
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    appResumeUrl = e.target.result;
-    appResumeFileName = file.name;
-  };
-  reader.readAsDataURL(file);
-}
-
-function submitAppForm(e) {
-  e.preventDefault();
-  var btn = document.getElementById('app-submit-btn');
-  var status = document.getElementById('app-status');
-  btn.disabled = true;
-  btn.textContent = 'Submitting…';
-  status.textContent = '';
-  status.className = 'app-status';
-
-  var payload = {
-    formType: 'job_application',
-    firstName: document.getElementById('app-first').value.trim(),
-    lastName: document.getElementById('app-last').value.trim(),
-    email: document.getElementById('app-email').value.trim(),
-    phone: document.getElementById('app-phone').value.trim(),
-    acwMember: document.getElementById('app-acw').checked,
-    quietlyLooking: document.getElementById('app-quiet').checked,
-    linkedinUrl: document.getElementById('app-linkedin').value.trim(),
-    salaryRequirements: document.getElementById('app-salary').value.trim(),
-    ote: document.getElementById('app-ote').value.trim(),
-    state: document.getElementById('app-state').value.trim(),
-    travelWillingness: document.getElementById('app-travel').value,
-    tsdRankings: {
-      telarus: document.getElementById('app-tsd-telarus').value.trim(),
-      avant: document.getElementById('app-tsd-avant').value.trim(),
-      intelisys: document.getElementById('app-tsd-intelisys').value.trim(),
-      sandler: document.getElementById('app-tsd-sandler').value.trim(),
-      appDirect: document.getElementById('app-tsd-appdirect').value.trim()
-    },
-    questions: document.getElementById('app-questions').value.trim(),
-    ecosystemType: document.getElementById('app-ecosystem').value,
-    expertise: document.getElementById('app-expertise').value
-  };
-
-  // Upload resume first if selected, then submit
-  function doSubmit(resumeUrl, resumeFileName) {
-    if (resumeUrl) { payload.resumeUrl = resumeUrl; payload.resumeFileName = resumeFileName; }
-    fetch('/api/trpc/bookings.create', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({ json: payload })
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (data && data.result) {
-        document.getElementById('app-form').style.display = 'none';
-        document.getElementById('app-confirm').style.display = 'flex';
-      } else {
-        throw new Error('Submission failed');
-      }
-    })
-    .catch(function() {
-      status.textContent = 'Something went wrong. Please try again.';
-      status.className = 'app-status error';
-      btn.disabled = false;
-      btn.textContent = 'Submit';
+  var tagline = document.getElementById('footer-tagline');
+  if (tagline) tagline.addEventListener('click', function() { applyPop(tagline); });
+  document.querySelectorAll('.btn-primary-ed').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      applyPop(btn);
+      var href = btn.getAttribute('href');
+      if (href && href !== '#') setTimeout(function() { window.location.href = href; }, 600);
     });
-  }
-
-  if (appResumeUrl) {
-    fetch('/api/upload-resume', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({ fileName: appResumeFileName, fileData: appResumeUrl, mimeType: appResumeFileName.endsWith('.pdf') ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' })
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(d) { doSubmit(d.url, appResumeFileName); })
-    .catch(function() { doSubmit('', ''); });
-  } else {
-    doSubmit('', '');
-  }
-}
+  });
+})();
 </script>
+
 </body>
 </html>

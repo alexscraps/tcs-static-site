@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact | The Channel Standard</title>
-<meta name="description" content="Get in touch with The Channel Standard. Book a meeting, ask about services, or send us a message." />
+<title>Community | The Channel Standard</title>
+<meta name="description" content="The Channel Standard community for advisors, suppliers, and channel leaders. Real conversations, research, and peer network." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -366,8 +366,6 @@ a, button, [onclick], .nav-cta, .btn-primary-ed, .btn-secondary-ed, .theme-toggl
   [data-theme="retro"] .grid-card { padding: 1.75rem 1.25rem !important; }
 }
 
-.form-section { padding: var(--space-2xl) 0; border-bottom: 1px solid var(--rule); }
-
 </style>
 </head>
 <body>
@@ -425,70 +423,73 @@ a, button, [onclick], .nav-cta, .btn-primary-ed, .btn-secondary-ed, .theme-toggl
 <section class="hero section">
   <div class="container">
     <div class="hero-content">
-      <p class="eyebrow">Contact</p>
-      <h1>Let's talk about <em>your channel.</em></h1>
-      <p class="hero-body">Whether you want to book a meeting, ask about services, discuss a partnership, or just have a question about the channel, we are easy to reach and quick to respond.</p>
+      <p class="eyebrow">Community</p>
+      <h1>Where channel professionals <em>think out loud.</em></h1>
+      <p class="hero-body">The Channel Standard community is for advisors, suppliers, and channel leaders who want to discuss what is actually happening in the channel, not just what the press releases say. No vendor pitches. No pay-to-play content. Just people who know this business talking honestly about it.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT FORM -->
-<section class="form-section">
+<!-- COMMUNITY GRID -->
+<section class="grid-section">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">Get in touch</p>
-      <h2>Send us a message.</h2>
-      <p>We respond to every message within one business day. No auto-responders, no ticket queues.</p>
+      <p class="eyebrow">What the community is</p>
+      <h2>A space for honest channel conversation.</h2>
+      <p>We are building a community that reflects the intelligence we bring to everything else at The Channel Standard.</p>
     </div>
-    <div class="form-wrap">
-      <form onsubmit="handleContactSubmit(event)">
-        <div class="form-group">
-          <label for="ct-first-name">First Name <span style="color:var(--accent)">*</span></label>
-          <input type="text" id="ct-first-name" name="first_name" required placeholder="Alex" />
+
+    <div class="card-grid">
+      <div class="grid-card">
+        <div class="grid-card-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H9l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/>
+          </svg>
         </div>
-        <div class="form-group">
-          <label for="ct-last-name">Last Name <span style="color:var(--accent)">*</span></label>
-          <input type="text" id="ct-last-name" name="last_name" required placeholder="Smith" />
+        <h3>Real Conversations</h3>
+        <p>Discussions about channel strategy, supplier relationships, deal structures, and where the market is heading. Moderated to keep the signal high and the noise low.</p>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20l8-8 4 4 8-10"/>
+            <path d="M28 8h-6v6"/>
+          </svg>
         </div>
-        <div class="form-group">
-          <label for="ct-email">Email Address <span style="color:var(--accent)">*</span></label>
-          <input type="email" id="ct-email" name="email" required placeholder="alex@company.com" />
+        <h3>Research and Analysis</h3>
+        <p>Early access to The Channel Standard research, data, and editorial analysis before it goes public. Members help shape the questions we ask and the problems we investigate.</p>
+      </div>
+      <div class="grid-card">
+        <div class="grid-card-icon">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="10" r="5"/>
+            <path d="M6 28c0-5.52 4.48-10 10-10s10 4.48 10 10"/>
+          </svg>
         </div>
-        <div class="form-group">
-          <label for="ct-company">Company</label>
-          <input type="text" id="ct-company" name="company" placeholder="Your company name" />
-        </div>
-        <div class="form-group">
-          <label for="ct-subject">What can we help with?</label>
-          <select id="ct-subject" name="subject">
-            <option value="">Select a topic</option>
-            <option value="advisory">Advisory Services</option>
-            <option value="talent">Talent</option>
-            <option value="companion">Channel Companion</option>
-            <option value="partnership">Partnership</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="ct-message">Message</label>
-          <textarea id="ct-message" name="message" placeholder="Tell us what you are working on..."></textarea>
-        </div>
-        <div style="margin-top: var(--space-lg);">
-          <button type="submit" class="btn-primary-ed"><span class="btn-label">Send Message</span> <span class="arrow">&rarr;</span></button>
-        </div>
-        <div id="ct-success" style="display:none; margin-top:var(--space-md); font-family:var(--sans); font-size:0.9rem; color:var(--accent);">Message received. We will be in touch shortly.</div>
-      </form>
+        <h3>Peer Network</h3>
+        <p>Connect with other channel professionals who are thinking seriously about the same problems. Not a LinkedIn group. A curated network of people who do this work at a high level.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- THESIS STRIP -->
+<section class="thesis-strip">
+  <div class="container">
+    <blockquote>
+      <span class="highlight">The best channel intelligence does not come from analysts. It comes from the people doing the work every day.</span>
+      <span class="punchline">From guesswork to intelligence.</span>
+    </blockquote>
   </div>
 </section>
 
 <!-- FOOTER CTA -->
 <section class="footer-cta">
   <div class="container">
-    <h2>Prefer to book directly?</h2>
+    <h2>Ready to join the conversation?</h2>
     <div class="cta-group">
-      <a href="#" class="btn-primary-ed"><span class="btn-label">Book a Meeting</span> <span class="arrow">&rarr;</span></a>
-      <a href="/services" class="btn-secondary-ed">See Our Services</a>
+      <a href="/contact" class="btn-primary-ed"><span class="btn-label">Request Access</span> <span class="arrow">&rarr;</span></a>
+      <a href="/companion" class="btn-secondary-ed">See Channel Companion</a>
     </div>
   </div>
 </section>
@@ -595,19 +596,5 @@ function toggleTheme() {
 })();
 </script>
 
-
-<script>
-function handleContactSubmit(e) {
-  e.preventDefault();
-  var form = e.target;
-  var email = form.querySelector('[type="email"]');
-  if (email && !email.validity.valid) {
-    email.focus();
-    return;
-  }
-  form.style.display = 'none';
-  document.getElementById('ct-success').style.display = 'block';
-}
-</script>
 </body>
 </html>

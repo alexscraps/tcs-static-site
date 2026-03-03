@@ -1,166 +1,378 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | The Channel Standard</title>
-  <meta name="description" content="Privacy Policy for The Channel Standard — how we collect, use, and protect your information." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --max-layout: 1200px;
-      --max-content: 680px;
-      --space-sm: 0.75rem;
-      --space-md: 1.25rem;
-      --space-lg: 2rem;
-      --space-xl: 3rem;
-      --space-2xl: 5rem;
-      --space-3xl: 7rem;
-      --theme-transition: 0.3s ease;
-      --ink: #0d0d0d;
-      --ink-muted: #555;
-      --rule: #e5e5e5;
-      --bg: #f5f4f0;
-      --bg-elevated: #eeede9;
-      --accent: #3b9b8f;
-      --accent-hover: #2e7d73;
-      --accent-glow: 0 0 12px rgba(124, 196, 186, 0.35);
-      --logo-text-fill: #0d0d0d;
-      --logo-dot-dark: #0d0d0d;
-      --logo-dot-teal: #3b9b8f;
-      --logo-dot-blue: #5bb2e8;
-      --footer-bg: #0f1117;
-      --footer-text: #888;
-      --footer-link: #666;
-      --footer-link-hover: #eaeaea;
-      --footer-rule: #222;
-      --white: #ffffff;
-      --serif: 'Times New Roman', Georgia, serif;
-      --sans: 'Inter', system-ui, -apple-system, sans-serif;
-    }
-    [data-theme="dark"] {
-      --ink: #eaeaea;
-      --ink-muted: #aaa;
-      --rule: #2a2a2a;
-      --bg: #0c0d11;
-      --bg-elevated: #14151a;
-      --accent: #7CC4BA;
-      --logo-text-fill: #eaeaea;
-      --logo-dot-dark: #eaeaea;
-      --logo-dot-teal: #7CC4BA;
-      --logo-dot-blue: #5bb2e8;
-      --footer-bg: #080910;
-      --footer-text: #666;
-      --footer-link: #555;
-      --footer-link-hover: #eaeaea;
-      --footer-rule: #1e1e1e;
-    }
-    [data-theme="retro"] {
-      --ink: #1a1a1a;
-      --ink-muted: #555;
-      --rule: #cccccc;
-      --bg: #e8e8e8;
-      --bg-elevated: #d8d8d8;
-      --accent: #1a5276;
-      --logo-text-fill: #333333;
-      --logo-dot-dark: #333333;
-      --logo-dot-teal: #2563EB;
-      --logo-dot-blue: #0ea5e9;
-      --footer-bg: #2c3e50;
-      --footer-text: #95a5a6;
-      --footer-link: #7f8c8d;
-      --footer-link-hover: #ecf0f1;
-      --footer-rule: #34495e;
-      --serif: 'Times New Roman', Georgia, serif;
-      --sans: 'Droid Sans', Verdana, Tahoma, Geneva, sans-serif;
-    }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
-    body { font-family: var(--sans); font-weight: 400; color: var(--ink); background: var(--bg); line-height: 1.6; transition: background var(--theme-transition), color var(--theme-transition); }
-    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
-    a:hover { text-decoration: underline; }
-    .logo-svg { height: 28px; width: auto; display: block; }
-    .logo-svg .logo-text { fill: var(--logo-text-fill); transition: fill var(--theme-transition); }
-    .logo-svg .logo-dot-dark { fill: var(--logo-dot-dark); transition: fill var(--theme-transition); }
-    .logo-svg .logo-dot-teal { fill: var(--logo-dot-teal); transition: fill var(--theme-transition); }
-    .logo-svg .logo-dot-blue { fill: var(--logo-dot-blue); transition: fill var(--theme-transition); }
-    .footer-logo .logo-svg { height: 38px; }
-    footer .logo-svg .logo-text { fill: #EAEAEA; }
-    footer .logo-svg .logo-dot-dark { fill: #EAEAEA; }
-    [data-theme="dark"] footer .logo-svg .logo-dot-teal { fill: #7CC4BA; }
-    .theme-toggle { background: none; border: 1px solid var(--rule); cursor: pointer; padding: 0.4rem; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 0; transition: all var(--theme-transition); color: var(--ink-muted); margin-left: 1rem; flex-shrink: 0; }
-    .theme-toggle:hover { border-color: var(--ink); color: var(--ink); }
-    [data-theme="dark"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
-    .theme-toggle svg { width: 16px; height: 16px; }
-    .theme-toggle .sun { display: block; }
-    .theme-toggle .moon { display: none; }
-    .theme-toggle .retro-icon { display: none; }
-    [data-theme="dark"] .theme-toggle .sun { display: none; }
-    [data-theme="dark"] .theme-toggle .moon { display: block; }
-    [data-theme="retro"] .theme-toggle .sun { display: none; }
-    [data-theme="retro"] .theme-toggle .moon { display: none; }
-    [data-theme="retro"] .theme-toggle .retro-icon { display: block; }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; max-width: var(--max-layout); margin: 0 auto; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
-    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
-    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); transition: color 0.2s; text-decoration: none; }
-    .nav-links a:hover { color: var(--ink); }
-    /* Legal content */
-    .legal-page { max-width: 760px; margin: 0 auto; padding: var(--space-2xl) 2rem; }
-    .legal-page .page-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-sm); }
-    .legal-page h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
-    .legal-page .effective-date { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--rule); }
-    .legal-page h2 { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--ink); margin-top: var(--space-xl); margin-bottom: var(--space-sm); }
-    .legal-page p { font-size: 0.95rem; line-height: 1.75; color: var(--ink-muted); margin-bottom: var(--space-md); }
-    .legal-page ul { margin: 0 0 var(--space-md) 1.5rem; }
-    .legal-page ul li { font-size: 0.95rem; line-height: 1.75; color: var(--ink-muted); margin-bottom: 0.4rem; }
-    .legal-page .contact-block { background: var(--bg-elevated); border: 1px solid var(--rule); padding: var(--space-lg); margin-top: var(--space-xl); }
-    .legal-page .contact-block p { margin-bottom: 0.25rem; }
-    /* Footer */
-    footer { background: var(--footer-bg); padding: var(--space-2xl) 2rem var(--space-lg); transition: background var(--theme-transition); }
-    .footer-grid { max-width: var(--max-layout); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-xl); padding-bottom: var(--space-lg); }
-    .footer-tagline {
-      cursor: default;
-      display: inline-block;
-      transform-origin: left center;
-      background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8);
-      background-size: 300% 100%;
-      background-position: 100% 50%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      transition: background-position 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-    .footer-tagline:hover { background-position: 0% 50%; transform: scale(1.03); }
-    .footer-col h4 { font-family: var(--sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); margin-bottom: var(--space-sm); }
-    .footer-col a { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--footer-link); margin-bottom: 0.5rem; transition: color 0.2s ease; text-decoration: none; }
-    .footer-col a:hover { color: var(--footer-link-hover); }
-    .footer-bottom { max-width: var(--max-layout); margin: 0 auto; padding: var(--space-lg) 0 0; margin-top: var(--space-lg); border-top: 1px solid var(--footer-rule); display: flex; justify-content: space-between; align-items: center; }
-    .footer-bottom p { font-size: 0.75rem; color: var(--footer-text); }
-    .footer-bottom-links { display: flex; gap: var(--space-md); }
-    .footer-bottom-links a { font-size: 0.75rem; color: var(--footer-text); transition: color 0.2s; text-decoration: none; }
-    .footer-bottom-links a:hover { color: var(--footer-link-hover); }
-    @media (max-width: 900px) {
-      .nav-links a:not(.nav-cta) { display: none; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
-    }
-    @media (max-width: 600px) {
-      nav { padding: 1rem 1.25rem; }
-      .logo-svg { height: 22px; }
-      .legal-page { padding: var(--space-xl) 1.25rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
-      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-    }
-  </style>
-  <!-- RB2B Visitor Identification -->
-  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0OV0VHYEER6Z");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy | The Channel Standard</title>
+<meta name="description" content="Privacy Policy for The Channel Standard. How we collect, use, and protect your information." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+/* ============================================
+   DESIGN TOKENS - LIGHT MODE
+   ============================================ */
+:root {
+  --teal-600: #157A6E;
+  --teal-500: #1A9E8F;
+  --teal-400: #2BB5A6;
+  --teal-300: #5CCFBF;
+  --teal-100: #E6F7F5;
+  --ink: #0F1115;
+  --ink-secondary: #181B21;
+  --ink-body: #1E2128;
+  --ink-muted: #4A4A4A;
+  --gray-500: #6B6B6B;
+  --gray-400: #8A8A8A;
+  --rule: #D4D4D4;
+  --rule-light: #EBEBEB;
+  --bg: #F7F5F2;
+  --bg-elevated: #F0EDEA;
+  --bg-invert: #0F1115;
+  --white: #FFFFFF;
+  --accent: var(--teal-600);
+  --accent-hover: var(--teal-500);
+  --accent-glow: none;
+  --logo-text-fill: #1c2228;
+  --logo-dot-dark: #1c2228;
+  --logo-dot-teal: #2d7b70;
+  --logo-dot-blue: #5bb2e8;
+  --btn-bg: var(--ink);
+  --btn-color: var(--white);
+  --btn-hover: var(--ink-secondary);
+  --btn-border: var(--ink-secondary);
+  --btn-outline-color: var(--ink);
+  --btn-outline-hover-bg: var(--ink);
+  --btn-outline-hover-color: var(--white);
+  --thesis-bg: var(--ink);
+  --thesis-text: var(--white);
+  --thesis-sub: var(--gray-400);
+  --thesis-accent: var(--teal-400);
+  --footer-bg: var(--ink);
+  --footer-text: var(--gray-400);
+  --footer-link: var(--gray-500);
+  --footer-link-hover: var(--white);
+  --footer-rule: var(--ink-secondary);
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+  --max-layout: 1100px;
+  --max-content: 720px;
+  --theme-transition: 0.35s ease;
+}
+[data-theme="dark"] {
+  --teal-600: #7CC4BA;
+  --teal-500: #93D4CB;
+  --teal-400: #A5DED6;
+  --teal-300: #B8E6E0;
+  --teal-100: rgba(124, 196, 186, 0.08);
+  --ink: #EAEAEA;
+  --ink-secondary: #D4D4D4;
+  --ink-body: #C0C0C0;
+  --ink-muted: #9A9A9A;
+  --gray-500: #7A7A7A;
+  --gray-400: #5A5A5A;
+  --rule: #2A2D35;
+  --rule-light: #22252B;
+  --bg: #0C0D11;
+  --bg-elevated: #13141A;
+  --bg-invert: #F7F5F2;
+  --white: #EAEAEA;
+  --accent: #7CC4BA;
+  --accent-hover: #93D4CB;
+  --accent-glow: 0 0 20px rgba(124, 196, 186, 0.12);
+  --logo-text-fill: #EAEAEA;
+  --logo-dot-dark: #EAEAEA;
+  --logo-dot-teal: #7CC4BA;
+  --logo-dot-blue: #5bb2e8;
+  --btn-bg: #7CC4BA;
+  --btn-color: #0C0D11;
+  --btn-hover: #93D4CB;
+  --btn-border: #2A2D35;
+  --btn-outline-color: #7CC4BA;
+  --btn-outline-hover-bg: #7CC4BA;
+  --btn-outline-hover-color: #0C0D11;
+  --thesis-bg: #13141A;
+  --thesis-text: #EAEAEA;
+  --thesis-sub: #7A7A7A;
+  --thesis-accent: #93D4CB;
+  --footer-bg: #0C0D11;
+  --footer-text: #5A5A5A;
+  --footer-link: #7A7A7A;
+  --footer-link-hover: #EAEAEA;
+  --footer-rule: #1A1D23;
+}
+[data-theme="retro"] {
+  --teal-600: #2563EB;
+  --teal-500: #3B82F6;
+  --teal-400: #60A5FA;
+  --teal-300: #93C5FD;
+  --teal-100: #EFF6FF;
+  --ink: #333333;
+  --ink-secondary: #444444;
+  --ink-body: #555555;
+  --ink-muted: #666666;
+  --gray-500: #999999;
+  --gray-400: #bbbbbb;
+  --rule: #cccccc;
+  --rule-light: #dddddd;
+  --bg: #e8e8e8;
+  --bg-elevated: #d8d8d8;
+  --bg-invert: #2c3e50;
+  --white: #ffffff;
+  --accent: #1a5276;
+  --accent-hover: #2980b9;
+  --accent-glow: none;
+  --logo-text-fill: #333333;
+  --logo-dot-dark: #333333;
+  --logo-dot-teal: #2563EB;
+  --logo-dot-blue: #0ea5e9;
+  --btn-bg: #2563EB;
+  --btn-color: #ffffff;
+  --btn-hover: #3B82F6;
+  --btn-border: #1a3c6e;
+  --btn-outline-color: #1a5276;
+  --btn-outline-hover-bg: #1a5276;
+  --btn-outline-hover-color: #ffffff;
+  --thesis-bg: #2c3e50;
+  --thesis-text: #ecf0f1;
+  --thesis-sub: #95a5a6;
+  --thesis-accent: #5dade2;
+  --footer-bg: #2c3e50;
+  --footer-text: #95a5a6;
+  --footer-link: #7f8c8d;
+  --footer-link-hover: #ecf0f1;
+  --footer-rule: #34495e;
+  --serif: 'Times New Roman', Georgia, serif;
+  --sans: 'Droid Sans', Verdana, Tahoma, Geneva, sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body { font-family: var(--sans); font-weight: 400; color: var(--ink); background: var(--bg); line-height: 1.6; transition: background var(--theme-transition), color var(--theme-transition); }
+img { max-width: 100%; display: block; }
+a { color: var(--ink); text-decoration: none; transition: color var(--theme-transition); }
+.container { max-width: var(--max-layout); margin: 0 auto; padding: 0 2rem; }
+.section { padding: var(--space-2xl) 0; }
+h1 { font-family: var(--sans); font-weight: 700; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); transition: color var(--theme-transition); }
+h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); transition: color var(--theme-transition); }
+h3 { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; line-height: 1.3; color: var(--ink); transition: color var(--theme-transition); }
+.eyebrow { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+[data-theme="dark"] .eyebrow { text-shadow: var(--accent-glow); }
+.logo-svg { height: 28px; width: auto; display: block; }
+.logo-svg .logo-text { fill: var(--logo-text-fill); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-dark { fill: var(--logo-dot-dark); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-teal { fill: var(--logo-dot-teal); transition: fill var(--theme-transition); }
+.logo-svg .logo-dot-blue { fill: var(--logo-dot-blue); transition: fill var(--theme-transition); }
+.footer-logo .logo-svg { height: 38px; }
+footer .logo-svg .logo-text { fill: #EAEAEA; }
+footer .logo-svg .logo-dot-dark { fill: #EAEAEA; }
+[data-theme="dark"] footer .logo-svg .logo-dot-teal { fill: #7CC4BA; }
+.theme-toggle { background: none; border: 1px solid var(--rule); cursor: pointer; padding: 0.4rem; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 0; transition: all var(--theme-transition); color: var(--ink-muted); margin-left: 1rem; flex-shrink: 0; }
+.theme-toggle:hover { border-color: var(--ink); color: var(--ink); }
+[data-theme="dark"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle svg { width: 16px; height: 16px; }
+.theme-toggle .sun { display: block; }
+.theme-toggle .moon { display: none; }
+.theme-toggle .retro-icon { display: none; }
+[data-theme="dark"] .theme-toggle .sun { display: none; }
+[data-theme="dark"] .theme-toggle .moon { display: block; }
+[data-theme="dark"] .theme-toggle .retro-icon { display: none; }
+[data-theme="retro"] .theme-toggle .sun { display: none; }
+[data-theme="retro"] .theme-toggle .moon { display: none; }
+[data-theme="retro"] .theme-toggle .retro-icon { display: block; }
+.nav-wrapper { border-bottom: 1px solid var(--rule); background: var(--bg); position: sticky; top: 0; z-index: 100; transition: background var(--theme-transition), border-color var(--theme-transition); }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; max-width: var(--max-layout); margin: 0 auto; }
+.nav-links { display: flex; align-items: center; gap: 1.75rem; }
+.nav-links a { font-family: var(--sans); font-size: 0.8rem; font-weight: 400; color: var(--gray-500); letter-spacing: 0.02em; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { font-weight: 500 !important; color: var(--ink) !important; border: 1px solid var(--btn-border); padding: 0.4rem 1rem; font-size: 0.75rem !important; letter-spacing: 0.04em; transition: all 0.2s ease; }
+.nav-cta:hover { background: var(--btn-bg); color: var(--btn-color) !important; }
+.hero { padding: var(--space-3xl) 0 var(--space-2xl); border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .hero { border-bottom-color: var(--rule); }
+.hero-content { max-width: 780px; }
+.hero h1 { margin-bottom: var(--space-md); }
+.hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); transition: color var(--theme-transition); }
+[data-theme="dark"] .hero h1 em { text-shadow: var(--accent-glow); }
+.hero-body { font-family: var(--sans); font-size: 1.1rem; line-height: 1.7; color: var(--ink-muted); max-width: 600px; margin-bottom: var(--space-lg); transition: color var(--theme-transition); }
+.section-head { margin-bottom: var(--space-xl); }
+.section-head h2 { max-width: 600px; margin-bottom: var(--space-sm); }
+.section-head p { font-family: var(--sans); font-size: 1rem; color: var(--ink-muted); transition: color var(--theme-transition); }
+.grid-section { padding: var(--space-2xl) 0; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .grid-section { border-bottom-color: var(--rule); }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .card-grid { border-top: 1px solid var(--accent); }
+.card-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 2px solid var(--ink); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .card-grid-2 { border-top: 1px solid var(--accent); }
+.grid-card { padding: var(--space-xl) 0; padding-right: var(--space-xl); transform: translateY(0); will-change: transform; transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); cursor: default; }
+.grid-card:hover { transform: translateY(-4px); }
+.card-grid .grid-card:not(:last-child) { border-right: 1px solid var(--rule); transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); }
+.card-grid-2 .grid-card:nth-child(odd) { border-right: 1px solid var(--rule); transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); }
+.card-grid-2 .grid-card:nth-child(even) { padding-left: var(--space-xl); padding-right: 0; }
+.card-grid-2 .grid-card:nth-child(1), .card-grid-2 .grid-card:nth-child(2) { border-bottom: 1px solid var(--rule); transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-color var(--theme-transition); }
+.card-grid .grid-card:not(:first-child) { padding-left: var(--space-xl); }
+[data-theme="dark"] .card-grid .grid-card:not(:last-child) { border-right-color: var(--rule); }
+[data-theme="dark"] .card-grid-2 .grid-card:nth-child(odd) { border-right-color: var(--rule); }
+[data-theme="dark"] .card-grid-2 .grid-card:nth-child(1),
+[data-theme="dark"] .card-grid-2 .grid-card:nth-child(2) { border-bottom-color: var(--rule); }
+.grid-card-icon { width: 32px; height: 32px; margin-bottom: var(--space-sm); color: var(--accent); transition: color var(--theme-transition); }
+[data-theme="dark"] .grid-card-icon { filter: drop-shadow(0 0 6px rgba(124, 196, 186, 0.15)); }
+.grid-card-icon svg { width: 100%; height: 100%; }
+.grid-card h3 { margin-bottom: 0.6rem; }
+.grid-card p { font-family: var(--sans); font-size: 0.9rem; line-height: 1.6; color: var(--gray-500); transition: color var(--theme-transition); }
+.stat-number { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1; color: var(--accent); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
+[data-theme="dark"] .stat-number { text-shadow: var(--accent-glow); }
+.stat-label { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-muted); transition: color var(--theme-transition); }
+.thesis-strip { padding: var(--space-3xl) 0; background: var(--thesis-bg); transition: background var(--theme-transition); }
+[data-theme="dark"] .thesis-strip { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.thesis-strip blockquote { max-width: 700px; margin: 0 auto; text-align: center; }
+.thesis-strip .highlight { display: block; font-family: var(--serif); font-size: clamp(1.4rem, 2.8vw, 1.85rem); line-height: 1.35; color: var(--thesis-text); margin-bottom: var(--space-md); transition: color var(--theme-transition); }
+.thesis-strip .punchline { display: block; font-family: var(--sans); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: var(--space-sm); background: linear-gradient(90deg, #157A6E 0%, #2d7b70 20%, #5bb2e8 50%, #2d7b70 80%, #157A6E 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 8s ease infinite; }
+[data-theme="dark"] .thesis-strip .punchline { background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 20%, #5bb2e8 50%, #93D4CB 80%, #7CC4BA 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 8s ease infinite; }
+.footer-cta { text-align: center; padding: var(--space-2xl) 0; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+[data-theme="dark"] .footer-cta { border-bottom-color: var(--rule); }
+.footer-cta h2 { margin-bottom: var(--space-lg); }
+.footer-cta .cta-group { display: flex; gap: var(--space-md); justify-content: center; align-items: center; }
+.btn-primary-ed { display: inline-block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; color: var(--btn-color); background: linear-gradient(90deg, #0F1115 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #0F1115 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; padding: 0.75rem 1.75rem; transition: all 0.25s ease; position: relative; overflow: hidden; }
+.btn-primary-ed:hover { background: linear-gradient(90deg, #181B21 0%, #1c2228 30%, #1a2a30 50%, #1c2228 70%, #181B21 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; color: var(--btn-color); }
+[data-theme="dark"] .btn-primary-ed { background: linear-gradient(90deg, #7CC4BA 0%, #93D4CB 30%, #8dc5bf 50%, #93D4CB 70%, #7CC4BA 100%); background-size: 200% 100%; animation: btnShimmer 6s ease infinite; color: #0C0D11; box-shadow: 0 0 24px rgba(124, 196, 186, 0.12); }
+[data-theme="dark"] .btn-primary-ed:hover { box-shadow: 0 0 32px rgba(124, 196, 186, 0.2); }
+.btn-primary-ed.pop { transform: scale(1.02); transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.btn-primary-ed.pop .btn-label { background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: brandSweep 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
+.btn-primary-ed.fade-back { transform: scale(1); transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.btn-primary-ed .arrow { margin-left: 0.5rem; transition: margin-left 0.2s ease; }
+.btn-primary-ed:hover .arrow { margin-left: 0.75rem; }
+.btn-secondary-ed { display: inline-block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; color: var(--btn-outline-color); border: 1px solid var(--btn-outline-color); padding: 0.7rem 1.75rem; transition: all 0.25s ease; }
+.btn-secondary-ed:hover { background: var(--btn-outline-hover-bg); color: var(--btn-outline-hover-color); }
+[data-theme="dark"] .btn-secondary-ed:hover { box-shadow: 0 0 24px rgba(124, 196, 186, 0.12); }
+footer { padding: var(--space-xl) 0 var(--space-lg); background: var(--footer-bg); transition: background var(--theme-transition); }
+.footer-grid { max-width: var(--max-layout); margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-xl); }
+.footer-brand p { font-family: var(--sans); font-size: 0.8rem; line-height: 1.6; color: var(--footer-text); max-width: 260px; margin-top: var(--space-sm); transition: color var(--theme-transition); }
+.footer-tagline { cursor: pointer; display: inline-block; transform-origin: left center; transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.4s ease; }
+.footer-tagline:hover { color: #7A7A7A !important; }
+.footer-tagline.pop { transform: scale(1.04); background: linear-gradient(90deg, #5bb2e8, #3b9b8f, #59be7a, #e9a75c, #e95a5b, #5bb2e8); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: brandSweep 1.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
+.footer-tagline.fade-back { transform: scale(1); transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.footer-col h4 { font-family: var(--sans); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--footer-text); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+.footer-col a { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--footer-link); margin-bottom: 0.5rem; transition: color 0.2s ease; }
+.footer-col a:hover { color: var(--footer-link-hover); }
+.footer-bottom { max-width: var(--max-layout); margin: 0 auto; padding: var(--space-lg) 2rem 0; margin-top: var(--space-lg); border-top: 1px solid var(--footer-rule); display: flex; justify-content: space-between; align-items: center; transition: border-color var(--theme-transition); }
+.footer-bottom p { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color var(--theme-transition); }
+.footer-bottom-links { display: flex; gap: var(--space-md); }
+.footer-bottom-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--footer-text); transition: color 0.2s ease; }
+.footer-bottom-links a:hover { color: var(--footer-link-hover); }
+/* Form styles */
+.form-section { padding: var(--space-2xl) 0; border-bottom: 1px solid var(--rule); transition: border-color var(--theme-transition); }
+.form-wrap { max-width: 560px; }
+.form-group { margin-bottom: var(--space-md); }
+.form-group label { display: block; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; color: var(--ink-muted); margin-bottom: 0.4rem; transition: color var(--theme-transition); }
+.form-group input, .form-group textarea, .form-group select { width: 100%; font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: var(--white); border: 1px solid var(--rule); padding: 0.65rem 0.9rem; transition: border-color 0.2s ease, background var(--theme-transition), color var(--theme-transition); outline: none; border-radius: 0; }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+[data-theme="dark"] .form-group input, [data-theme="dark"] .form-group textarea, [data-theme="dark"] .form-group select { background: var(--bg-elevated); border-color: var(--rule); color: var(--ink); }
+[data-theme="retro"] .form-group input, [data-theme="retro"] .form-group textarea, [data-theme="retro"] .form-group select { border-radius: 4px; border-color: #aaaaaa; background: #ffffff; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+/* Legal page styles */
+.legal-section { padding: var(--space-2xl) 0; }
+.legal-content { max-width: 720px; }
+.legal-content h2 { font-size: 1.4rem; margin-top: var(--space-xl); margin-bottom: var(--space-sm); }
+.legal-content h3 { font-size: 1rem; margin-top: var(--space-lg); margin-bottom: 0.5rem; }
+.legal-content p { font-family: var(--sans); font-size: 0.95rem; line-height: 1.75; color: var(--ink-body); margin-bottom: var(--space-sm); transition: color var(--theme-transition); }
+.legal-content ul { font-family: var(--sans); font-size: 0.95rem; line-height: 1.75; color: var(--ink-body); margin-bottom: var(--space-sm); padding-left: 1.5rem; transition: color var(--theme-transition); }
+.legal-content li { margin-bottom: 0.4rem; }
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes btnShimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes brandSweep { 0% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.hero .eyebrow { animation: fadeUp 0.6s ease both 0.1s; }
+.hero h1 { animation: fadeUp 0.6s ease both 0.25s; }
+.hero-body { animation: fadeUp 0.6s ease both 0.4s; }
+/* Retro overrides */
+[data-theme="retro"] body { background: #e8e8e8; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px); }
+[data-theme="retro"] .nav-cta, [data-theme="retro"] .btn-primary-ed, [data-theme="retro"] .btn-secondary-ed, [data-theme="retro"] .theme-toggle { border-radius: 6px; }
+[data-theme="retro"] .btn-primary-ed { background: linear-gradient(180deg, #6db3f8 0%, #3B82F6 40%, #2563EB 60%, #1d4ed8 100%) !important; animation: none !important; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(0,0,0,0.15) inset, 0 2px 6px rgba(30,64,175,0.5); border: 1px solid #1a3c6e; color: #ffffff; text-shadow: 0 -1px 1px rgba(0,0,0,0.35); font-family: 'Droid Sans', Verdana, Tahoma, sans-serif; font-weight: 700; }
+[data-theme="retro"] .btn-primary-ed:hover { background: linear-gradient(180deg, #93C5FD 0%, #60A5FA 40%, #3B82F6 60%, #2563EB 100%) !important; animation: none !important; }
+[data-theme="retro"] .btn-secondary-ed { background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 40%, #e0e0e0 100%); border: 1px solid #aaaaaa; border-radius: 6px; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.12); color: #333333; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif; font-weight: 700; text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
+[data-theme="retro"] .card-grid, [data-theme="retro"] .card-grid-2 { border-top: none; background: #ffffff; border-radius: 10px; box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 3px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #c0c0c0; overflow: hidden; padding: 0.5rem; }
+[data-theme="retro"] .grid-card { padding: 2.5rem 2rem !important; }
+[data-theme="retro"] .card-grid .grid-card:not(:last-child) { border-right-color: #d0d0d0 !important; }
+[data-theme="retro"] .card-grid-2 .grid-card:nth-child(odd) { border-right-color: #d0d0d0 !important; }
+[data-theme="retro"] .card-grid-2 .grid-card:nth-child(1), [data-theme="retro"] .card-grid-2 .grid-card:nth-child(2) { border-bottom-color: #d0d0d0 !important; }
+[data-theme="retro"] h1 { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-weight: 700; color: #222222; }
+[data-theme="retro"] h2 { font-family: 'Times New Roman', Georgia, serif !important; color: #333333; }
+[data-theme="retro"] h3 { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-weight: 700; color: #333333; }
+[data-theme="retro"] p { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-size: 0.9rem; line-height: 1.65; }
+[data-theme="retro"] .eyebrow { color: #1a5276; text-shadow: none; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; font-weight: 700; font-size: 0.65rem; letter-spacing: 0.22em; background: linear-gradient(180deg, #2563EB, #1a5276); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+[data-theme="retro"] .nav-wrapper { border-bottom: none; background: transparent; }
+[data-theme="retro"] nav { border-bottom: none; border-image: none; background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 40%, #d4d4d4 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.5) inset; border-bottom: 1px solid #aaaaaa; }
+[data-theme="retro"] .nav-links a { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif; font-weight: 700; font-size: 0.75rem; color: #555555; }
+[data-theme="retro"] .nav-links a:hover { color: #2563EB; }
+[data-theme="retro"] .nav-cta { background: linear-gradient(180deg, #ffffff 0%, #eeeeee 100%); border: 1px solid #aaaaaa; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 2px rgba(0,0,0,0.08); text-shadow: 0 1px 0 rgba(255,255,255,0.8); }
+[data-theme="retro"] .nav-cta:hover { background: linear-gradient(180deg, #6db3f8 0%, #2563EB 100%); border-color: #1a3c6e; color: #ffffff !important; text-shadow: 0 -1px 0 rgba(0,0,0,0.2); }
+[data-theme="retro"] .hero { background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%); border-bottom: 1px solid #c0c0c0; }
+[data-theme="retro"] .hero h1 em { color: #2563EB; font-family: 'Times New Roman', Georgia, serif !important; }
+[data-theme="retro"] .grid-card-icon { color: #2563EB; filter: none; }
+[data-theme="retro"] .stat-number { color: #2563EB; font-family: 'Times New Roman', Georgia, serif !important; }
+[data-theme="retro"] .thesis-strip { background: linear-gradient(180deg, #34495e 0%, #2c3e50 30%, #1a252f 100%); border-top: 3px solid #5dade2; border-bottom: 3px solid #5dade2; box-shadow: 0 0 20px rgba(0,0,0,0.3) inset; }
+[data-theme="retro"] .thesis-strip .highlight { font-family: 'Times New Roman', Georgia, serif !important; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+[data-theme="retro"] .thesis-strip .punchline { background: linear-gradient(90deg, #5dade2 0%, #85c1e9 50%, #5dade2 100%) !important; background-size: 200% 100% !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; text-shadow: none !important; }
+[data-theme="retro"] footer { background: linear-gradient(180deg, #34495e 0%, #2c3e50 40%, #1a252f 100%); box-shadow: 0 -1px 0 rgba(255,255,255,0.05) inset; }
+[data-theme="retro"] footer p, [data-theme="retro"] footer a, [data-theme="retro"] footer h4 { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+[data-theme="retro"] .footer-tagline { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+[data-theme="retro"] .theme-toggle { background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%); border: 1px solid #aaaaaa; border-radius: 6px; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 3px rgba(0,0,0,0.1); }
+[data-theme="retro"] .theme-toggle:hover { border-color: #2563EB; color: #2563EB; background: linear-gradient(180deg, #f0f0f0 0%, #d8d8d8 100%); }
+[data-theme="retro"] .logo-svg .logo-dot-teal { fill: #2563EB; }
+[data-theme="retro"] .logo-svg .logo-dot-blue { fill: #0ea5e9; }
+[data-theme="retro"] .form-group label { font-family: 'Droid Sans', Verdana, Tahoma, sans-serif !important; }
+/* Custom dot cursor */
+body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%232d7b70' opacity='0.9'/%3E%3Ccircle cx='10' cy='10' r='5.5' fill='none' stroke='%231c2228' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E") 10 10, default; }
+a, button, [onclick], .nav-cta, .btn-primary-ed, .btn-secondary-ed, .theme-toggle { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232d7b70' opacity='0.12'/%3E%3Ccircle cx='12' cy='12' r='5.5' fill='none' stroke='%232d7b70' stroke-width='1.5' opacity='0.85'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%232d7b70' opacity='0.9'/%3E%3C/svg%3E") 12 12, pointer; }
+[data-theme="dark"] body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%237CC4BA' opacity='0.9'/%3E%3Ccircle cx='10' cy='10' r='5.5' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E") 10 10, default; }
+[data-theme="dark"] a, [data-theme="dark"] button, [data-theme="dark"] [onclick], [data-theme="dark"] .nav-cta, [data-theme="dark"] .btn-primary-ed, [data-theme="dark"] .btn-secondary-ed, [data-theme="dark"] .theme-toggle { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%237CC4BA' opacity='0.12'/%3E%3Ccircle cx='12' cy='12' r='5.5' fill='none' stroke='%237CC4BA' stroke-width='1.5' opacity='0.85'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%237CC4BA' opacity='0.9'/%3E%3C/svg%3E") 12 12, pointer; }
+[data-theme="retro"] body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%232563EB' opacity='0.9'/%3E%3Ccircle cx='10' cy='10' r='5.5' fill='none' stroke='%231a3c6e' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E") 10 10, default; }
+[data-theme="retro"] a, [data-theme="retro"] button, [data-theme="retro"] [onclick], [data-theme="retro"] .nav-cta, [data-theme="retro"] .btn-primary-ed, [data-theme="retro"] .btn-secondary-ed, [data-theme="retro"] .theme-toggle { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='6' fill='%232563EB' opacity='0.12'/%3E%3Ccircle cx='12' cy='12' r='5.5' fill='none' stroke='%232563EB' stroke-width='1.5' opacity='0.85'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%232563EB' opacity='0.9'/%3E%3C/svg%3E") 12 12, pointer; }
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links { gap: 0.75rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .card-grid .grid-card:not(:last-child) { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; }
+  .card-grid .grid-card:not(:first-child) { padding-left: 0; }
+  .card-grid-2 { grid-template-columns: 1fr; }
+  .card-grid-2 .grid-card:nth-child(odd) { border-right: none; padding-right: 0; }
+  .card-grid-2 .grid-card:nth-child(even) { padding-left: 0; }
+  .card-grid-2 .grid-card:nth-child(1), .card-grid-2 .grid-card:nth-child(2), .card-grid-2 .grid-card:nth-child(3) { border-bottom: 1px solid var(--rule); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+  .section { padding: var(--space-xl) 0; }
+  .hero { padding: var(--space-2xl) 0 var(--space-xl); }
+  .grid-section { padding: var(--space-xl) 0; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 1.25rem; }
+  .section { padding: var(--space-lg) 0; }
+  .hero { padding: var(--space-xl) 0 var(--space-lg); }
+  .hero-body { font-size: 0.9rem; }
+  nav { padding: 1rem 1.25rem; }
+  .logo-svg { height: 22px; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .btn-primary-ed, .btn-secondary-ed { min-height: 44px; padding: 0.75rem 1.5rem; }
+  .nav-cta { min-height: 36px; }
+  [data-theme="retro"] .grid-card { padding: 1.75rem 1.25rem !important; }
+}
+
+</style>
 </head>
 <body>
-<!-- NAVIGATION -->
+
+<div class="nav-wrapper">
 <nav>
-  <a href="/">
+  <a href="/" class="nav-logo">
     <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
       <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
       <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
@@ -169,136 +381,157 @@
       <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
       <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
       <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
-      <path class="logo-text" d="M248.06,228.15v-44.82h9.34v16.93h-.62c.33-2.45,1.44-4.38,3.33-5.79,1.89-1.41,4.28-2.12,7.19-2.12s5.43.68,7.56,2.05c2.13,1.37,3.77,3.3,4.92,5.79,1.14,2.49,1.71,5.46,1.71,8.9s-.57,6.36-1.71,8.81c-1.14,2.45-2.78,4.35-4.92,5.7-2.14,1.35-4.68,2.02-7.63,2.02s-5.34-.68-7.25-2.05c-1.91-1.37-3.04-3.2-3.39-5.48l.68-.12v6.16h-9.22ZM265.24,221.3c2.24,0,4.06-.77,5.45-2.3,1.39-1.54,2.09-3.79,2.09-6.75s-.69-5.17-2.09-6.72c-1.39-1.56-3.21-2.33-5.45-2.33s-3.98.78-5.35,2.33c-1.37,1.56-2.05,3.79-2.05,6.69s.68,5.14,2.05,6.69c1.37,1.56,3.17,2.33,5.35,2.33Z"/>
-      <path class="logo-text" d="M286.56,228.15v-31.75h9.15v7.47h.19v24.28h-9.34ZM295.89,211.6l-.81-7.53c.75-2.7,1.97-4.75,3.67-6.16,1.7-1.41,3.82-2.12,6.35-2.12.79,0,1.37.08,1.74.25v8.72c-.21-.08-.5-.13-.87-.16-.37-.02-.83-.03-1.37-.03-2.99,0-5.19.53-6.6,1.59-1.41,1.06-2.12,2.87-2.12,5.45Z"/>
-      <path class="logo-text" d="M308.93,228.15v-31.75h9.34v31.75h-9.34ZM308.93,192.81v-8.28h9.34v8.28h-9.34Z"/>
-      <path class="logo-text" d="M323.25,228.15v-31.75h9.15v6.6h.62c.62-2.28,1.82-4.06,3.58-5.35,1.76-1.29,3.96-1.93,6.6-1.93,3.36,0,5.97,1.02,7.84,3.05,1.87,2.03,2.8,4.96,2.8,8.78v20.61h-9.34v-19.18c0-2.03-.46-3.54-1.37-4.54-.91-1-2.22-1.49-3.92-1.49s-3.13.55-4.17,1.65c-1.04,1.1-1.56,2.66-1.56,4.67v18.87h-9.22Z"/>
-      <path class="logo-text" d="M358.97,237.62l2.24-7.1c.83.37,1.72.63,2.68.78.95.14,1.99.22,3.11.22,1.99,0,3.54-.52,4.67-1.56,1.12-1.04,1.68-2.49,1.68-4.35v-5.35l.62.12c-.37,2.2-1.47,3.96-3.3,5.29-1.83,1.33-4.05,1.99-6.66,1.99-2.82,0-5.27-.63-7.35-1.9-2.07-1.27-3.68-3.1-4.82-5.48-1.14-2.39-1.71-5.23-1.71-8.53s.57-6.18,1.71-8.59c1.14-2.41,2.75-4.28,4.82-5.6,2.07-1.33,4.52-1.99,7.35-1.99,2.61,0,4.83.67,6.66,2.02,1.83,1.35,2.93,3.13,3.3,5.35l-.62.12v-6.66h9.15v29.82c0,5.1-1.41,8.93-4.23,11.5-2.82,2.57-6.93,3.86-12.34,3.86-1.74,0-3.37-.13-4.89-.4-1.52-.27-2.87-.66-4.07-1.18ZM368.43,221.18c2.07,0,3.73-.71,4.98-2.12,1.25-1.41,1.87-3.44,1.87-6.1s-.62-4.69-1.87-6.1c-1.25-1.41-2.91-2.12-4.98-2.12s-3.79.71-5.07,2.12c-1.27,1.41-1.9,3.44-1.9,6.1s.63,4.69,1.9,6.1c1.27,1.41,2.97,2.12,5.07,2.12Z"/>
-      <path class="logo-text" d="M391.62,228.15v-31.75h9.34v31.75h-9.34ZM391.62,192.81v-8.28h9.34v8.28h-9.34Z"/>
-      <path class="logo-text" d="M404.19,202.81v-7.1h23.47v7.1h-23.47ZM422.12,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
-      <path class="logo-text" d="M432.99,228.15l11.28-16.18-10.96-15.57h10.84l5.72,8.97h-.5l5.6-8.97h10.59l-10.84,15.38,11.34,16.37h-10.96l-6.1-9.71h.5l-6.22,9.71h-10.28Z"/>
-      <path class="logo-text" d="M218.06,276.19v-7.1h23.47v7.1h-23.47ZM235.99,301.53c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
-      <path class="logo-text" d="M262.55,301.53c-3.53,0-6.62-.69-9.28-2.08-2.66-1.39-4.73-3.34-6.22-5.85-1.49-2.51-2.24-5.44-2.24-8.78s.74-6.18,2.21-8.65c1.47-2.47,3.52-4.39,6.13-5.76,2.61-1.37,5.62-2.05,9.03-2.05s6.37.68,8.87,2.05c2.49,1.37,4.42,3.28,5.79,5.73,1.37,2.45,2.05,5.3,2.05,8.53v2.49h-25.27v-5.6h18.06l-2.12,1.62c0-2.49-.6-4.41-1.81-5.76-1.2-1.35-2.87-2.02-5.01-2.02s-3.88.73-5.13,2.18c-1.25,1.45-1.87,3.54-1.87,6.25v1.37c0,2.78.71,4.88,2.12,6.29,1.41,1.41,3.44,2.12,6.1,2.12,1.66,0,3.11-.27,4.35-.81,1.25-.54,2.37-1.37,3.36-2.49l5.85,5.6c-1.58,1.87-3.52,3.3-5.82,4.29-2.3.99-4.93,1.49-7.88,1.49Z"/>
-      <path class="logo-text" d="M283.25,301.53v-44.82h9.34v44.82h-9.34Z"/>
-      <path class="logo-text" d="M297.57,301.53v-44.82h9.34v44.82h-9.34Z"/>
-      <path class="logo-text" d="M313.76,301.53v-31.75h9.34v31.75h-9.34ZM313.76,266.19v-8.28h9.34v8.28h-9.34Z"/>
-      <path class="logo-text" d="M328.08,301.53v-31.75h9.15v6.6h.62c.62-2.28,1.82-4.06,3.58-5.35,1.76-1.29,3.96-1.93,6.6-1.93,3.36,0,5.97,1.02,7.84,3.05,1.87,2.03,2.8,4.96,2.8,8.78v20.61h-9.34v-19.18c0-2.03-.46-3.54-1.37-4.54-.91-1-2.22-1.49-3.92-1.49s-3.13.55-4.17,1.65c-1.04,1.1-1.56,2.66-1.56,4.67v18.87h-9.22Z"/>
-      <path class="logo-text" d="M377.7,301.53c-3.53,0-6.62-.69-9.28-2.08-2.66-1.39-4.73-3.34-6.22-5.85-1.49-2.51-2.24-5.44-2.24-8.78s.74-6.18,2.21-8.65c1.47-2.47,3.52-4.39,6.13-5.76,2.61-1.37,5.62-2.05,9.03-2.05s6.37.68,8.87,2.05c2.49,1.37,4.42,3.28,5.79,5.73,1.37,2.45,2.05,5.3,2.05,8.53v2.49h-25.27v-5.6h18.06l-2.12,1.62c0-2.49-.6-4.41-1.81-5.76-1.2-1.35-2.87-2.02-5.01-2.02s-3.88.73-5.13,2.18c-1.25,1.45-1.87,3.54-1.87,6.25v1.37c0,2.78.71,4.88,2.12,6.29,1.41,1.41,3.44,2.12,6.1,2.12,1.66,0,3.11-.27,4.35-.81,1.25-.54,2.37-1.37,3.36-2.49l5.85,5.6c-1.58,1.87-3.52,3.3-5.82,4.29-2.3.99-4.93,1.49-7.88,1.49Z"/>
-      <path class="logo-text" d="M398.4,301.53v-31.75h9.15v7.47h.19v24.28h-9.34ZM407.73,284.97l-.81-7.53c.75-2.7,1.97-4.75,3.67-6.16,1.7-1.41,3.82-2.12,6.35-2.12.79,0,1.37.08,1.74.25v8.72c-.21-.08-.5-.13-.87-.16-.37-.02-.83-.03-1.37-.03-2.99,0-5.19.53-6.6,1.59-1.41,1.06-2.12,2.87-2.12,5.45Z"/>
+      <path class="logo-text" d="M247.13,227.47v-44.82h9.34v44.82h-9.34ZM269.23,227.47v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M300.61,228.09c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M235.3,276.81c-3.32,0-6.25-.71-8.78-2.12-2.53-1.41-4.51-3.36-5.95-5.85-1.43-2.49-2.15-5.33-2.15-8.53s.72-6.04,2.15-8.53c1.43-2.49,3.41-4.44,5.95-5.85,2.53-1.41,5.46-2.12,8.78-2.12,2.78,0,5.28.51,7.5,1.53,2.22,1.02,4.05,2.42,5.48,4.2,1.43,1.78,2.36,3.88,2.77,6.29h-9.03c-.46-1.53-1.28-2.7-2.46-3.49-1.18-.79-2.56-1.18-4.14-1.18-1.49,0-2.79.37-3.89,1.12-1.1.75-1.94,1.81-2.52,3.18-.58,1.37-.87,2.99-.87,4.86s.29,3.49.87,4.86c.58,1.37,1.42,2.43,2.52,3.18,1.1.75,2.4,1.12,3.89,1.12,1.58,0,2.96-.39,4.14-1.18,1.18-.79,2-1.95,2.46-3.49h9.03c-.41,2.41-1.34,4.5-2.77,6.29-1.43,1.78-3.26,3.19-5.48,4.2-2.22,1.02-4.72,1.53-7.5,1.53Z"/>
+      <path class="logo-text" d="M255.91,276.19v-44.82h9.34v44.82h-9.34ZM278.01,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M302.54,276.81c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM313.62,276.19c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M329.18,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM351.28,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M367.72,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM389.82,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M421.2,276.81c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
       <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
-      <path class="logo-text" d="M218.06,324.91v-7.1h23.47v7.1h-23.47ZM235.99,350.25c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
-      <path class="logo-text" d="M262.55,350.25c-3.49,0-6.56-.72-9.22-2.15-2.66-1.43-4.74-3.44-6.25-6.03-1.51-2.59-2.27-5.6-2.27-9.03s.76-6.4,2.27-8.97c1.51-2.57,3.6-4.56,6.25-5.98,2.66-1.41,5.73-2.12,9.22-2.12s6.56.71,9.22,2.12c2.66,1.41,4.74,3.41,6.25,5.98,1.51,2.57,2.27,5.56,2.27,8.97s-.76,6.44-2.27,9.03c-1.51,2.59-3.6,4.6-6.25,6.03-2.66,1.43-5.73,2.15-9.22,2.15ZM262.55,342.97c2.2,0,3.96-.77,5.29-2.3,1.33-1.54,1.99-3.79,1.99-6.75s-.66-5.17-1.99-6.72c-1.33-1.56-3.09-2.33-5.29-2.33s-3.96.78-5.29,2.33c-1.33,1.56-1.99,3.79-1.99,6.72s.66,5.21,1.99,6.75c1.33,1.54,3.09,2.3,5.29,2.3Z"/>
-      <path class="logo-text" d="M285.19,350.25v-31.75h9.15v6.6h.62c.62-2.28,1.82-4.06,3.58-5.35,1.76-1.29,3.96-1.93,6.6-1.93,3.36,0,5.97,1.02,7.84,3.05,1.87,2.03,2.8,4.96,2.8,8.78v20.61h-9.34v-19.18c0-2.03-.46-3.54-1.37-4.54-.91-1-2.22-1.49-3.92-1.49s-3.13.55-4.17,1.65c-1.04,1.1-1.56,2.66-1.56,4.67v18.87h-9.22Z"/>
-      <path class="logo-text" d="M320.16,350.25v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM312.69,343.4c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
-      <path class="logo-text" d="M348.7,350.25c-3.53,0-6.62-.69-9.28-2.08-2.66-1.39-4.73-3.34-6.22-5.85-1.49-2.51-2.24-5.44-2.24-8.78s.74-6.18,2.21-8.65c1.47-2.47,3.52-4.39,6.13-5.76,2.61-1.37,5.62-2.05,9.03-2.05s6.37.68,8.87,2.05c2.49,1.37,4.42,3.28,5.79,5.73,1.37,2.45,2.05,5.3,2.05,8.53v2.49h-25.27v-5.6h18.06l-2.12,1.62c0-2.49-.6-4.41-1.81-5.76-1.2-1.35-2.87-2.02-5.01-2.02s-3.88.73-5.13,2.18c-1.25,1.45-1.87,3.54-1.87,6.25v1.37c0,2.78.71,4.88,2.12,6.29,1.41,1.41,3.44,2.12,6.1,2.12,1.66,0,3.11-.27,4.35-.81,1.25-.54,2.37-1.37,3.36-2.49l5.85,5.6c-1.58,1.87-3.52,3.3-5.82,4.29-2.3.99-4.93,1.49-7.88,1.49Z"/>
-      <path class="logo-text" d="M373.93,350.25c-2.49,0-4.86-.33-7.1-.99-2.24-.66-4.17-1.6-5.79-2.83l3.49-6.47c1.37,1.04,2.87,1.84,4.48,2.4,1.62.56,3.27.84,4.95.84,1.49,0,2.63-.23,3.42-.68.79-.45,1.18-1.09,1.18-1.9,0-.71-.35-1.27-1.06-1.68-.71-.41-1.97-.83-3.77-1.25l-3.11-.75c-2.82-.66-4.96-1.72-6.41-3.18-1.45-1.47-2.18-3.3-2.18-5.51,0-2.03.54-3.82,1.62-5.35,1.08-1.54,2.6-2.73,4.54-3.58,1.95-.85,4.2-1.27,6.75-1.27,2.2,0,4.29.31,6.25.93,1.97.62,3.67,1.51,5.1,2.68l-3.49,6.35c-1.29-.99-2.63-1.74-4.04-2.24-1.41-.5-2.82-.75-4.23-.75-1.37,0-2.43.25-3.18.75-.75.5-1.12,1.16-1.12,1.99,0,.66.31,1.2.93,1.62.62.41,1.72.79,3.3,1.12l3.11.75c3.07.71,5.37,1.79,6.88,3.24,1.51,1.45,2.27,3.34,2.27,5.66,0,2.03-.55,3.82-1.65,5.35-1.1,1.54-2.66,2.73-4.67,3.58-2.01.85-4.37,1.27-7.07,1.27Z"/>
-      <path class="logo-text" d="M404.19,324.91v-7.1h23.47v7.1h-23.47ZM422.12,350.25c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M233.75,325.53c-4.65,0-8.34-.93-11.08-2.8-2.74-1.87-4.23-4.44-4.48-7.72h8.34c.21,1.41.92,2.48,2.15,3.21,1.22.73,2.92,1.09,5.07,1.09,1.95,0,3.37-.28,4.26-.84.89-.56,1.34-1.36,1.34-2.4,0-.79-.26-1.4-.78-1.84-.52-.44-1.46-.8-2.83-1.09l-5.1-1.06c-3.78-.79-6.56-1.98-8.34-3.58-1.78-1.6-2.68-3.66-2.68-6.19,0-3.07,1.18-5.47,3.55-7.19,2.37-1.72,5.67-2.58,9.9-2.58s7.53.84,10.02,2.52c2.49,1.68,3.86,4.02,4.11,7h-8.34c-.17-1.08-.75-1.9-1.74-2.46-1-.56-2.41-.84-4.23-.84-1.66,0-2.89.24-3.7.72-.81.48-1.21,1.15-1.21,2.02,0,.75.33,1.34,1,1.77.66.44,1.76.82,3.3,1.15l5.73,1.18c3.2.66,5.61,1.9,7.25,3.7,1.64,1.81,2.46,3.93,2.46,6.38,0,3.11-1.21,5.53-3.64,7.25-2.43,1.72-5.86,2.58-10.3,2.58Z"/>
+      <path class="logo-text" d="M249.31,300.26v-7.1h23.47v7.1h-23.47ZM267.24,325.59c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M286.66,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM297.74,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M313.31,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM335.41,324.91v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M374.32,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM366.85,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
+      <path class="logo-text" d="M399.84,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM410.92,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
       <path class="logo-text" d="M426.49,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM435.82,308.35l-.81-7.53c.75-2.7,1.97-4.75,3.67-6.16,1.7-1.41,3.82-2.12,6.35-2.12.79,0,1.37.08,1.74.25v8.72c-.21-.08-.5-.13-.87-.16-.37-.02-.83-.03-1.37-.03-2.99,0-5.19.53-6.6,1.59-1.41,1.06-2.12,2.87-2.12,5.45Z"/>
       <path class="logo-text" d="M473.18,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM465.71,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
-      <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
-      <path class="logo-text" d="M441.99,324.91v-44.82h9.34v44.82h-9.34Z"/>
     </svg>
   </a>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/insights">Insights</a>
     <a href="/services">Services</a>
     <a href="/talent">Talent</a>
     <a href="/jobs">Jobs</a>
+    <a href="/community">Community</a>
     <a href="/companion">Companion</a>
+    <a href="/companion-waitlist">Companion Wait List</a>
     <a href="/contact">Contact</a>
+    <a href="#" class="nav-cta">Book a Meeting</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="retro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    </button>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    <svg class="retro-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-  </button>
 </nav>
+</div>
 
-<!-- CONTENT -->
-<main class="legal-page">
-  <p class="page-label">Legal</p>
-  <h1>Privacy Policy</h1>
-  <p class="effective-date">Effective Date: March 1, 2026 &nbsp;·&nbsp; Last Updated: March 1, 2026</p>
-
-  <p>The Channel Standard ("we," "us," or "our") operates the website located at <a href="https://www.thechannelstandard.com">www.thechannelstandard.com</a> (the "Site"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our Site or submit information through our forms. Please read this policy carefully. If you disagree with its terms, please discontinue use of the Site.</p>
-
-  <h2>1. Information We Collect</h2>
-  <p>We may collect the following categories of information:</p>
-  <ul>
-    <li><strong>Personal Identification Information</strong> — name, email address, company name, job title, and phone number, provided voluntarily when you submit a contact form, booking request, or waitlist registration.</li>
-    <li><strong>Usage Data</strong> — IP address, browser type, operating system, referring URLs, pages viewed, and time spent on pages, collected automatically through standard web analytics tools.</li>
-    <li><strong>Visitor Intelligence Data</strong> — We use RB2B, a third-party visitor identification service, which may identify the LinkedIn profiles of individuals visiting our Site based on their IP address. This data is processed in accordance with RB2B's own privacy policy.</li>
-    <li><strong>Cookies and Tracking Technologies</strong> — We use cookies and similar tracking technologies to improve your experience and analyze Site traffic. You may control cookie settings through your browser.</li>
-  </ul>
-
-  <h2>2. How We Use Your Information</h2>
-  <p>We use the information we collect to:</p>
-  <ul>
-    <li>Respond to inquiries, consultation requests, and form submissions.</li>
-    <li>Send you information about our services, insights, and updates (only where you have provided consent or have a legitimate interest).</li>
-    <li>Analyze Site usage to improve content, navigation, and user experience.</li>
-    <li>Identify and understand our audience to better serve channel professionals.</li>
-    <li>Comply with applicable legal obligations.</li>
-  </ul>
-
-  <h2>3. Sharing of Your Information</h2>
-  <p>We do not sell, trade, or rent your personal information to third parties. We may share your information with:</p>
-  <ul>
-    <li><strong>Service Providers</strong> — Trusted third-party vendors who assist us in operating the Site, conducting our business, or servicing you (e.g., email delivery, analytics, CRM), subject to confidentiality obligations.</li>
-    <li><strong>Legal Requirements</strong> — When required by law, regulation, or valid legal process, or to protect the rights, property, or safety of The Channel Standard, our users, or others.</li>
-    <li><strong>Business Transfers</strong> — In connection with a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
-  </ul>
-
-  <h2>4. Third-Party Services</h2>
-  <p>Our Site may contain links to third-party websites and integrates third-party services including RB2B visitor identification, Google Analytics, and scheduling tools. These third parties have their own privacy policies, and we encourage you to review them. We are not responsible for the privacy practices of third-party sites or services.</p>
-
-  <h2>5. Data Retention</h2>
-  <p>We retain personal information for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. Form submission data is retained to maintain records of inquiries and to comply with our internal notification and reporting workflows.</p>
-
-  <h2>6. Your Rights</h2>
-  <p>Depending on your jurisdiction, you may have the right to:</p>
-  <ul>
-    <li>Access the personal information we hold about you.</li>
-    <li>Request correction of inaccurate or incomplete data.</li>
-    <li>Request deletion of your personal information, subject to legal obligations.</li>
-    <li>Opt out of marketing communications at any time by contacting us or using the unsubscribe link in any email.</li>
-    <li>Lodge a complaint with a supervisory authority if you believe your rights have been violated.</li>
-  </ul>
-  <p>To exercise any of these rights, please contact us using the information below.</p>
-
-  <h2>7. Security</h2>
-  <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
-
-  <h2>8. Children's Privacy</h2>
-  <p>Our Site is not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us immediately so we can delete it.</p>
-
-  <h2>9. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the "Last Updated" date at the top of this page. Your continued use of the Site after any changes constitutes your acceptance of the revised policy.</p>
-
-  <h2>10. Contact Us</h2>
-  <div class="contact-block">
-    <p><strong>The Channel Standard</strong></p>
-    <p>Email: <a href="mailto:info@thechannelstandard.com">info@thechannelstandard.com</a></p>
-    <p>Website: <a href="https://www.thechannelstandard.com">www.thechannelstandard.com</a></p>
+<!-- HERO -->
+<section class="hero section">
+  <div class="container">
+    <div class="hero-content">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy <em>Policy</em></h1>
+      <p class="hero-body">Last updated: March 2026</p>
+    </div>
   </div>
-</main>
+</section>
 
-<!-- FOOTER -->
+<!-- LEGAL CONTENT -->
+<section class="legal-section">
+  <div class="container">
+    <div class="legal-content">
+      <p>This Privacy Policy describes how The Channel Standard ("we," "us," or "our") collects, uses, and shares information about you when you use our website at thechannelstandard.com and any related services (collectively, the "Services").</p>
+
+      <h2>Information We Collect</h2>
+      <h3>Information You Provide</h3>
+      <p>We collect information you provide directly to us, including when you:</p>
+      <ul>
+        <li>Fill out a contact form or join a wait list</li>
+        <li>Create an account or register for access</li>
+        <li>Communicate with us by email or other means</li>
+        <li>Subscribe to our newsletter or updates</li>
+      </ul>
+      <p>This information may include your name, email address, company name, job title, and any other information you choose to provide.</p>
+
+      <h3>Information Collected Automatically</h3>
+      <p>When you use our Services, we automatically collect certain information, including:</p>
+      <ul>
+        <li>Log data such as your IP address, browser type, pages visited, and time spent on pages</li>
+        <li>Device information including hardware model, operating system, and unique device identifiers</li>
+        <li>Usage information about how you interact with our Services</li>
+      </ul>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Provide, maintain, and improve our Services</li>
+        <li>Respond to your comments, questions, and requests</li>
+        <li>Send you technical notices and support messages</li>
+        <li>Send you marketing communications about products and services, subject to your preferences</li>
+        <li>Monitor and analyze trends, usage, and activities in connection with our Services</li>
+        <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+      </ul>
+
+      <h2>Sharing of Information</h2>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:</p>
+      <ul>
+        <li>With service providers who assist us in operating our website and conducting our business</li>
+        <li>In response to a request for information if we believe disclosure is in accordance with applicable law</li>
+        <li>If we believe your actions are inconsistent with our user agreements or policies, or to protect the rights, property, and safety of us or others</li>
+        <li>In connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business</li>
+      </ul>
+
+      <h2>Data Retention</h2>
+      <p>We retain personal information for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements.</p>
+
+      <h2>Security</h2>
+      <p>We take reasonable measures to help protect information about you from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction.</p>
+
+      <h2>Your
+ Choices</h2>
+      <p>You may opt out of receiving promotional communications from us by following the instructions in those messages or by contacting us directly. You may also update or correct information about yourself by contacting us.</p>
+
+      <h2>Cookies</h2>
+      <p>We use cookies and similar tracking technologies to track activity on our Services and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+
+      <h2>Third-Party Links</h2>
+      <p>Our Services may contain links to third-party websites. We are not responsible for the privacy practices of those sites and encourage you to review their privacy policies.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Our Services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us at <a href="/contact" style="color:var(--accent)">thechannelstandard.com/contact</a>.</p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" class="footer-logo">
         <svg class="logo-svg" viewBox="25 190 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="The Channel Standard">
-          <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
-          <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
-          <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
-          <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
-          <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
-          <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
-          <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
-          <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
-          <path class="logo-text" d="M441.99,324.91v-44.82h9.34v44.82h-9.34Z"/>
+      <circle cx="58.92" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="117.41" cy="241.62" r="29.25" class="logo-dot-teal"/>
+      <circle cx="175.9" cy="241.62" r="29.25" class="logo-dot-dark"/>
+      <circle cx="58.92" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <circle cx="117.41" cy="300.11" r="29.25" class="logo-dot-dark"/>
+      <circle cx="175.9" cy="300.11" r="29.25" class="logo-dot-blue"/>
+      <path class="logo-text" d="M218.06,202.81v-7.1h23.47v7.1h-23.47ZM235.99,228.15c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M247.13,227.47v-44.82h9.34v44.82h-9.34ZM269.23,227.47v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M300.61,228.09c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M235.3,276.81c-3.32,0-6.25-.71-8.78-2.12-2.53-1.41-4.51-3.36-5.95-5.85-1.43-2.49-2.15-5.33-2.15-8.53s.72-6.04,2.15-8.53c1.43-2.49,3.41-4.44,5.95-5.85,2.53-1.41,5.46-2.12,8.78-2.12,2.78,0,5.28.51,7.5,1.53,2.22,1.02,4.05,2.42,5.48,4.2,1.43,1.78,2.36,3.88,2.77,6.29h-9.03c-.46-1.53-1.28-2.7-2.46-3.49-1.18-.79-2.56-1.18-4.14-1.18-1.49,0-2.79.37-3.89,1.12-1.1.75-1.94,1.81-2.52,3.18-.58,1.37-.87,2.99-.87,4.86s.29,3.49.87,4.86c.58,1.37,1.42,2.43,2.52,3.18,1.1.75,2.4,1.12,3.89,1.12,1.58,0,2.96-.39,4.14-1.18,1.18-.79,2-1.95,2.46-3.49h9.03c-.41,2.41-1.34,4.5-2.77,6.29-1.43,1.78-3.26,3.19-5.48,4.2-2.22,1.02-4.72,1.53-7.5,1.53Z"/>
+      <path class="logo-text" d="M255.91,276.19v-44.82h9.34v44.82h-9.34ZM278.01,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M302.54,276.81c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM313.62,276.19c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M329.18,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM351.28,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M367.72,276.19v-31.75h9.15v7.47h.19v24.28h-9.34ZM389.82,276.19v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M421.2,276.81c-3.53,0-6.6-.69-9.21-2.09-2.61-1.39-4.64-3.33-6.07-5.82-1.43-2.49-2.15-5.35-2.15-8.59s.72-6.15,2.15-8.62c1.43-2.47,3.43-4.4,6.01-5.79,2.57-1.39,5.56-2.09,8.96-2.09s6.12.66,8.53,1.99c2.41,1.33,4.27,3.18,5.6,5.54,1.33,2.37,1.99,5.15,1.99,8.34,0,.66-.02,1.28-.06,1.84-.04.56-.1,1.09-.19,1.59h-27.52v-6.16h19.98l-1.62,1.12c0-2.57-.61-4.47-1.84-5.7-1.22-1.22-2.89-1.84-5.01-1.84-2.45,0-4.35.83-5.7,2.49-1.35,1.66-2.02,4.15-2.02,7.47s.67,5.65,2.02,7.22c1.35,1.58,3.37,2.37,6.07,2.37,1.49,0,2.78-.25,3.86-.75,1.08-.5,1.89-1.31,2.43-2.43h8.78c-1.04,3.07-2.81,5.49-5.32,7.25-2.51,1.76-5.74,2.65-9.68,2.65Z"/>
+      <path class="logo-text" d="M441.99,276.19v-44.82h9.34v44.82h-9.34Z"/>
+      <path class="logo-text" d="M233.75,325.53c-4.65,0-8.34-.93-11.08-2.8-2.74-1.87-4.23-4.44-4.48-7.72h8.34c.21,1.41.92,2.48,2.15,3.21,1.22.73,2.92,1.09,5.07,1.09,1.95,0,3.37-.28,4.26-.84.89-.56,1.34-1.36,1.34-2.4,0-.79-.26-1.4-.78-1.84-.52-.44-1.46-.8-2.83-1.09l-5.1-1.06c-3.78-.79-6.56-1.98-8.34-3.58-1.78-1.6-2.68-3.66-2.68-6.19,0-3.07,1.18-5.47,3.55-7.19,2.37-1.72,5.67-2.58,9.9-2.58s7.53.84,10.02,2.52c2.49,1.68,3.86,4.02,4.11,7h-8.34c-.17-1.08-.75-1.9-1.74-2.46-1-.56-2.41-.84-4.23-.84-1.66,0-2.89.24-3.7.72-.81.48-1.21,1.15-1.21,2.02,0,.75.33,1.34,1,1.77.66.44,1.76.82,3.3,1.15l5.73,1.18c3.2.66,5.61,1.9,7.25,3.7,1.64,1.81,2.46,3.93,2.46,6.38,0,3.11-1.21,5.53-3.64,7.25-2.43,1.72-5.86,2.58-10.3,2.58Z"/>
+      <path class="logo-text" d="M249.31,300.26v-7.1h23.47v7.1h-23.47ZM267.24,325.59c-4.07,0-7.09-.99-9.06-2.96-1.97-1.97-2.96-4.97-2.96-9v-27.58l9.34-3.49v31.38c0,1.41.39,2.47,1.18,3.18.79.71,2.01,1.06,3.67,1.06.62,0,1.2-.06,1.74-.19.54-.12,1.08-.27,1.62-.44v7.1c-.54.29-1.3.52-2.27.68-.98.17-2.06.25-3.27.25Z"/>
+      <path class="logo-text" d="M286.66,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM297.74,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M313.31,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM335.41,324.91v-19.67c0-1.74-.45-3.05-1.34-3.92-.89-.87-2.19-1.31-3.89-1.31-1.45,0-2.75.33-3.89,1-1.14.66-2.03,1.58-2.68,2.74-.64,1.16-.96,2.53-.96,4.11l-.81-7.66c1.04-2.32,2.56-4.18,4.58-5.57,2.01-1.39,4.49-2.09,7.44-2.09,3.53,0,6.23.99,8.09,2.96,1.87,1.97,2.8,4.62,2.8,7.94v21.48h-9.34Z"/>
+      <path class="logo-text" d="M374.32,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM366.85,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
+      <path class="logo-text" d="M399.84,325.53c-3.15,0-5.67-.8-7.53-2.4-1.87-1.6-2.8-3.72-2.8-6.38,0-2.95,1.11-5.32,3.33-7.13,2.22-1.81,5.32-2.98,9.31-3.52l9.28-1.31v5.42l-7.72,1.18c-1.66.25-2.88.71-3.67,1.37-.79.66-1.18,1.58-1.18,2.74,0,1.04.37,1.83,1.12,2.37.75.54,1.74.81,2.99.81,1.95,0,3.61-.53,4.98-1.59s2.05-2.29,2.05-3.7l.87,4.98c-.91,2.37-2.3,4.15-4.17,5.35-1.87,1.2-4.15,1.81-6.85,1.81ZM410.92,324.91c-.25-.91-.43-1.89-.53-2.93-.1-1.04-.16-2.24-.16-3.61h-.25v-15c0-1.29-.43-2.29-1.28-3.02-.85-.73-2.11-1.09-3.77-1.09s-2.83.27-3.77.81c-.93.54-1.55,1.33-1.84,2.37h-8.9c.41-2.86,1.89-5.23,4.42-7.1,2.53-1.87,6-2.8,10.4-2.8s8.05,1.02,10.46,3.05c2.41,2.03,3.61,4.96,3.61,8.78v14.01c0,1.04.07,2.09.22,3.14.14,1.06.38,2.19.72,3.39h-9.34Z"/>
+      <path class="logo-text" d="M426.49,324.91v-31.75h9.15v7.47h.19v24.28h-9.34ZM435.82,308.35l-.81-7.53c.75-2.7,1.97-4.75,3.67-6.16,1.7-1.41,3.82-2.12,6.35-2.12.79,0,1.37.08,1.74.25v8.72c-.21-.08-.5-.13-.87-.16-.37-.02-.83-.03-1.37-.03-2.99,0-5.19.53-6.6,1.59-1.41,1.06-2.12,2.87-2.12,5.45Z"/>
+      <path class="logo-text" d="M473.18,324.91v-7.03l.62.12c-.42,2.28-1.65,4.11-3.7,5.48-2.05,1.37-4.51,2.05-7.38,2.05s-5.43-.67-7.56-2.02c-2.14-1.35-3.79-3.25-4.95-5.7-1.16-2.45-1.74-5.33-1.74-8.65s.6-6.29,1.81-8.78c1.2-2.49,2.89-4.42,5.07-5.79,2.18-1.37,4.72-2.05,7.63-2.05s5.49.71,7.38,2.12c1.89,1.41,3,3.34,3.33,5.79l-.68.06v-20.42h9.34v44.82h-9.15ZM465.71,318.06c2.2,0,3.98-.78,5.35-2.33s2.05-3.79,2.05-6.69-.7-5.14-2.09-6.69c-1.39-1.56-3.21-2.33-5.45-2.33s-3.93.79-5.32,2.37c-1.39,1.58-2.09,3.82-2.09,6.72s.69,5.13,2.09,6.66c1.39,1.54,3.21,2.3,5.45,2.3Z"/>
         </svg>
       </a>
       <p class="footer-tagline" id="footer-tagline">From guesswork to intelligence.</p>
@@ -306,10 +539,10 @@
     <div class="footer-col">
       <h4>Product</h4>
       <a href="/companion">Channel Companion</a>
+      <a href="/companion-waitlist">Wait List</a>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
-      <a href="/insights">Insights</a>
       <a href="/services">Advisory</a>
       <a href="/talent">Talent</a>
       <a href="/jobs">Jobs</a>
@@ -317,15 +550,15 @@
     <div class="footer-col">
       <h4>Connect</h4>
       <a href="/contact">Contact</a>
-      <a href="https://www.linkedin.com/company/the-channel-standard/" target="_blank">LinkedIn</a>
-      <a href="https://www.youtube.com/@thechannelstandard" target="_blank">YouTube</a>
+      <a href="/community">Community</a>
+      <a href="#">LinkedIn</a>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 The Channel Standard. All rights reserved.</p>
     <div class="footer-bottom-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms-of-service">Terms</a>
     </div>
   </div>
 </footer>
@@ -339,6 +572,38 @@ function toggleTheme() {
   var next = themes[(idx + 1) % themes.length];
   html.setAttribute('data-theme', next);
 }
+(function() {
+  function applyPop(el) {
+    if (el.classList.contains('pop')) return;
+    el.classList.remove('fade-back');
+    el.classList.add('pop');
+    setTimeout(function() {
+      el.classList.remove('pop');
+      el.classList.add('fade-back');
+      var targets = [el];
+      el.querySelectorAll('.btn-label').forEach(function(c) { targets.push(c); });
+      if (el.classList.contains('footer-tagline')) targets.push(el);
+      targets.forEach(function(t) {
+        t.style.background = '';
+        t.style.webkitBackgroundClip = '';
+        t.style.backgroundClip = '';
+        t.style.webkitTextFillColor = '';
+      });
+    }, 1800);
+    setTimeout(function() { el.classList.remove('fade-back'); }, 2600);
+  }
+  var tagline = document.getElementById('footer-tagline');
+  if (tagline) tagline.addEventListener('click', function() { applyPop(tagline); });
+  document.querySelectorAll('.btn-primary-ed').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      applyPop(btn);
+      var href = btn.getAttribute('href');
+      if (href && href !== '#') setTimeout(function() { window.location.href = href; }, 600);
+    });
+  });
+})();
 </script>
+
 </body>
 </html>
